@@ -2,18 +2,17 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
-import './index.css'
 
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'xcbuddy' },
+        { name: 'keywords', content: 'xcode, swift, swift' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header />
     <div
       style={{
         margin: '0 auto',
