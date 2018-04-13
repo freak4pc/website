@@ -10,7 +10,7 @@ const Layout = ({ children, data }) => (
     <Flex flexDirection="column" flex="1 1 auto">
       <Helmet
         title={data.site.siteMetadata.title}
-        bodyAttributes={{ style: 'margin: 0px;' }}
+        bodyAttributes={[{ style: 'margin: 0px;' }]}
         link={[
           {
             href: 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab',
