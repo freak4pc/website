@@ -10,7 +10,6 @@ const Layout = ({ children, data }) => (
     <Flex flexDirection="column" flex="1 1 auto">
       <Helmet
         title={data.site.siteMetadata.title}
-        bodyAttributes={{ style: 'margin: 0px;' }}
         link={[
           {
             href: 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab',
@@ -21,8 +20,9 @@ const Layout = ({ children, data }) => (
           { name: 'description', content: 'xcbuddy - xcode at scale' },
           { name: 'keywords', content: 'xcode, swift, swift' },
         ]}
-      />
-
+      >
+        {/* <body style="margin: 0px;" /> */}
+      </Helmet>
       <Header />
       <div
         style={{
