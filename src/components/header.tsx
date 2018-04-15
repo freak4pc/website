@@ -18,7 +18,8 @@ const Header = () => {
       <Text>xcbuddy</Text>
       <Badge bg="main">0.1.0</Badge>
       <NavButton ml="auto">Docs</NavButton>
-      <NavButton>Features</NavButton>
+      <NavButton>Blog</NavButton>
+      <NavButton>Faq</NavButton>
       <NavButton>Releases</NavButton>
       <NavButton>Contact</NavButton>
     </Toolbar>

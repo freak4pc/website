@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
@@ -21,6 +22,12 @@ module.exports = {
           yandex: false,
           windows: false,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-drift',
+      options: {
+        appId: 'bm7wiyev9zye',
       },
     },
   ],
