@@ -4,7 +4,7 @@ cache:
   directories:
     - node_modules
 script:
-  - npm test
+  - npm build
 env:
   - CI=true
 before_deploy:
