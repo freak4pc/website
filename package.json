@@ -20,18 +20,18 @@
     "styled-components": "^3.2.5",
     "typescript": "^2.8.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jest"
   },
   "devDependencies": {
     "@types/jest": "^22.2.3",
-    "prettier": "^1.11.1"
+    "jest": "^22.4.3",
+    "prettier": "^1.11.1",
+    "ts-jest": "^22.4.3"
   }
 }
