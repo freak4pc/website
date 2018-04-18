@@ -7,6 +7,8 @@
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/xcbuddy)
 sss
 
+s
+
 ## Setup
 
 1.  Git clone the repository `git clone git@github.com:xcbuddy/website.git`.
