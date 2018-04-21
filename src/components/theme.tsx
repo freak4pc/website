@@ -18,10 +18,6 @@ const colors = {
   complementary: '#fcb07e',
   dark: '#202a25',
 }
-const fonts = {
-  serif: '"Roboto Slab", serif',
-  sans: '"Roboto", sans-serif',
-}
 const theme = {
   colors,
   breakpoints,
@@ -30,9 +26,8 @@ const theme = {
   lineHeights,
   fontWeights,
   letterSpacings,
-  radii,
+  // radii,
   borders,
-  fonts,
 }
 
 export default theme

@@ -5,25 +5,36 @@ import theme from '../components/theme'
 import Header from '../components/header'
 import { Flex } from 'grid-styled'
 
+const globalStyle = `
+  * {
+    margin: 0px;
+    font-family: Roboto, sans-serif;
+  }
+  a {
+    all: unset;
+  }
+`
+
 const Layout = ({ children, data }) => (
   <ThemeProvider theme={theme}>
     <Flex flexDirection="column" flex="1 1 auto">
-      <Helmet
-        title={data.site.siteMetadata.title}
-        link={[
-          {
-            href: 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab',
-            rel: 'stylesheet',
-          },
-        ]}
-        meta={[
-          { name: 'description', content: 'xcbuddy - xcode at scale' },
-          { name: 'keywords', content: 'xcode, swift, swift' },
-        ]}
-      >
-        {/* <body style="margin: 0px;" /> */}
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+        <style type="text/css">{globalStyle}</style>
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+          crossorigin="anonymous"
+        />
+        <meta name="description" content="xcbuddy - xcode at scale" />
+        <meta name="keywords" content="xcode, swift, swift" />
       </Helmet>
-      <Header />
+      <Header data={data.site} />
       <div
         style={{
           margin: '0 auto',
@@ -43,6 +54,7 @@ export default Layout
 export const query = graphql`
   query SiteTitleQuery {
     site {
+      ...HeaderSiteData
       siteMetadata {
         title
       }

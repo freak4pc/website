@@ -1,6 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: '👩‍💻 xcbuddy | Xcode at scale',
+    urls: {
+      releases: 'https://github.com/xcbuddy/xcbuddy/releases',
+      docs: 'https://xcbuddy.github.io/xcbuddy/',
+    },
+    installScript:
+      '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/xcbuddy/xcbuddy/master/scripts/install)"',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
