@@ -18,32 +18,23 @@ const CopyButton = styled(Link)`
   }
 `
 
-const Header = ({ data }) => (
-  <Flex flexDirection="column" bg="main">
-    <Toolbar color="white" bg="none">
-      <Text>xcbuddy</Text>
-      <Badge bg="main">0.1.0</Badge>
-      <NavButton ml="auto" href={data.siteMetadata.urls.docs} target="blank">
-        Docs
-      </NavButton>
-      <NavButton>Blog</NavButton>
-      <NavButton>Faq</NavButton>
-      <NavButton href={data.siteMetadata.urls.releases} target="blank">
-        Releases
-      </NavButton>
-    </Toolbar>
-    <Box style={{ height: '200px' }} />
-    <Toolbar color="white" bg="dark">
-      <Text ml="auto">Install: </Text>
-      <Text ml={10} mr={10} style={{ opacity: 0.7 }}>
-        {data.siteMetadata.installScript}
-      </Text>
-      <CopyButton mr="auto">
-        <Text className="far fa-copy" mx="6px" my="5px" />
-      </CopyButton>
-    </Toolbar>
-  </Flex>
-)
+// <Flex flexDirection="column" bg="main" />
+
+const HomeHeader = ({ data }) => {
+  return <div> sgas</div>
+}
+
+const SecondaryHeader = ({ data }) => {
+  return <div />
+}
+
+const Header = ({ data }) => {
+  if (location.pathname == '/') {
+    return HomeHeader({ data })
+  } else {
+    return SecondaryHeader({ data })
+  }
+}
 
 export default Header
 
@@ -54,7 +45,38 @@ export const headerFragment = graphql`
       urls {
         releases
         docs
+        github
+        blog
+        twitter
       }
     }
   }
 `
+
+{
+  /* <Toolbar color="white" bg="none">
+      <Text>xcbuddy</Text>
+      <Badge bg="main">0.1.0</Badge>
+      <NavButton ml="auto" href={data.siteMetadata.urls.docs} target="blank">
+        Docs
+      </NavButton>
+      <NavButton href={data.siteMetadata.urls.blog} target="blank">
+        Blog
+      </NavButton>
+      <NavButton>Faq</NavButton>
+      <NavButton>Twitter</NavButton>
+      <NavButton>GitHub</NavButton>
+      <NavButton href={data.siteMetadata.urls.releases} target="blank">
+        Releases
+      </NavButton>
+    </Toolbar>
+    <Toolbar color="white" bg="dark">
+      <Text ml="auto">Install: </Text>
+      <Text ml={10} mr={10} style={{ opacity: 0.7 }}>
+        {data.siteMetadata.installScript}
+      </Text>
+      <CopyButton mr="auto">
+        <Text className="far fa-copy" mx="6px" my="5px" />
+      </CopyButton>
+    </Toolbar> */
+}

@@ -3,24 +3,15 @@ import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import theme from '../components/theme'
 import Header from '../components/header'
+import Footer from '../components/footer'
 import { Flex } from 'grid-styled'
-
-const globalStyle = `
-  * {
-    margin: 0px;
-    font-family: Roboto, sans-serif;
-  }
-  a {
-    all: unset;
-  }
-`
+import './index.css'
 
 const Layout = ({ children, data }) => (
   <ThemeProvider theme={theme}>
     <Flex flexDirection="column" flex="1 1 auto">
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
-        <style type="text/css">{globalStyle}</style>
         <link
           href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab"
           rel="stylesheet"
@@ -45,6 +36,7 @@ const Layout = ({ children, data }) => (
       >
         {children()}
       </div>
+      <Footer data={data.site} />
     </Flex>
   </ThemeProvider>
 )

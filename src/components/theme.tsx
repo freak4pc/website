@@ -13,10 +13,11 @@ const letterSpacings = {
 const radii = [0, 2, 4, 8]
 const borders = [0, '1px solid', '2px solid']
 const colors = {
-  main: '#00b2ca',
-  secondary: '#7dcfb6',
-  complementary: '#fcb07e',
-  dark: '#202a25',
+  darkblue: '#13505B',
+  blue: '#2292A4',
+  dark: '#040404',
+  green: '#BDBF09',
+  orange: '#D96C06',
 }
 const theme = {
   colors,

@@ -4,6 +4,9 @@ module.exports = {
     urls: {
       releases: 'https://github.com/xcbuddy/xcbuddy/releases',
       docs: 'https://xcbuddy.github.io/xcbuddy/',
+      twitter: 'https://twitter.com/xcbuddyapp',
+      github: 'https://github.com/xcbuddy',
+      blog: 'https://medium.com/xcbuddy',
     },
     installScript:
       '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/xcbuddy/xcbuddy/master/scripts/install)"',

@@ -16,3 +16,4 @@
 
 * [Rebass](http://jxnblk.com/rebass/)
 * [styled-system](https://github.com/jxnblk/styled-system)
+* [grid-styled](https://github.com/jxnblk/grid-styled)
