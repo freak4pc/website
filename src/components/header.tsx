@@ -18,17 +18,15 @@ const CopyButton = styled(Link)`
   }
 `
 
-// <Flex flexDirection="column" bg="main" />
-
 const HomeHeader = ({ data }) => {
-  return <div> sgas</div>
+  return <div>Home Header</div>
 }
 
 const SecondaryHeader = ({ data }) => {
-  return <div />
+  return <div>Secondary header</div>
 }
 
-const Header = ({ data }) => {
+const Header = ({ data, location }) => {
   if (location.pathname == '/') {
     return HomeHeader({ data })
   } else {
@@ -38,7 +36,7 @@ const Header = ({ data }) => {
 
 export default Header
 
-export const headerFragment = graphql`
+export const headerFragments = graphql`
   fragment HeaderSiteData on Site {
     siteMetadata {
       installScript

@@ -14,17 +14,11 @@ const Footer = ({ data }) => {
             width={25}
           />
         </Box>
-        <Flex
-          flex="1 0 auto"
-          mx={10}
-          justifyContent="center"
-          flexDirection="row"
-          alignItems="center"
-        >
+        <Box ml="auto" mr="auto">
           <Box color="white" fontSize={15}>
-            GitHub · Spectrum · Twitter · Legal/Conduct
+            GitHub · Twitter
           </Box>
-        </Flex>
+        </Box>
       </Flex>
     </Flex>
   )

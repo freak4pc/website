@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: '👩‍💻 xcbuddy | Xcode at scale',
+    title: '🤖 xcbuddy · Scaling your Xcode projects',
     urls: {
       releases: 'https://github.com/xcbuddy/xcbuddy/releases',
       docs: 'https://xcbuddy.github.io/xcbuddy/',

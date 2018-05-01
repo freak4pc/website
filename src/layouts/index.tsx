@@ -7,7 +7,7 @@ import Footer from '../components/footer'
 import { Flex } from 'grid-styled'
 import './index.css'
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children, data, location }) => (
   <ThemeProvider theme={theme}>
     <Flex flexDirection="column" flex="1 1 auto">
       <Helmet>
@@ -25,7 +25,7 @@ const Layout = ({ children, data }) => (
         <meta name="description" content="xcbuddy - xcode at scale" />
         <meta name="keywords" content="xcode, swift, swift" />
       </Helmet>
-      <Header data={data.site} />
+      <Header data={data} location={location} />
       <div
         style={{
           margin: '0 auto',
