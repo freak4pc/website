@@ -1,9 +1,16 @@
 import * as React from 'react'
-import { Image, Link } from 'rebass'
+import { Image } from 'rebass'
 import { Flex, Box } from 'grid-styled'
-import { withPrefix } from 'gatsby-link'
+import Link, { withPrefix } from 'gatsby-link'
+import styled from 'styled-components'
 
-const FooterLink = Link.extend`
+const InternalLink = styled(Link)`
+  color: white;
+  &:hover {
+    color: ${props => props.theme.colors.green};
+  }
+`
+const ExternalLink = styled.a`
   color: white;
   &:hover {
     color: ${props => props.theme.colors.green};
@@ -30,16 +37,16 @@ const Links = ({ urls }) => {
       justifyContent="center"
       color="white"
     >
-      <FooterLink href={urls.github} target="blank">
+      <ExternalLink href={urls.github} target="blank">
         GitHub
-      </FooterLink>&nbsp;·&nbsp;
-      <FooterLink href={urls.twitter} target="blank">
+      </ExternalLink>&ensp;·&ensp;
+      <ExternalLink href={urls.twitter} target="blank">
         Twitter
-      </FooterLink>&nbsp;·&nbsp;
-      <FooterLink href={urls.spectrum} target="blank">
+      </ExternalLink>&ensp;·&ensp;
+      <ExternalLink href={urls.spectrum} target="blank">
         Spectrum
-      </FooterLink>&nbsp;·&nbsp;
-      <FooterLink>Legal/Conduct</FooterLink>
+      </ExternalLink>&ensp;·&ensp;
+      <InternalLink to="/legal">Legal/Conduct</InternalLink>
     </Flex>
   )
 }
