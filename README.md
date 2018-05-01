@@ -17,3 +17,4 @@
 * [Rebass](http://jxnblk.com/rebass/)
 * [styled-system](https://github.com/jxnblk/styled-system)
 * [grid-styled](https://github.com/jxnblk/grid-styled)
+* [Practical Gatsby.js](https://blog.scottnonnenberg.com/practical-gatsby-js/)
