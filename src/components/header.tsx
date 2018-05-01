@@ -41,10 +41,7 @@ export const headerFragments = graphql`
     siteMetadata {
       installScript
       urls {
-        releases
-        docs
         github
-        blog
         twitter
       }
     }

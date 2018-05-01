@@ -25,7 +25,7 @@ const Layout = ({ children, data, location }) => (
         <meta name="description" content="xcbuddy - xcode at scale" />
         <meta name="keywords" content="xcode, swift, swift" />
       </Helmet>
-      <Header data={data} location={location} />
+      <Header data={data.site} location={location} />
       <div
         style={{
           margin: '0 auto',
@@ -47,6 +47,7 @@ export const query = graphql`
   query SiteTitleQuery {
     site {
       ...HeaderSiteData
+      ...FooterSiteMetadata
       siteMetadata {
         title
       }

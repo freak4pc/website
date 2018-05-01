@@ -18,7 +18,7 @@ const Logo = () => {
   )
 }
 
-const Links = () => {
+const Links = ({ urls }) => {
   return (
     <Flex
       display={['none', 'inherit']}
@@ -30,9 +30,15 @@ const Links = () => {
       justifyContent="center"
       color="white"
     >
-      <FooterLink href="https://github.com/xcbuddy">GitHub</FooterLink>&nbsp;·&nbsp;
-      <FooterLink>Twitter</FooterLink>&nbsp;·&nbsp;
-      <FooterLink>Spectrum</FooterLink>&nbsp;·&nbsp;
+      <FooterLink href={urls.github} target="blank">
+        GitHub
+      </FooterLink>&nbsp;·&nbsp;
+      <FooterLink href={urls.twitter} target="blank">
+        Twitter
+      </FooterLink>&nbsp;·&nbsp;
+      <FooterLink href={urls.spectrum} target="blank">
+        Spectrum
+      </FooterLink>&nbsp;·&nbsp;
       <FooterLink>Legal/Conduct</FooterLink>
     </Flex>
   )
@@ -43,10 +49,22 @@ const Footer = ({ data }) => {
     <Flex bg="darkblue" alignItems="stretch" flexDirection="row">
       <Flex m={15} flex="1 0 auto" flexDirection="row">
         <Logo />
-        <Links />
+        <Links urls={data.siteMetadata.urls} />
       </Flex>
     </Flex>
   )
 }
 
 export default Footer
+
+export const footerFragment = graphql`
+  fragment FooterSiteMetadata on Site {
+    siteMetadata {
+      urls {
+        github
+        twitter
+        spectrum
+      }
+    }
+  }
+`
