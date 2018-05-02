@@ -17,6 +17,17 @@ const ExternalLink = styled.a`
   }
 `
 
+const Icon = ({ icon, url }) => {
+  return (
+    <a
+      className={`fab fa-${icon}`}
+      style={{ color: 'white' }}
+      href={url}
+      target="_blank"
+    />
+  )
+}
+
 const Logo = () => {
   return (
     <Box m={15} display={['none', 'inherit']}>
@@ -77,6 +88,22 @@ const NavButtons = ({ urls, location }) => {
   )
 }
 
+const NavIcons = ({ urls }) => {
+  return (
+    <Flex
+      flex="0 0 80px"
+      mr={15}
+      flexDirection="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Icon icon="twitter" url={urls.twitter} />
+      <Icon icon="stack-overflow" url={urls.stackoverflow} />
+      <Icon icon="github" url={urls.github} />
+    </Flex>
+  )
+}
+
 const HomeHeader = () => {
   return <div />
 }
@@ -87,6 +114,7 @@ const BaseHeader = ({ data, location }) => {
       <Flex flex="1 0 auto" flexDirection="row">
         <Logo />
         <NavButtons urls={data.siteMetadata.urls} location={location} />
+        <NavIcons urls={data.siteMetadata.urls} />
       </Flex>
     </Flex>
   )
