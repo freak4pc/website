@@ -6,6 +6,7 @@ module.exports = {
       twitter: 'https://twitter.com/xcbuddyapp',
       github: 'https://github.com/xcbuddy',
       spectrum: 'https://spectrum.chat/xcbuddy',
+      stackoverflow: '',
     },
     installScript:
       '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/xcbuddy/xcbuddy/master/scripts/install)"',

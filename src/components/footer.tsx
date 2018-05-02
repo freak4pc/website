@@ -21,7 +21,12 @@ const Logo = () => {
   return (
     <Box display={['none', 'inherit']}>
       <Link to="/">
-        <Image alt="Logo" src={withPrefix('/logo.png')} height={25} width={25} />
+        <Image
+          alt="Logo"
+          src={withPrefix('/logo.png')}
+          height={25}
+          width={25}
+        />
       </Link>
     </Box>
   )
@@ -39,13 +44,13 @@ const Links = ({ urls }) => {
       justifyContent="center"
       color="white"
     >
-      <ExternalLink href={urls.github} target="blank">
+      <ExternalLink href={urls.github} target="_blank">
         GitHub
       </ExternalLink>&ensp;·&ensp;
-      <ExternalLink href={urls.twitter} target="blank">
+      <ExternalLink href={urls.twitter} target="_blank">
         Twitter
       </ExternalLink>&ensp;·&ensp;
-      <ExternalLink href={urls.spectrum} target="blank">
+      <ExternalLink href={urls.spectrum} target="_blank">
         Spectrum
       </ExternalLink>&ensp;·&ensp;
       <InternalLink to="/legal">Legal/Conduct</InternalLink>

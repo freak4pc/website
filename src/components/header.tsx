@@ -4,9 +4,22 @@ import { Flex, Box } from 'grid-styled'
 import Link, { withPrefix } from 'gatsby-link'
 import styled from 'styled-components'
 
+const InternalLink = styled(Link)`
+  color: white;
+  &:hover {
+    color: ${props => props.theme.colors.green};
+  }
+`
+const ExternalLink = styled.a`
+  color: white;
+  &:hover {
+    color: ${props => props.theme.colors.green};
+  }
+`
+
 const Logo = () => {
   return (
-    <Box display={['none', 'inherit']}>
+    <Box m={15} display={['none', 'inherit']}>
       <Link to="/">
         <Image
           alt="Logo"
@@ -19,8 +32,30 @@ const Logo = () => {
   )
 }
 
-const Button = ({ path, name }) => {
-  return <Box mx={10}>{name}</Box>
+const Button = ({ path, url, name, location }) => {
+  return (
+    <Flex
+      mx={10}
+      flexDirection="column"
+      alignItems="stretch"
+      justifyContent="center"
+    >
+      {path && <InternalLink to={path}>{name}</InternalLink>}
+      {url && (
+        <ExternalLink href={url} target="_blank">
+          {name}
+        </ExternalLink>
+      )}
+      <Box
+        mt={2}
+        bg="green"
+        style={{
+          visibility: path == location.pathname ? 'visible' : 'hidden',
+        }}
+        flex="0 0 3px"
+      />
+    </Flex>
+  )
 }
 
 const NavButtons = ({ urls, location }) => {
@@ -30,14 +65,14 @@ const NavButtons = ({ urls, location }) => {
       ml={40}
       flex="1 1 auto"
       flexDirection="row"
-      alignItems="center"
+      alignItems="stretch"
       justifyContent="flex-start"
       color="white"
     >
-      <Button path={location.pathname} name="Docs" />
-      <Button path={location.pathname} name="Blog" />
-      <Button path={location.pathname} name="Faq" />
-      <Button path={location.pathname} name="Releases" />
+      <Button location={location} path={null} url={urls.docs} name="Docs" />
+      <Button location={location} path="/blog" url={null} name="Blog" />
+      <Button location={location} path="/faq" url={null} name="Faq" />
+      <Button location={location} path="/releases" url={null} name="Releases" />
     </Flex>
   )
 }
@@ -49,7 +84,7 @@ const HomeHeader = () => {
 const BaseHeader = ({ data, location }) => {
   return (
     <Flex bg="blue" alignItems="stretch" flexDirection="row">
-      <Flex m={15} flex="1 0 auto" flexDirection="row">
+      <Flex flex="1 0 auto" flexDirection="row">
         <Logo />
         <NavButtons urls={data.siteMetadata.urls} location={location} />
       </Flex>
@@ -72,9 +107,10 @@ export const headerFragment = graphql`
   fragment HeaderSiteMetadata on Site {
     siteMetadata {
       urls {
+        docs
         github
         twitter
-        spectrum
+        stackoverflow
       }
     }
   }
