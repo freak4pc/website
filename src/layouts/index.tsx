@@ -46,7 +46,7 @@ export default Layout
 export const query = graphql`
   query SiteTitleQuery {
     site {
-      ...HeaderSiteData
+      ...HeaderSiteMetadata
       ...FooterSiteMetadata
       siteMetadata {
         title

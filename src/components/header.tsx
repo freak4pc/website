@@ -1,77 +1,81 @@
 import * as React from 'react'
+import { Image } from 'rebass'
 import { Flex, Box } from 'grid-styled'
-import { Toolbar, NavLink, Link, Text, Badge } from 'rebass'
+import Link, { withPrefix } from 'gatsby-link'
 import styled from 'styled-components'
-import color from 'styled-system'
 
-const NavButton = styled(NavLink)`
-  &:hover {
-    opacity: 0.7;
-    // color: ${props => props.theme.colors.complementary};
-  }
-`
-const CopyButton = styled(Link)`
-  border-radius: 3px;
-  background-color: ${props => props.theme.colors.secondary}
-  &:hover {
-    opacity: 0.7;
-  }
-`
-
-const HomeHeader = ({ data }) => {
-  return <div>Home Header</div>
+const Logo = () => {
+  return (
+    <Box display={['none', 'inherit']}>
+      <Link to="/">
+        <Image
+          alt="Logo"
+          src={withPrefix('/logo.png')}
+          height={25}
+          width={25}
+        />
+      </Link>
+    </Box>
+  )
 }
 
-const SecondaryHeader = ({ data }) => {
-  return <div>Secondary header</div>
+const Button = ({ path, name }) => {
+  return <Box mx={10}>{name}</Box>
+}
+
+const NavButtons = ({ urls, location }) => {
+  return (
+    <Flex
+      display={['none', 'inherit']}
+      ml={40}
+      flex="1 1 auto"
+      flexDirection="row"
+      alignItems="center"
+      justifyContent="flex-start"
+      color="white"
+    >
+      <Button path={location.pathname} name="Docs" />
+      <Button path={location.pathname} name="Blog" />
+      <Button path={location.pathname} name="Faq" />
+      <Button path={location.pathname} name="Releases" />
+    </Flex>
+  )
+}
+
+const HomeHeader = () => {
+  return <div />
+}
+
+const BaseHeader = ({ data, location }) => {
+  return (
+    <Flex bg="blue" alignItems="stretch" flexDirection="row">
+      <Flex m={15} flex="1 0 auto" flexDirection="row">
+        <Logo />
+        <NavButtons urls={data.siteMetadata.urls} location={location} />
+      </Flex>
+    </Flex>
+  )
 }
 
 const Header = ({ data, location }) => {
+  console.log(location)
   if (location.pathname == '/') {
-    return HomeHeader({ data })
+    return <HomeHeader />
   } else {
-    return SecondaryHeader({ data })
+    return <BaseHeader data={data} location={location} />
   }
 }
 
 export default Header
 
-export const headerFragments = graphql`
-  fragment HeaderSiteData on Site {
+export const headerFragment = graphql`
+  fragment HeaderSiteMetadata on Site {
     siteMetadata {
-      installScript
       urls {
         github
         twitter
+        spectrum
       }
     }
   }
 `
-
-{
-  /* <Toolbar color="white" bg="none">
-      <Text>xcbuddy</Text>
-      <Badge bg="main">0.1.0</Badge>
-      <NavButton ml="auto" href={data.siteMetadata.urls.docs} target="blank">
-        Docs
-      </NavButton>
-      <NavButton href={data.siteMetadata.urls.blog} target="blank">
-        Blog
-      </NavButton>
-      <NavButton>Faq</NavButton>
-      <NavButton>Twitter</NavButton>
-      <NavButton>GitHub</NavButton>
-      <NavButton href={data.siteMetadata.urls.releases} target="blank">
-        Releases
-      </NavButton>
-    </Toolbar>
-    <Toolbar color="white" bg="dark">
-      <Text ml="auto">Install: </Text>
-      <Text ml={10} mr={10} style={{ opacity: 0.7 }}>
-        {data.siteMetadata.installScript}
-      </Text>
-      <CopyButton mr="auto">
-        <Text className="far fa-copy" mx="6px" my="5px" />
-      </CopyButton>
-    </Toolbar> */
-}

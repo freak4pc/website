@@ -20,7 +20,9 @@ const ExternalLink = styled.a`
 const Logo = () => {
   return (
     <Box display={['none', 'inherit']}>
-      <Image alt="Logo" src={withPrefix('/logo.png')} height={25} width={25} />
+      <Link to="/">
+        <Image alt="Logo" src={withPrefix('/logo.png')} height={25} width={25} />
+      </Link>
     </Box>
   )
 }
