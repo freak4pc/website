@@ -8795,6 +8795,12 @@ style-loader@^0.13.0:
   dependencies:
     prop-types "^15.6.0"
 
+styled-system@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-2.2.5.tgz#95f1e2c2c9ddc5c462cc56237cf039aa9ecfd27d"
+  dependencies:
+    prop-types "^15.6.0"
+
 stylis-rule-sheet@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"

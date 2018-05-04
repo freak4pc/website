@@ -1,6 +1,17 @@
-const breakpoints = [32, 48, 64, 80]
+const breakpoints = ['40em', '52em', '64em']
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512]
-const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 96, 128]
+const fontSizes = [
+  '12px',
+  '14px',
+  '16px',
+  '20px',
+  '24px',
+  '32px',
+  '48px',
+  '64px',
+  '96px',
+  '128px',
+]
 const lineHeights = [1, 1.125, 1.25, 1.5]
 const fontWeights = {
   normal: 500,
@@ -18,6 +29,8 @@ const colors = {
   dark: '#040404',
   green: '#BDBF09',
   orange: '#D96C06',
+  grey: '#F1F1F1',
+  darkgrey: '#676767',
 }
 const theme = {
   colors,
@@ -27,7 +40,7 @@ const theme = {
   lineHeights,
   fontWeights,
   letterSpacings,
-  // radii,
+  radii,
   borders,
 }
 

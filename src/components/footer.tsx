@@ -35,24 +35,28 @@ const Logo = () => {
 const Links = ({ urls }) => {
   return (
     <Flex
-      display={['none', 'inherit']}
-      ml={10}
+      ml={2}
+      my={[3, 0]}
       flex="1 1 auto"
       fontSize={15}
-      flexDirection="row"
+      flexDirection={['column', 'row']}
       alignItems="center"
       justifyContent="center"
       color="white"
     >
       <ExternalLink href={urls.github} target="_blank">
         GitHub
-      </ExternalLink>&ensp;·&ensp;
+      </ExternalLink>
+      <Box color={['darkblue', 'white']}>&ensp;·&ensp;</Box>
       <ExternalLink href={urls.twitter} target="_blank">
         Twitter
-      </ExternalLink>&ensp;·&ensp;
+      </ExternalLink>
+      <Box color={['darkblue', 'white']}>&ensp;·&ensp;</Box>
       <ExternalLink href={urls.spectrum} target="_blank">
         Spectrum
-      </ExternalLink>&ensp;·&ensp;
+      </ExternalLink>
+      <Box color={['darkblue', 'white']}>&ensp;·&ensp;</Box>
+
       <InternalLink to="/legal">Legal/Conduct</InternalLink>
     </Flex>
   )
@@ -61,7 +65,12 @@ const Links = ({ urls }) => {
 const Footer = ({ data }) => {
   return (
     <Flex bg="darkblue" alignItems="stretch" flexDirection="row">
-      <Flex m={15} flex="1 0 auto" flexDirection="row">
+      <Flex
+        m={15}
+        flex="1 0 auto"
+        flexDirection={['column', 'row']}
+        alignItems={['center', 'flex-start']}
+      >
         <Logo />
         <Links urls={data.siteMetadata.urls} />
       </Flex>

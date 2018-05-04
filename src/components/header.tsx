@@ -1,25 +1,20 @@
 import * as React from 'react'
-import { Image } from 'rebass'
+import { Image, Text, Link } from 'rebass'
 import { Flex, Box } from 'grid-styled'
-import Link, { withPrefix } from 'gatsby-link'
+import { withPrefix } from 'gatsby-link'
 import styled from 'styled-components'
 
-const InternalLink = styled(Link)`
-  color: white;
-  &:hover {
-    color: ${props => props.theme.colors.green};
-  }
-`
-const ExternalLink = styled.a`
+const HoverLink = styled(Link)`
   color: white;
   &:hover {
     color: ${props => props.theme.colors.green};
   }
 `
 
-const Icon = ({ icon, url }) => {
+const IconLink = ({ icon, url }) => {
   return (
-    <a
+    <HoverLink
+      m={['6px', '0px']}
       className={`fab fa-${icon}`}
       style={{ color: 'white' }}
       href={url}
@@ -30,20 +25,26 @@ const Icon = ({ icon, url }) => {
 
 const Logo = () => {
   return (
-    <Box m={15} display={['none', 'inherit']}>
-      <Link to="/">
+    <Box m={15}>
+      <HoverLink to="/">
         <Image
           alt="Logo"
           src={withPrefix('/logo.png')}
-          height={25}
-          width={25}
+          height={[40, 25]}
+          width={[40, 25]}
         />
-      </Link>
+      </HoverLink>
     </Box>
   )
 }
 
 const Button = ({ path, url, name, location }) => {
+  let href: string
+  if (path) {
+    href = withPrefix(path)
+  } else {
+    href = url
+  }
   return (
     <Flex
       mx={10}
@@ -51,14 +52,12 @@ const Button = ({ path, url, name, location }) => {
       alignItems="stretch"
       justifyContent="center"
     >
-      {path && <InternalLink to={path}>{name}</InternalLink>}
-      {url && (
-        <ExternalLink href={url} target="_blank">
-          {name}
-        </ExternalLink>
-      )}
+      <HoverLink href={href}>
+        <Text textAlign={['center', 'left']}>{name}</Text>
+      </HoverLink>
       <Box
         mt={2}
+        mb={['5px', '0px']}
         bg="green"
         style={{
           visibility: path == location.pathname ? 'visible' : 'hidden',
@@ -72,12 +71,11 @@ const Button = ({ path, url, name, location }) => {
 const NavButtons = ({ urls, location }) => {
   return (
     <Flex
-      display={['none', 'inherit']}
-      ml={40}
+      ml={['0px', '40px']}
       flex="1 1 auto"
-      flexDirection="row"
+      flexDirection={['column', 'row']}
       alignItems="stretch"
-      justifyContent="flex-start"
+      justifyContent={['center', 'flex-start']}
       color="white"
     >
       <Button location={location} path={null} url={urls.docs} name="Docs" />
@@ -97,9 +95,9 @@ const NavIcons = ({ urls }) => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Icon icon="twitter" url={urls.twitter} />
-      <Icon icon="stack-overflow" url={urls.stackoverflow} />
-      <Icon icon="github" url={urls.github} />
+      <IconLink icon="twitter" url={urls.twitter} />
+      <IconLink icon="stack-overflow" url={urls.stackoverflow} />
+      <IconLink icon="github" url={urls.github} />
     </Flex>
   )
 }
@@ -110,8 +108,12 @@ const HomeHeader = () => {
 
 const BaseHeader = ({ data, location }) => {
   return (
-    <Flex bg="blue" alignItems="stretch" flexDirection="row">
-      <Flex flex="1 0 auto" flexDirection="row">
+    <Flex bg="blue">
+      <Flex
+        flex="1 0 auto"
+        flexDirection={['column', 'row']}
+        alignItems={['center', 'center']}
+      >
         <Logo />
         <NavButtons urls={data.siteMetadata.urls} location={location} />
         <NavIcons urls={data.siteMetadata.urls} />
