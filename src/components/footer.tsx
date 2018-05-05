@@ -64,7 +64,12 @@ const Links = ({ urls }) => {
 
 const Footer = ({ data }) => {
   return (
-    <Flex bg="darkblue" alignItems="stretch" flexDirection="row">
+    <Flex
+      bg="darkblue"
+      alignItems="stretch"
+      flexDirection="row"
+      position="absolute"
+    >
       <Flex
         m={15}
         flex="1 0 auto"

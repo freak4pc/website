@@ -26,14 +26,14 @@ const IconLink = ({ icon, url }) => {
 const Logo = () => {
   return (
     <Box m={15}>
-      <HoverLink to="/">
+      <a href={withPrefix('/')}>
         <Image
           alt="Logo"
           src={withPrefix('/logo.png')}
           height={[40, 25]}
           width={[40, 25]}
         />
-      </HoverLink>
+      </a>
     </Box>
   )
 }
@@ -52,11 +52,11 @@ const Button = ({ path, url, name, location }) => {
       alignItems="stretch"
       justifyContent="center"
     >
-      <HoverLink href={href}>
+      <HoverLink href={href} target={url ? '_blank' : '_self'}>
         <Text textAlign={['center', 'left']}>{name}</Text>
       </HoverLink>
       <Box
-        mt={2}
+        mt={1}
         mb={['5px', '0px']}
         bg="green"
         style={{
@@ -78,10 +78,21 @@ const NavButtons = ({ urls, location }) => {
       justifyContent={['center', 'flex-start']}
       color="white"
     >
-      <Button location={location} path={null} url={urls.docs} name="Docs" />
+      <Button
+        location={location}
+        path="/docs"
+        url={null}
+        name="Documentation"
+      />
       <Button location={location} path="/blog" url={null} name="Blog" />
       <Button location={location} path="/faq" url={null} name="Faq" />
       <Button location={location} path="/releases" url={null} name="Releases" />
+      <Button
+        location={location}
+        path={null}
+        url={urls.reference}
+        name="Reference"
+      />
     </Flex>
   )
 }
@@ -137,7 +148,7 @@ export const headerFragment = graphql`
   fragment HeaderSiteMetadata on Site {
     siteMetadata {
       urls {
-        docs
+        reference
         github
         twitter
         stackoverflow

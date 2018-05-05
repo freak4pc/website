@@ -9,8 +9,9 @@ export default class Page extends React.Component {
       <Flex flexDirection="column" bg="grey" flex="1">
         <Flex
           bg="white"
-          mx={[0, 6]}
-          p={[3, 4]}
+          mx={[2, 6]}
+          py={[3, 4]}
+          px={[4, 5]}
           flex="1"
           flexDirection="column"
           alignItems="stretch"
