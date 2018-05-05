@@ -6,15 +6,17 @@ import styled from 'styled-components'
 export default class Page extends React.Component {
   render() {
     return (
-      <Flex
-        flexDirection="column"
-        bg="grey"
-        alignItems="stretch"
-        flex="1 0 auto"
-      >
-        <Box bg="white" mx={[0, 6]} p={[3, 4]} flex="1 0 auto">
+      <Flex flexDirection="column" bg="grey" flex="1">
+        <Flex
+          bg="white"
+          mx={[0, 6]}
+          p={[3, 4]}
+          flex="1"
+          flexDirection="column"
+          alignItems="stretch"
+        >
           {this.props.children}
-        </Box>
+        </Flex>
       </Flex>
     )
   }

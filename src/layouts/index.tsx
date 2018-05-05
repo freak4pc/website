@@ -9,7 +9,7 @@ import './index.css'
 
 const Layout = ({ children, data, location }) => (
   <ThemeProvider theme={theme}>
-    <Flex flexDirection="column" flex="1 1 auto">
+    <Flex flexDirection="column" flex="1 0 auto">
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
         <link

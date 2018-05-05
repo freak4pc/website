@@ -2,6 +2,12 @@
   margin: 0px;
   font-family: Roboto, sans-serif;
 }
+body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+}
 a {
   text-decoration: none;
 }
