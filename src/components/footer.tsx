@@ -68,7 +68,7 @@ const Footer = ({ data }) => {
       bg="darkblue"
       alignItems="stretch"
       flexDirection="row"
-      position="absolute"
+      flex="0 0 auto"
     >
       <Flex
         m={15}

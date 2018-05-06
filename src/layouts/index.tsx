@@ -6,10 +6,11 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { Flex } from 'grid-styled'
 import './index.css'
+import './prism-theme.css'
 
 const Layout = ({ children, data, location }) => (
   <ThemeProvider theme={theme}>
-    <Flex flexDirection="column" flex="1 0 auto">
+    <Flex style={{ height: '100%' }} flexDirection="column" flex="1 0 auto">
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
         <link

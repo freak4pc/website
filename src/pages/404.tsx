@@ -1,10 +1,24 @@
 import * as React from 'react'
+import { Image } from 'rebass'
+import { Flex, Box } from 'grid-styled'
+import { withPrefix } from 'gatsby-link'
 
-const NotFoundPage = () => (
-  <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
-)
+const NotFoundPage = () => {
+  return (
+    <Flex
+      flex="1 0 auto"
+      flexDirection="column"
+      justifyContent="flex-end"
+      alignItems="center"
+    >
+      <Image
+        alt="Not found image"
+        src={withPrefix('/404.png')}
+        height="344px"
+        width="1000px"
+      />
+    </Flex>
+  )
+}
 
 export default NotFoundPage

@@ -4,23 +4,24 @@ import Page from '../components/page'
 import { Text } from 'rebass'
 import { Box, Flex } from 'grid-styled'
 import { MainTitle, SecondaryTitle } from '../components/title'
+import styled from 'styled-components'
+import { themeGet } from 'styled-system'
 
 const Question = ({ data }) => {
   return (
-    <Flex my={3} flex="1" flexDirection="column">
+    <Box my={3}>
       <SecondaryTitle mb={3}>{data.frontmatter.question}</SecondaryTitle>
       <Text
         my={2}
         textAlign={['center', 'left']}
         dangerouslySetInnerHTML={{ __html: data.html }}
       />
-      <Box bg="grey" flex="0 0 1px" mx={3} mt={3} />
-    </Flex>
+    </Box>
   )
 }
 
 const FaqPage = ({ data }) => (
-  <Page>
+  <Page pb={[4, 4]}>
     <MainTitle mb={2} mt={[4, 0]} textAlign={['center', 'left']}>
       Frequently Asked Questions
     </MainTitle>
@@ -36,7 +37,7 @@ export default FaqPage
 export const faqQuery = graphql`
   query FaqQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: ASC, fields: [frontmatter___date] }
       filter: { fileAbsolutePath: { glob: "**/faq/*" } }
     ) {
       edges {

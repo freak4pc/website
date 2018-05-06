@@ -36,23 +36,27 @@ const Article = ({ data }) => {
 }
 
 const BlogPage = ({ data }) => (
-  <Page>
+  <Page pb={[0, 0]}>
     <Flex flex="1" flexDirection="column">
-      <Box>
-        <MainTitle mb={2} mt={[4, 0]} textAlign={['center', 'left']}>
-          Blog
-        </MainTitle>
+      <Box flex="0 0 auto">
+        <Box>
+          <MainTitle mb={2} textAlign={['center', 'left']}>
+            Blog
+          </MainTitle>
+        </Box>
+        {data.allMarkdownRemark.edges.map(edge => {
+          return <Article data={edge.node} />
+        })}
       </Box>
-      {data.allMarkdownRemark.edges.map(edge => {
-        return <Article data={edge.node} />
-      })}
-      <Image
-        style={{ display: 'flex', alignSelf: 'center' }}
-        alt="Coding"
-        src={withPrefix('/coding.svg')}
-        height={[150, 300]}
-        width={[150, 300]}
-      />
+      <Flex flex="1 0 auto" flexDirection="column" justifyContent="flex-end">
+        <Image
+          style={{ display: 'flex', alignSelf: 'center' }}
+          alt="Coding"
+          src={withPrefix('/coding.svg')}
+          height={[150, 300]}
+          width={[150, 300]}
+        />
+      </Flex>
     </Flex>
   </Page>
 )
