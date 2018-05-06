@@ -25,9 +25,9 @@ const FaqPage = ({ data }) => (
     <MainTitle mb={2} mt={[4, 0]} textAlign="left">
       Frequently Asked Questions
     </MainTitle>
-    {data.allMarkdownRemark.edges.map(edge => {
+    {data.allMarkdownRemark.edges.map((edge, i) => {
       const question = edge.node
-      return <Question data={question} />
+      return <Question data={question} key={i} />
     })}
   </Page>
 )

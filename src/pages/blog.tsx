@@ -44,8 +44,8 @@ const BlogPage = ({ data }) => (
             Blog
           </MainTitle>
         </Box>
-        {data.allMarkdownRemark.edges.map(edge => {
-          return <Article data={edge.node} />
+        {data.allMarkdownRemark.edges.map((edge, i) => {
+          return <Article data={edge.node} key={i} />
         })}
       </Box>
       <Flex flex="1 0 auto" flexDirection="column" justifyContent="flex-end">

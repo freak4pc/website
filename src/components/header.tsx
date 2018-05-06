@@ -3,7 +3,6 @@ import HomeHeader from './header/home-header'
 import BaseHeader from './header/base-header'
 
 const Header = ({ data, location }) => {
-  console.log(location)
   if (location.pathname == '/') {
     return <HomeHeader data={data} location={location} />
   } else {

@@ -38,7 +38,10 @@ const Layout = ({ children, data, location }) => (
           content={data.site.siteMetadata.siteUrl + location.pathname}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={withPrefix('/card.png')} />
+        <meta
+          property="og:image"
+          content={data.site.siteMetadata.siteUrl + '/card.png'}
+        />
         <meta
           property="og:description"
           content={data.site.siteMetadata.description}
@@ -57,7 +60,10 @@ const Layout = ({ children, data, location }) => (
           content={data.site.siteMetadata.description}
         />
         <meta name="twitter:title" content={data.site.siteMetadata.title} />
-        <meta property="twitter:image" content={withPrefix('/card.png')} />
+        <meta
+          property="twitter:image"
+          content={data.site.siteMetadata.siteUrl + '/card.png'}
+        />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Header data={data.site} location={location} />
