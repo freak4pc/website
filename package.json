@@ -15,6 +15,7 @@
     "gatsby-plugin-drift": "^1.0.0",
     "gatsby-plugin-favicon": "^2.1.1",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-sitemap": "^1.2.23",
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-plugin-typescript": "^1.4.19",
     "gatsby-remark-prismjs": "^2.0.2",
@@ -29,7 +30,9 @@
     "timeago.js": "^3.0.2",
     "typescript": "^2.8.1"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
