@@ -81,5 +81,8 @@ module.exports = {
         name: 'author',
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
   ],
 }
