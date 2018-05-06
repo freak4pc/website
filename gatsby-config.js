@@ -3,6 +3,7 @@ module.exports = {
     title: '🤖 xcbuddy · Scaling your Xcode projects',
     siteUrl: 'https://xcbuddy.io',
     fbAppId: '2075203806032023',
+    twitterHandle: '@xcbuddyapp',
     description:
       'An open source tool that helps you scale your projects and avoid the hassle and derivated issues of maintaining projects',
     urls: {

@@ -5,6 +5,7 @@ import theme from '../components/theme'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Flex } from 'grid-styled'
+import { withPrefix } from 'gatsby-link'
 import './index.css'
 import './prism-theme.css'
 
@@ -27,22 +28,37 @@ const Layout = ({ children, data, location }) => (
         />
 
         {/* METADATA */}
-        <meta name="description" content="xcbuddy - xcode at scale" />
+        <meta name="description" content={data.site.siteMetadata.description} />
         <meta name="keywords" content="xcode, swift, swift" />
 
-        {/* FACEBOOK OPEN GRAPH */}
+        {/* OPEN GRAPH */}
         <meta property="og:title" content={data.site.siteMetadata.title} />
         <meta
           property="og:url"
           content={data.site.siteMetadata.siteUrl + location.pathname}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
+        <meta property="og:image" content={withPrefix('/card.png')} />
         <meta
           property="og:description"
           content={data.site.siteMetadata.description}
         />
+
+        {/* FACEBOOK */}
         <meta property="fb:app_id" content={data.site.siteMetadata.fbAppId} />
+
+        {/* TWITTER */}
+        <meta
+          property="twitter:site"
+          content={data.site.siteMetadata.twitterHandle}
+        />
+        <meta
+          name="twitter:description"
+          content={data.site.siteMetadata.description}
+        />
+        <meta name="twitter:title" content={data.site.siteMetadata.title} />
+        <meta property="twitter:image" content={withPrefix('/card.png')} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Header data={data.site} location={location} />
       <Flex flex="1 0 auto" alignItems="stretch">
@@ -62,6 +78,7 @@ export const query = graphql`
       ...FooterSiteMetadata
       siteMetadata {
         title
+        twitterHandle
         siteUrl
         description
         fbAppId
