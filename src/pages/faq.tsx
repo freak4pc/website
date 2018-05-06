@@ -6,7 +6,7 @@ import { Box, Flex } from 'grid-styled'
 import { MainTitle, SecondaryTitle } from '../components/title'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-
+import OpenGraph from '../components/open-graph'
 const Question = ({ data }) => {
   return (
     <Box my={3}>
@@ -22,6 +22,10 @@ const Question = ({ data }) => {
 
 const FaqPage = ({ data }) => (
   <Page pb={[4, 4]}>
+    <OpenGraph
+      title="Frequently Asked Questions"
+      description="Find answers to the most commonly asked questions"
+    />
     <MainTitle mb={2} mt={[4, 0]} textAlign="left">
       Frequently Asked Questions
     </MainTitle>

@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: '🤖 xcbuddy · Scaling your Xcode projects',
+    title: 'xcbuddy · Scaling your Xcode projects',
+    titlePrefix: 'xcbuddy · ',
     siteUrl: 'https://xcbuddy.io',
     fbAppId: '2075203806032023',
     twitterHandle: '@xcbuddyapp',
@@ -13,8 +14,6 @@ module.exports = {
       spectrum: 'https://spectrum.chat/xcbuddy',
       stackoverflow: 'https://stackoverflow.com/search?q=xcbuddy',
     },
-    installScript:
-      '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/xcbuddy/xcbuddy/master/scripts/install)"',
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': `AuthorYaml`,
@@ -38,6 +37,19 @@ module.exports = {
               aliases: {},
             },
           },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
         ],
       },
     },
