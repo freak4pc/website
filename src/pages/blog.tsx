@@ -72,15 +72,6 @@ export default BlogPage
 
 export const blogQuery = graphql`
   query BlogQuery {
-    site {
-      siteMetadata {
-        openGraph {
-          id
-          title
-          description
-        }
-      }
-    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { fileAbsolutePath: { glob: "**/blog/*" } }
