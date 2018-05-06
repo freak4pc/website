@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: '🤖 xcbuddy · Scaling your Xcode projects',
+    siteUrl: 'https://xcbuddy.io',
+    fbAppId: '2075203806032023',
+    description:
+      'An open source tool that helps you scale your projects and avoid the hassle and derivated issues of maintaining projects',
     urls: {
       reference: 'https://xcbuddy.github.io/xcbuddy/',
       twitter: 'https://twitter.com/xcbuddyapp',
@@ -83,6 +87,15 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sitemap`,
+    },
+    {
+      resolve: `gatsby-plugin-facebook-analytics`,
+      options: {
+        appId: '2075203806032023',
+        includeInDevelopment: false,
+        debug: false,
+        language: 'en_US',
+      },
     },
   ],
 }
