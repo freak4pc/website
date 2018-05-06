@@ -13,7 +13,7 @@ const Question = ({ data }) => {
       <SecondaryTitle mb={3}>{data.frontmatter.question}</SecondaryTitle>
       <Text
         my={2}
-        textAlign={['center', 'left']}
+        textAlign="left"
         dangerouslySetInnerHTML={{ __html: data.html }}
       />
     </Box>
@@ -22,7 +22,7 @@ const Question = ({ data }) => {
 
 const FaqPage = ({ data }) => (
   <Page pb={[4, 4]}>
-    <MainTitle mb={2} mt={[4, 0]} textAlign={['center', 'left']}>
+    <MainTitle mb={2} mt={[4, 0]} textAlign="left">
       Frequently Asked Questions
     </MainTitle>
     {data.allMarkdownRemark.edges.map(edge => {
