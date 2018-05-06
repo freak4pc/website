@@ -14,3 +14,15 @@ a {
   color: #bdbf09;
   text-decoration: none;
 }
+
+p {
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Roboto Slab';
+}

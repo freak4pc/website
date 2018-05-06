@@ -12,9 +12,11 @@ import OpenGraph from '../components/open-graph'
 const Article = ({ data }) => {
   return (
     <Flex my={3} flexDirection="column" flex="1">
-      <SecondaryTitle mb={3} textAlign={['center', 'left']}>
-        {data.frontmatter.title}
-      </SecondaryTitle>
+      <Link to={data.fields.slug}>
+        <SecondaryTitle mb={3} textAlign={['center', 'left']}>
+          {data.frontmatter.title}
+        </SecondaryTitle>
+      </Link>
       <Text
         style={{ fontStyle: 'italic' }}
         textAlign={['center', 'left']}
