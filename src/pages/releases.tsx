@@ -31,9 +31,9 @@ export const IconLink = ({ icon, url }) => {
 }
 
 const Version = ({ index, release }: { index: number; release: Release }) => {
-  const prLinkRegex = /https:\/\/github\.com\/.+\/.+\/pull\/(\d*)/g
-  const body = release.body.replace(prLinkRegex, (match, pr) => {
-    return `[#${pr}](${match})`
+  const prLinkRegex = /https:\/\/github\.com\/.+\/.+\/(pull|issues)\/(\d*)/g
+  const body = release.body.replace(prLinkRegex, (match, _, number) => {
+    return `[#${number}](${match})`
   })
   // https://github.com/xcbuddy/xcbuddy/pull/25
   const converter = new showdown.Converter({
