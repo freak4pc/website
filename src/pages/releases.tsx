@@ -31,6 +31,11 @@ export const IconLink = ({ icon, url }) => {
 }
 
 const Version = ({ index, release }: { index: number; release: Release }) => {
+  const prLinkRegex = /https:\/\/github\.com\/.+\/.+\/pull\/(\d*)/g
+  const body = release.body.replace(prLinkRegex, (match, pr) => {
+    return `[#${pr}](${match})`
+  })
+  // https://github.com/xcbuddy/xcbuddy/pull/25
   const converter = new showdown.Converter({
     ghCompatibleHeaderId: 'true',
     ghMentions: 'true',
@@ -38,7 +43,7 @@ const Version = ({ index, release }: { index: number; release: Release }) => {
     simplifiedAutoLink: 'true',
     openLinksInNewWindow: 'true',
   })
-  const html = converter.makeHtml(release.body)
+  const html = converter.makeHtml(body)
   return (
     <Flex flexDirection="row" flex="1 0 auto">
       <Flex flex="0 0 50px" flexDirection="column" alignItems="center">

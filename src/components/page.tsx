@@ -6,12 +6,13 @@ import styled from 'styled-components'
 type PageProps = {
   children?: any
   pb?: any
+  id?: any
 }
 
 export default class Page extends React.Component<PageProps> {
   render() {
     return (
-      <Flex flexDirection="column" bg="grey" flex="1">
+      <Flex flexDirection="column" bg="grey" flex="1" id={this.props.id}>
         <Flex
           bg="white"
           mx={[2, 6]}
