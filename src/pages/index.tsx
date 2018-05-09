@@ -91,7 +91,7 @@ const Tryout = () => {
       >
         Try it out
       </SecondaryTitle>
-      <Text my={3} style={{ color: 'white' }}>
+      <Text my={3} textAlign="center" style={{ color: 'white' }}>
         We’ve made the installation process very easy for you. With just one
         command, you’ll get xcbuddy working on your environment.
       </Text>

@@ -2,12 +2,17 @@ export default class Api {
   static contributors(): Promise<any> {
     return Api.get('/teams/xcoders/members')
   }
+  static releases(): Promise<any> {
+    return Api.get('/releases')
+  }
   private static get(path: string): Promise<any> {
     return cachedFetch(`http://xcbuddy-website-api.herokuapp.com${path}`, {
       method: 'get',
     })
   }
 }
+
+const EXPIRATION_TIME = 1000 + 60 * 60 * 24
 
 const cachedFetch = (url, options) => {
   return new Promise((resolve, reject) => {
@@ -17,7 +22,7 @@ const cachedFetch = (url, options) => {
         let object = JSON.parse(cachedResponse)
         if (
           object.date &&
-          new Date(object.date * 1000 + 60 * 60 * 24) > new Date()
+          new Date(object.date * EXPIRATION_TIME) > new Date()
         ) {
           resolve(object.json)
         } else {
