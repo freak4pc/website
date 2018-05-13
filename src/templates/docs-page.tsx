@@ -1,9 +1,8 @@
 import * as React from 'react'
 import Page from '../components/page'
 import OpenGraph from '../components/open-graph'
-import { MainTitle } from '../components/title'
 import { Flex, Box } from 'grid-styled'
-import { Image, Text, Link } from 'rebass'
+import { Image, Text, Link, Heading } from 'rebass'
 import { withPrefix } from 'gatsby-link'
 
 const FooterLinks = ({ previous, next }) => {
@@ -48,7 +47,9 @@ const DocsPage = ({ data, pathContext }) => {
   return (
     <Page pb={[5, 5]}>
       <OpenGraph title={title} description={description} />
-      <MainTitle textAlign={['center', 'left']}>{title}</MainTitle>
+      <Heading is="h1" fontSize={[5, 6]} textAlign={['center', 'left']}>
+        {title}
+      </Heading>
       <Box>
         <Text
           style={{ display: 'block' }}

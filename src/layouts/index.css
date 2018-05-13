@@ -2,6 +2,7 @@
   margin: 0px;
   font-family: Roboto, sans-serif;
   line-height: 26px;
+  color: #515151;
 }
 html,
 body {
@@ -11,7 +12,7 @@ body {
   height: 100%;
 }
 a {
-  color: #d96c06;
+  color: #1d1d1d;
   text-decoration: none;
 }
 
@@ -23,13 +24,21 @@ p {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   line-height: 1.6em;
   font-family: 'Roboto Slab';
 }
 
+h1 {
+  color: #0c0c0c;
+}
+
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   color: #13505b;
 }

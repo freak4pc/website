@@ -4,7 +4,7 @@ import { Link, Image, Text } from 'rebass'
 import styled from 'styled-components'
 import { withPrefix } from 'gatsby-link'
 
-const HoverLink = styled(Link) `
+const HoverText = styled(Text)`
   color: white;
   &:hover {
     color: ${props => props.theme.colors.green};
@@ -13,7 +13,7 @@ const HoverLink = styled(Link) `
 
 export const IconLink = ({ icon, url }) => {
   return (
-    <HoverLink
+    <Link
       m={['6px', '0px']}
       className={`fab fa-${icon}`}
       style={{ color: 'white' }}
@@ -52,9 +52,9 @@ export const Button = ({ path, url, name, location }) => {
       alignItems="stretch"
       justifyContent="center"
     >
-      <HoverLink href={href} target={url ? '_blank' : '_self'}>
-        <Text textAlign={['center', 'left']}>{name}</Text>
-      </HoverLink>
+      <Link href={href} target={url ? '_blank' : '_self'}>
+        <HoverText textAlign={['center', 'left']}>{name}</HoverText>
+      </Link>
       <Box
         mt={1}
         mb={['5px', '0px']}

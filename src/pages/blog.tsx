@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { Text, Image } from 'rebass'
+import { Text, Image, Heading } from 'rebass'
 import { Box, Flex } from 'grid-styled'
 import styled from 'styled-components'
 import Page from '../components/page'
-import { MainTitle, SecondaryTitle } from '../components/title'
 import theme from '../components/theme'
 import Link, { withPrefix } from 'gatsby-link'
 import timeago from 'timeago.js'
@@ -13,9 +12,14 @@ const Article = ({ data }) => {
   return (
     <Flex my={3} flexDirection="column" flex="1">
       <Link to={data.fields.slug}>
-        <SecondaryTitle mb={3} textAlign={['center', 'left']}>
+        <Heading
+          is="h2"
+          fontSize={[3, 4]}
+          mb={3}
+          textAlign={['center', 'left']}
+        >
           {data.frontmatter.title}
-        </SecondaryTitle>
+        </Heading>
       </Link>
       <Text
         style={{ fontStyle: 'italic' }}
@@ -49,9 +53,14 @@ const BlogPage = ({ data }) => (
     <Flex flex="1" flexDirection="column">
       <Box flex="0 0 auto">
         <Box>
-          <MainTitle mb={2} textAlign={['center', 'left']}>
+          <Heading
+            is="h1"
+            fontSize={[5, 6]}
+            mb={2}
+            textAlign={['center', 'left']}
+          >
             Blog
-          </MainTitle>
+          </Heading>
         </Box>
         {data.allMarkdownRemark.edges.map((edge, i) => {
           return <Article data={edge.node} key={i} />

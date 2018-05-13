@@ -1,16 +1,15 @@
 import * as React from 'react'
 import OpenGraph from '../components/open-graph'
-import { Text, Link } from 'rebass'
+import { Text, Link, Heading } from 'rebass'
 import { Box, Flex } from 'grid-styled'
 import { themeGet } from 'styled-system'
 import Page from '../components/page'
-import { MainTitle, SecondaryTitle } from '../components/title'
 import timeago from 'timeago.js'
 import Api from '../utils/api'
 import * as showdown from 'showdown'
 import styled from 'styled-components'
 
-const HoverLink = styled(Link) `
+const HoverLink = styled(Link)`
   color: ${themeGet('colors.darkblue')};
   &:hover {
     color: ${themeGet('colors.green')};
@@ -63,7 +62,9 @@ const Version = ({ index, release }: { index: number; release: Release }) => {
         alignItems="flex-start"
       >
         <Flex flexDirection="row" alignItems="center">
-          <SecondaryTitle>{release.name}</SecondaryTitle>
+          <Heading is="h2" fontSize={[3, 4]}>
+            {release.name}
+          </Heading>
           <IconLink icon="github" url={release.html_url} />
         </Flex>
         <Text style={{ fontStyle: 'italic' }} color="darkgrey">
@@ -85,7 +86,7 @@ const Version = ({ index, release }: { index: number; release: Release }) => {
           </Box>
           <Text mt={2} ml={1} fontSize={1}>{`${
             release.app.download_count
-            } downloads`}</Text>
+          } downloads`}</Text>
         </Link>
       </Flex>
     </Flex>
@@ -114,7 +115,7 @@ type ReleasesPageState = {
 export default class ReleasesPage extends React.Component<
   ReleasesPageProps,
   ReleasesPageState
-  > {
+> {
   constructor(props) {
     super(props)
     this.state = { releases: [] }
@@ -137,9 +138,9 @@ export default class ReleasesPage extends React.Component<
           title="Releases"
           description="Check out all the project releases"
         />
-        <MainTitle mb={4} mt={[4, 0]} textAlign="left">
+        <Heading is="h1" fontSize={[5, 6]} mb={4} mt={[4, 0]} textAlign="left">
           Releases
-        </MainTitle>
+        </Heading>
         <Flex flex="1 0 auto" flexDirection="column" alignItems="stretch">
           {this.state.releases.map((release, index) => {
             return <Version key={index} index={index} release={release} />

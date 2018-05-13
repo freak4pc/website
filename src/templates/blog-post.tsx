@@ -1,11 +1,10 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import OpenGraph from '../components/open-graph'
-import { Image, Text, Link } from 'rebass'
+import { Image, Text, Link, Heading } from 'rebass'
 import { Flex, Box } from 'grid-styled'
 import styled from 'styled-components'
 import { borderRadius, color, themeGet } from 'styled-system'
-import { MainTitle } from '../components/title'
 import { withPrefix } from 'gatsby-link'
 import timeago from 'timeago.js'
 
@@ -103,9 +102,9 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         flexDirection="column"
         alignItems="center"
       >
-        <MainTitle textAlign={['center', 'left']}>
+        <Heading is="h1" fontSize={[5, 6]} textAlign={['center', 'left']}>
           {frontmatter.title}
-        </MainTitle>
+        </Heading>
         <Text
           style={{ fontStyle: 'italic' }}
           textAlign={['center', 'left']}

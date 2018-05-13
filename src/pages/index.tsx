@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { Text, Link, Image } from 'rebass'
+import { Text, Link, Image, Heading } from 'rebass'
 import { Flex, Box } from 'grid-styled'
 import { themeGet } from 'styled-system'
 import styled from 'styled-components'
-import { MainTitle, SecondaryTitle } from '../components/title'
 import { withPrefix } from 'gatsby-link'
 import Api from '../utils/api'
 
@@ -42,9 +41,10 @@ class Contributors extends React.Component<any, IContributorsState> {
         px={[3, 6]}
         py={3}
       >
-        <SecondaryTitle textAlign={['center', 'center']}>
+        <Heading is="h1" fontSize={[5, 6]} textAlign={['center', 'center']}>
           We wouldn't exist without them ❤️
-        </SecondaryTitle>
+        </Heading>
+        <Text>And special thanks to the CocoaPods crew</Text>
         <Flex flexDirection="row" my={3}>
           {this.state.contributors.map((contributor, id) => {
             return (

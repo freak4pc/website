@@ -1,64 +1,77 @@
 import * as React from 'react'
 import OpenGraph from '../components/open-graph'
 import Page from '../components/page'
-import { pageQuery } from '../templates/blog-post';
+import { pageQuery } from '../templates/blog-post'
 import { Box, Flex } from 'grid-styled'
-import { Text, Image } from 'rebass'
+import { Text, Image, Heading } from 'rebass'
 import Link, { withPrefix } from 'gatsby-link'
-import { MainTitle, SecondaryTitle } from '../components/title'
-import * as _ from "lodash"
+import * as _ from 'lodash'
 
 const sectionTitles = {
-  "basics": "Basics",
-  "advanced": "Advanced"
+  basics: 'Basics',
+  advanced: 'Advanced',
 }
 
-const pageTitle = "Documentation"
-const pageDescription = "Learn how to use xcbuddy with a bunch of useful documentation resources."
+const pageTitle = 'Documentation'
+const pageDescription =
+  'Learn how to use xcbuddy with a bunch of useful documentation resources.'
 
-const DocsSection = ({ id, pages }: { id: string, pages: any }) => {
-  return <Box>
-    <SecondaryTitle>{sectionTitles[id]}</SecondaryTitle>
-    {pages.map((page) => {
-      return <Box>
-        <Link to={page.fields.slug}>
-          <Text my={2} color="orange">
-            {page.frontmatter.title}
-          </Text>
-        </Link>
-      </Box>
-    })}
-  </Box>
+const DocsSection = ({ id, pages }: { id: string; pages: any }) => {
+  return (
+    <Box>
+      <Heading is="h2" fontSize={[3, 4]}>
+        {sectionTitles[id]}
+      </Heading>
+      {pages.map(page => {
+        return (
+          <Box>
+            <Link to={page.fields.slug}>
+              <Text my={2} color="orange">
+                {page.frontmatter.title}
+              </Text>
+            </Link>
+          </Box>
+        )
+      })}
+    </Box>
+  )
 }
 
 const DocsPage = ({ data }) => {
-  let sections = _.groupBy(data.allMarkdownRemark.edges.map((edge) => edge.node), 'frontmatter.section')
+  let sections = _.groupBy(
+    data.allMarkdownRemark.edges.map(edge => edge.node),
+    'frontmatter.section'
+  )
 
-  return <Page pb={[0, 0]}>
-    <OpenGraph
-      title={pageTitle}
-      description={pageDescription}
-    />
-    <Flex flex="1" flexDirection="column">
-      <Box flex="0 0 auto">
-        <Box>
-          <MainTitle mb={2} textAlign={['center', 'left']}>
-            Documentation
-          </MainTitle>
+  return (
+    <Page pb={[0, 0]}>
+      <OpenGraph title={pageTitle} description={pageDescription} />
+      <Flex flex="1" flexDirection="column">
+        <Box flex="0 0 auto">
+          <Box>
+            <Heading
+              is="h1"
+              fontSize={[5, 6]}
+              mb={2}
+              textAlign={['center', 'left']}
+            >
+              Documentation
+            </Heading>
+          </Box>
         </Box>
-      </Box>
-      {_.map(sections, (pages, id) => <DocsSection id={id} pages={pages} />)}
-      <Flex flex="1 0 auto" flexDirection="column" justifyContent="flex-end">
-        <Image
-          style={{ display: 'flex', alignSelf: 'center' }}
-          alt="Checking docs"
-          src={withPrefix('/docs.svg')}
-          height={[150, 300]}
-          width={[150, 300]}
-        />
+        {_.map(sections, (pages, id) => <DocsSection id={id} pages={pages} />)}
+        <Flex flex="1 0 auto" flexDirection="column" justifyContent="flex-end">
+          <Image
+            style={{ display: 'flex', alignSelf: 'center' }}
+            alt="Checking docs"
+            src={withPrefix('/docs.svg')}
+            height={[150, 300]}
+            width={[150, 300]}
+          />
+        </Flex>
       </Flex>
-    </Flex>
-  </Page>
+    </Page>
+  )
 }
 export default DocsPage
 

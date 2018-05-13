@@ -1,7 +1,6 @@
 import * as React from 'react'
 import OpenGraph from '../components/open-graph'
 import Page from '../components/page'
-import { MainTitle } from '../components/title'
 import { Text, Image } from 'rebass'
 import { Box, Flex } from 'grid-styled'
 import Link, { withPrefix } from 'gatsby-link'
