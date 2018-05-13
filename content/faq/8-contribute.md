@@ -1,5 +1,4 @@
 ---
-order: 7
 question: "How can I contribute?"
 ---
 

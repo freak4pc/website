@@ -94,6 +94,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `./content/docs/`,
+        name: 'docs',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `./content/author.yml`,
         name: 'author',
       },

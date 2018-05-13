@@ -1,5 +1,4 @@
 ---
-order: 1
 question: "How does it differ from the Swift Package Manager?"
 ---
 

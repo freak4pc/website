@@ -41,7 +41,7 @@ export default FaqPage
 export const faqQuery = graphql`
   query FaqQuery {
     allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___date] }
+      sort: { order: ASC, fields: [fileAbsolutePath] }
       filter: { fileAbsolutePath: { glob: "**/faq/*" } }
     ) {
       edges {

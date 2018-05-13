@@ -1,44 +1,81 @@
 import * as React from 'react'
 import OpenGraph from '../components/open-graph'
 import Page from '../components/page'
-import Sidebar from 'react-sidebar'
+import { pageQuery } from '../templates/blog-post';
+import { Box, Flex } from 'grid-styled'
+import { Text, Image } from 'rebass'
+import Link, { withPrefix } from 'gatsby-link'
+import { MainTitle, SecondaryTitle } from '../components/title'
+import * as _ from "lodash"
 
-type DocsPageState = {
-  sidebarOpen: boolean
+const sectionTitles = {
+  "basics": "Basics",
+  "advanced": "Advanced"
 }
 
-export default class DocsPage extends React.Component<any, DocsPageState> {
-  showSettings(event) {
-    event.preventDefault()
-  }
-  constructor(props) {
-    super(props)
-    this.state = {
-      sidebarOpen: false,
-    }
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this)
-  }
+const DocsSection = ({ id, pages }: { id: string, pages: any }) => {
+  return <Box>
+    <SecondaryTitle>{sectionTitles[id]}</SecondaryTitle>
+    {pages.map((page) => {
+      return <Box>
+        <Link to={page.fields.slug}>
+          <Text my={2} color="orange">
+            {page.frontmatter.title}
+          </Text>
+        </Link>
+      </Box>
+    })}
+  </Box>
+}
 
-  onSetSidebarOpen(open: boolean) {
-    this.setState({ sidebarOpen: open })
-  }
+const DocsPage = ({ data }) => {
+  let sections = _.groupBy(data.allMarkdownRemark.edges.map((edge) => edge.node), 'frontmatter.section')
 
-  render() {
-    var sidebarContent = <b>Sidebar content</b>
-    return (
-      <Page id="page-container">
-        {/* <Sidebar
-          sidebar={sidebarContent}
-          open={this.state.sidebarOpen}
-          onSetOpen={this.onSetSidebarOpen}
-        >
-          <b>Main content</b>
-        </Sidebar> */}
-        <OpenGraph
-          title="Documentation"
-          description="Read the latest news about the xcbuddy project"
+  return <Page pb={[0, 0]}>
+    <OpenGraph
+      title="Documentation"
+      description="Learn how to use xcbuddy with a bunch of useful documentation resources."
+    />
+    <Flex flex="1" flexDirection="column">
+      <Box flex="0 0 auto">
+        <Box>
+          <MainTitle mb={2} textAlign={['center', 'left']}>
+            Documentation
+          </MainTitle>
+        </Box>
+      </Box>
+      {_.map(sections, (pages, id) => <DocsSection id={id} pages={pages} />)}
+      <Flex flex="1 0 auto" flexDirection="column" justifyContent="flex-end">
+        <Image
+          style={{ display: 'flex', alignSelf: 'center' }}
+          alt="Checking docs"
+          src={withPrefix('/docs.svg')}
+          height={[150, 300]}
+          width={[150, 300]}
         />
-      </Page>
-    )
-  }
+      </Flex>
+    </Flex>
+  </Page>
 }
+export default DocsPage
+
+export const docsQuery = graphql`
+  query DocsQuery {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { glob: "**/docs/*" } }
+      sort: { order: ASC, fields: [fields___slug] }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            section
+          }
+        }
+      }
+    }
+  }
+`

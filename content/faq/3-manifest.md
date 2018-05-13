@@ -1,5 +1,4 @@
 ---
-order: 2
 question: "Why are the manifests in Swift?"
 ---
 

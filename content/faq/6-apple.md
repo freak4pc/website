@@ -1,5 +1,4 @@
 ---
-order: 5
 question: "Might Apple provide something like xcbuddy from Xcode?"
 ---
 

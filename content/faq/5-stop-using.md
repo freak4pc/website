@@ -1,5 +1,4 @@
 ---
-order: 4
 question: "What if we want to stop using it in the future for whatever reason?"
 ---
 
