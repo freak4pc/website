@@ -52,7 +52,7 @@ const BlogPostTemplate = ({ data, pathContext }) => {
   const { previous, next } = pathContext
 
   return (
-    <div>
+    <Box flex="1">
       <OpenGraph
         title={title}
         description={description}
@@ -121,7 +121,7 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         )}
         <Image src={withPrefix('/rocket.svg')} height={400} width={400} />
       </Flex>
-    </div>
+    </Box>
   )
 }
 
