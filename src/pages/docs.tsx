@@ -13,6 +13,9 @@ const sectionTitles = {
   "advanced": "Advanced"
 }
 
+const pageTitle = "Documentation"
+const pageDescription = "Learn how to use xcbuddy with a bunch of useful documentation resources."
+
 const DocsSection = ({ id, pages }: { id: string, pages: any }) => {
   return <Box>
     <SecondaryTitle>{sectionTitles[id]}</SecondaryTitle>
@@ -33,8 +36,8 @@ const DocsPage = ({ data }) => {
 
   return <Page pb={[0, 0]}>
     <OpenGraph
-      title="Documentation"
-      description="Learn how to use xcbuddy with a bunch of useful documentation resources."
+      title={pageTitle}
+      description={pageDescription}
     />
     <Flex flex="1" flexDirection="column">
       <Box flex="0 0 auto">

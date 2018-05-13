@@ -65,7 +65,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   })
 
   let docPages = new Promise((resolve, reject) => {
-    const docPage = path.resolve('./src/templates/doc-page.tsx')
+    const docPage = path.resolve('./src/templates/docs-page.tsx')
     resolve(
       graphql(
         `
