@@ -46,25 +46,19 @@ const BlogPostTemplate = ({ data, pathContext }) => {
   const post = data.markdownRemark
   const siteMetadata = data.site.siteMetadata
   const frontmatter = post.frontmatter
-  const title = siteMetadata.titlePrefix + frontmatter.title
+  const title = frontmatter.title
   const description = frontmatter.description
   const author = frontmatter.author
   const { previous, next } = pathContext
 
   return (
     <div>
-      <Helmet>
-        <meta property="og:title" content={title} />
-        <title>{title}</title>
-        <meta
-          property="twitter:creator"
-          content={`@${frontmatter.author.twitter}`}
-        />
-        <meta property="twitter:description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="article" />
-      </Helmet>
+      <OpenGraph
+        title={title}
+        description={description}
+        twitter={frontmatter.author.twitter}
+        type="article"
+      />
       <Header
         flex="0 0 auto"
         flexDirection="column"

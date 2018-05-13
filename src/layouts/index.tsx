@@ -15,21 +15,14 @@ const Layout = ({ children, data, location }) => (
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
 
-        {/* STYLES */}
-        <link
-          href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
-          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
-          crossorigin="anonymous"
-        />
-
-        {/* METADATA */}
+        {/* SEARCH ENGINE */}
         <meta name="description" content={data.site.siteMetadata.description} />
+        <meta
+          name="image"
+          content={data.site.siteMetadata.siteUrl + '/card.png'}
+        />
         <meta name="keywords" content="xcode, swift, swift" />
+        <link rel="canonical" href="https://xcbuddy.io" />
 
         {/* OPEN GRAPH */}
         <meta property="og:title" content={data.site.siteMetadata.title} />
@@ -45,6 +38,17 @@ const Layout = ({ children, data, location }) => (
         <meta
           property="og:description"
           content={data.site.siteMetadata.description}
+        />
+
+        {/* GOOGLE */}
+        <meta itemprop="name" content={data.site.siteMetadata.title} />
+        <meta
+          itemprop="description"
+          content={data.site.siteMetadata.description}
+        />
+        <meta
+          itemprop="image"
+          content={data.site.siteMetadata.siteUrl + '/card.png'}
         />
 
         {/* FACEBOOK */}
@@ -65,6 +69,18 @@ const Layout = ({ children, data, location }) => (
           content={data.site.siteMetadata.siteUrl + '/card.png'}
         />
         <meta name="twitter:card" content="summary_large_image" />
+
+        {/* STYLES */}
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+          crossorigin="anonymous"
+        />
       </Helmet>
       <Header data={data.site} location={location} />
       <Flex flex="1 0 auto" alignItems="stretch">

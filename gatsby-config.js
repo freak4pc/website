@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'xcbuddy · Scaling your Xcode projects',
+    title: 'xcbuddy',
     titlePrefix: 'xcbuddy · ',
     siteUrl: 'https://xcbuddy.io',
     fbAppId: '2075203806032023',
     twitterHandle: '@xcbuddyapp',
     description:
-      'An open source tool that helps you scale your projects and avoid the hassle and derivated issues of maintaining projects',
+      '🤖 An open source tool that helps you scale your projects and avoid the hassle and derivated issues of maintaining projects',
     urls: {
       reference: 'https://xcbuddy.github.io/xcbuddy/',
       twitter: 'https://twitter.com/xcbuddyapp',
