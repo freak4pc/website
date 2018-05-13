@@ -106,6 +106,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./content/legal.md`,
+        name: 'legal',
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
     },
     {
@@ -120,7 +127,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
         head: false,
         anonymize: true,
         respectDNT: true,

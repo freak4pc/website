@@ -11,7 +11,7 @@ body {
   height: 100%;
 }
 a {
-  color: #bdbf09;
+  color: #d96c06;
   text-decoration: none;
 }
 
@@ -24,5 +24,12 @@ h1,
 h2,
 h3,
 h4 {
+  line-height: 1.6em;
   font-family: 'Roboto Slab';
+}
+
+h2,
+h3,
+h4 {
+  color: #13505b;
 }
