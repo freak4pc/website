@@ -11,7 +11,11 @@ const gradientBackgroundStyle = {
 
 const HomeHeader = ({ data, location }) => {
   return (
-    <Flex style={{ ...gradientBackgroundStyle }} flexDirection="column">
+    <Flex
+      style={{ ...gradientBackgroundStyle }}
+      flexDirection="column"
+      flex="0 0 auto"
+    >
       <Flex
         flex="1 0 auto"
         flexDirection={['column', 'row']}

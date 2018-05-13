@@ -36,15 +36,18 @@ class Contributors extends React.Component<any, IContributorsState> {
       <Flex
         bg="white"
         flexDirection="column"
-        flex="0 0 auto"
         alignItems="center"
         px={[3, 6]}
         py={3}
       >
-        <Heading is="h1" fontSize={[5, 6]} textAlign={['center', 'center']}>
+        <Heading is="h2" fontSize={[3, 4]} textAlign={['center', 'center']}>
           We wouldn't exist without them ❤️
         </Heading>
-        <Text>And special thanks to the CocoaPods crew</Text>
+        <Text my={3} textAlign={['center']}>
+          And special thanks to the CocoaPods crew for all the work they've
+          done, not only on facilitating dependency management, but on creating
+          and empowering a strong and rich community.
+        </Text>
         <Flex flexDirection="row" my={3}>
           {this.state.contributors.map((contributor, id) => {
             return (
@@ -80,17 +83,18 @@ const Tryout = () => {
     <Flex
       bg="green"
       flexDirection="column"
-      flex="0 0 auto"
       alignItems="center"
       px={[3, 6]}
       py={3}
     >
-      <SecondaryTitle
+      <Heading
+        fontSize={[3, 4]}
+        is="h2"
         style={{ color: 'white' }}
         textAlign={['center', 'center']}
       >
         Try it out
-      </SecondaryTitle>
+      </Heading>
       <Text my={3} textAlign="center" style={{ color: 'white' }}>
         We’ve made the installation process very easy for you. With just one
         command, you’ll get xcbuddy working on your environment.
@@ -120,7 +124,7 @@ const Tryout = () => {
 }
 
 const IndexPage = () => (
-  <Flex flex="1 0 0" flexDirection="column">
+  <Flex flex="1" flexDirection="column">
     <Community />
     <Contributors />
     <Tryout />
