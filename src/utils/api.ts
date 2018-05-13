@@ -12,7 +12,7 @@ export default class Api {
   }
 }
 
-const EXPIRATION_TIME = 1000 + 60 * 60 * 24
+const EXPIRATION_TIME = 1000 * 60 * 60 * 24
 
 const cachedFetch = (url, options) => {
   return new Promise((resolve, reject) => {
