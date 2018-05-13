@@ -4,7 +4,6 @@ import Page from '../components/page'
 import { Text, Heading } from 'rebass'
 import { Box, Flex } from 'grid-styled'
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
 import OpenGraph from '../components/open-graph'
 
 const Question = ({ data }) => {

@@ -64,9 +64,10 @@ const DocsPage = ({ data }) => {
           <Image
             style={{ display: 'flex', alignSelf: 'center' }}
             alt="Checking docs"
+            mb={4}
             src={withPrefix('/docs.svg')}
-            height={[150, 300]}
-            width={[150, 300]}
+            height={[200, 350]}
+            width={[200, 350]}
           />
         </Flex>
       </Flex>

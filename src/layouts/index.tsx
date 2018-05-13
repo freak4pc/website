@@ -104,6 +104,10 @@ export const query = graphql`
         siteUrl
         description
         fbAppId
+        urls {
+          spectrum
+          install
+        }
       }
     }
   }

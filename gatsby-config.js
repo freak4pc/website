@@ -13,6 +13,7 @@ module.exports = {
       github: 'https://github.com/xcbuddy',
       spectrum: 'https://spectrum.chat/xcbuddy',
       stackoverflow: 'https://stackoverflow.com/search?q=xcbuddy',
+      install: 'https://goo.gl/4cbZoL',
     },
   },
   mapping: {

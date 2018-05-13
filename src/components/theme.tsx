@@ -15,8 +15,9 @@ const fontSizes = [
 ]
 const lineHeights = [1, 1.125, 1.25, 1.5]
 const fontWeights = {
-  normal: 500,
-  bold: 700,
+  normal: 300,
+  semibold: 500,
+  bold: 600,
 }
 const letterSpacings = {
   normal: 'normal',
