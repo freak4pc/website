@@ -17,6 +17,7 @@
     "gatsby-plugin-drift": "^1.0.0",
     "gatsby-plugin-facebook-analytics": "^1.0.3",
     "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sitemap": "^1.2.23",
     "gatsby-plugin-styled-components": "^2.0.11",

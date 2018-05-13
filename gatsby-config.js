@@ -111,10 +111,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-facebook-analytics`,
       options: {
-        appId: '2075203806032023',
+        appId: 'UA-119164913-1',
         includeInDevelopment: false,
         debug: false,
         language: 'en_US',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: [],
       },
     },
   ],

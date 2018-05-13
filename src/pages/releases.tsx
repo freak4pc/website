@@ -10,7 +10,7 @@ import Api from '../utils/api'
 import * as showdown from 'showdown'
 import styled from 'styled-components'
 
-const HoverLink = styled(Link)`
+const HoverLink = styled(Link) `
   color: ${themeGet('colors.darkblue')};
   &:hover {
     color: ${themeGet('colors.green')};
@@ -59,7 +59,7 @@ const Version = ({ index, release }: { index: number; release: Release }) => {
       <Flex
         flex="1 1 auto"
         flexDirection="column"
-        mb={6}
+        mb={4}
         alignItems="flex-start"
       >
         <Flex flexDirection="row" alignItems="center">
@@ -85,7 +85,7 @@ const Version = ({ index, release }: { index: number; release: Release }) => {
           </Box>
           <Text mt={2} ml={1} fontSize={1}>{`${
             release.app.download_count
-          } downloads`}</Text>
+            } downloads`}</Text>
         </Link>
       </Flex>
     </Flex>
@@ -114,7 +114,7 @@ type ReleasesPageState = {
 export default class ReleasesPage extends React.Component<
   ReleasesPageProps,
   ReleasesPageState
-> {
+  > {
   constructor(props) {
     super(props)
     this.state = { releases: [] }
