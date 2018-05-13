@@ -4,7 +4,7 @@ import { Link, Image, Text } from 'rebass'
 import styled from 'styled-components'
 import { withPrefix } from 'gatsby-link'
 
-const HoverLink = styled(Link)`
+const HoverLink = styled(Link) `
   color: white;
   &:hover {
     color: ${props => props.theme.colors.green};
@@ -60,7 +60,7 @@ export const Button = ({ path, url, name, location }) => {
         mb={['5px', '0px']}
         bg="green"
         style={{
-          visibility: path == location.pathname ? 'visible' : 'hidden',
+          visibility: location.pathname.includes(path) ? 'visible' : 'hidden',
         }}
         flex="0 0 3px"
       />

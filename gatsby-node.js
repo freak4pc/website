@@ -95,9 +95,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         const docs = result.data.allMarkdownRemark.edges
         _.each(docs, (doc, index) => {
-          const previous =
+          const next =
             index === docs.length - 1 ? null : docs[index + 1].node
-          const next = index === 0 ? null : docs[index - 1].node
+          const previous = index === 0 ? null : docs[index - 1].node
 
           createPage({
             path: doc.node.fields.slug,
