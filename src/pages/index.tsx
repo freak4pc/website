@@ -75,7 +75,7 @@ class Contributors extends React.Component<any, IContributorsState> {
 
 const Features = () => {
   return (
-    <Flex flexDirection={['column', 'row']} bg="white" px={[5, 5]} py={4}>
+    <Flex flexDirection={['column', 'row']} bg="white" px={[2, 5]} py={4}>
       <Flex
         mr={[0, 6]}
         justifyContent="center"
@@ -119,7 +119,7 @@ const Features = () => {
 
 const Scale = () => {
   return (
-    <Flex flexDirection={['column', 'row']} bg="grey" px={[5, 5]} py={4}>
+    <Flex flexDirection={['column', 'row']} bg="grey" px={[2, 5]} py={4}>
       <Flex flexDirection="column">
         <Heading
           fontSize={[3, 4]}
@@ -159,7 +159,7 @@ const Scale = () => {
 
 const Community = ({ spectrumUrl }: { spectrumUrl: string }) => {
   return (
-    <Flex flexDirection={['column', 'row']} bg="grey" px={[5, 5]} py={4}>
+    <Flex flexDirection={['column', 'row']} bg="grey" px={[2, 5]} py={4}>
       <Flex flexDirection="column">
         <Heading
           fontSize={[3, 4]}
@@ -212,7 +212,7 @@ const Tryout = ({ data }) => {
       bg="green"
       flexDirection="column"
       alignItems="center"
-      px={[3, 6]}
+      px={[2, 6]}
       py={4}
     >
       <Heading

@@ -60,7 +60,12 @@ const DocsPage = ({ data }) => {
           </Box>
         </Box>
         {_.map(sections, (pages, id) => <DocsSection id={id} pages={pages} />)}
-        <Flex flex="1 0 auto" flexDirection="column" justifyContent="flex-end">
+        <Flex
+          mt={5}
+          flex="1 0 auto"
+          flexDirection="column"
+          justifyContent="flex-end"
+        >
           <Image
             style={{ display: 'flex', alignSelf: 'center' }}
             alt="Checking docs"
