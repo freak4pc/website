@@ -1,3 +1,5 @@
+import 'whatwg-fetch'
+
 export default class Api {
   static contributors(): Promise<any> {
     return Api.get('/teams/xcoders/members')
@@ -8,7 +10,7 @@ export default class Api {
   private static get(path: string): Promise<any> {
     const url = `http://xcbuddy-website-api.herokuapp.com${path}`
     return fetch(url, {
-      method: 'get',
+      method: 'GET',
     })
       .then(res => res.json())
       .then(json => {
