@@ -119,7 +119,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-facebook-analytics`,
       options: {
-        appId: 'UA-119164913-1',
+        appId: '2075203806032023',
         includeInDevelopment: false,
         debug: false,
         language: 'en_US',
@@ -128,7 +128,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        trackingId: 'UA-119164913-1',
         head: false,
         anonymize: true,
         respectDNT: true,
