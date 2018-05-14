@@ -52,7 +52,7 @@ const BlogPostTemplate = ({ data, pathContext }) => {
   const { previous, next } = pathContext
 
   return (
-    <Box flex="1">
+    <Flex flex="1" flexDirection="column" alignItems="stretch">
       <OpenGraph
         title={title}
         description={description}
@@ -60,12 +60,12 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         type="article"
       />
       <Header
-        flex="0 0 auto"
+        flex="1 1 auto"
         flexDirection="column"
         justifyContent="flex-end"
         alignItems="center"
       >
-        <Flex mt={5} flexDirection="column" alignItems="center">
+        <Flex mt={5} flex="1 1 auto" flexDirection="column" alignItems="center">
           <Image
             src={author.avatar_url}
             width={150}
@@ -90,7 +90,7 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         </Flex>
       </Header>
       <Flex
-        flex="1 0 auto"
+        flex="1 1 auto"
         pt={3}
         px={[4, 6]}
         flexDirection="column"
@@ -106,8 +106,8 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         >
           Published {timeago().format(frontmatter.date)}
         </Text>
-        <Text
-          style={{ display: 'block' }}
+        <Flex
+          flexDirection="column"
           my={2}
           textAlign="left"
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -121,7 +121,7 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         )}
         <Image src={withPrefix('/rocket.svg')} height={400} width={400} />
       </Flex>
-    </Box>
+    </Flex>
   )
 }
 
