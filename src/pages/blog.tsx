@@ -62,9 +62,10 @@ const BlogPage = ({ data }) => (
             Blog
           </Heading>
         </Box>
-        {data.allMarkdownRemark.edges.map((edge, i) => {
-          return <Article data={edge.node} key={i} />
-        })}
+        {data.allMarkdownRemark &&
+          data.allMarkdownRemark.edges.map((edge, i) => {
+            return <Article data={edge.node} key={i} />
+          })}
       </Box>
       <Flex flex="1 0 auto" flexDirection="column" justifyContent="flex-end">
         <Image
@@ -85,7 +86,10 @@ export const blogQuery = graphql`
   query BlogQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fileAbsolutePath: { glob: "**/blog/*" } }
+      filter: {
+        fileAbsolutePath: { glob: "**/blog/*" }
+        frontmatter: { published: { eq: true } }
+      }
     ) {
       edges {
         node {
