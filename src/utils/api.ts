@@ -8,7 +8,7 @@ export default class Api {
     return Api.get('/releases')
   }
   private static get(path: string): Promise<any> {
-    const url = `http://xcbuddy-website-api.herokuapp.com${path}`
+    const url = `https://website-api-jigoqvnodo.now.sh${path}`
     return fetch(url, {
       method: 'GET',
     })
