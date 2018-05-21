@@ -5,7 +5,7 @@ const Share = ({ url, description }) => {
     <div>
       <a
         className="resp-sharing-button__link"
-        href="https://facebook.com/sharer/sharer.php?u=URL"
+        href={`https://facebook.com/sharer/sharer.php?u=${encodeURI(url)}`}
         target="_blank"
         aria-label=""
       >

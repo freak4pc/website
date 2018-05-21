@@ -47,9 +47,10 @@ export const IconLink = ({ icon, url }) => {
 const BlogPostTemplate = ({ data, pathContext }) => {
   const post = data.markdownRemark
   const slug = post.fields.slug
-  const url = withPrefix(slug)
   const id = post.id
   const siteMetadata = data.site.siteMetadata
+  const siteUrl = siteMetadata.siteUrl
+  const url = siteUrl + withPrefix(slug)
   const frontmatter = post.frontmatter
   const title = frontmatter.title
   const description = frontmatter.description
@@ -153,6 +154,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         titlePrefix
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
