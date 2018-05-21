@@ -49,6 +49,8 @@ const BlogPage = ({ data }) => (
     <OpenGraph
       title="Blog"
       description="Read the latest news about the xcbuddy project"
+      cardTitle="xcbuddy"
+      cardSubtitle="Read the lastest updates"
     />
     <Flex flex="1" flexDirection="column">
       <Box flex="0 0 auto">

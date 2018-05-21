@@ -26,6 +26,8 @@ const FaqPage = ({ data }) => (
     <OpenGraph
       title="Frequently Asked Questions"
       description="Find answers to the most commonly asked questions"
+      cardTitle="xcbuddy"
+      cardSubtitle="Frequently Asked Questions"
     />
     <Heading is="h1" fontSize={[5, 6]} mb={2} mt={[4, 0]} textAlign="left">
       Frequently Asked Questions

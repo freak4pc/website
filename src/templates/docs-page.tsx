@@ -46,7 +46,12 @@ const DocsPage = ({ data, pathContext }) => {
 
   return (
     <Page pb={[5, 5]}>
-      <OpenGraph title={title} description={description} />
+      <OpenGraph
+        title={title}
+        description={description}
+        cardTitle="xcbuddy"
+        cardSubtitle={`${title} documentation`}
+      />
       <Heading is="h1" fontSize={[5, 6]} textAlign={['center', 'left']}>
         {title}
       </Heading>

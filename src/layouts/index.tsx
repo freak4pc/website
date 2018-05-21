@@ -8,6 +8,7 @@ import { Flex } from 'grid-styled'
 import { withPrefix } from 'gatsby-link'
 import './index.css'
 import './prism-theme.css'
+import { defaultCard } from '../utils/card'
 
 const Layout = ({ children, data, location }) => (
   <ThemeProvider theme={theme}>
@@ -17,10 +18,7 @@ const Layout = ({ children, data, location }) => (
 
         {/* SEARCH ENGINE */}
         <meta name="description" content={data.site.siteMetadata.description} />
-        <meta
-          name="image"
-          content={data.site.siteMetadata.siteUrl + '/card.png'}
-        />
+        <meta name="image" content={defaultCard} />
         <meta name="keywords" content="xcode, swift, swift" />
         <link rel="canonical" href="https://xcbuddy.io" />
 
@@ -31,10 +29,7 @@ const Layout = ({ children, data, location }) => (
           content={data.site.siteMetadata.siteUrl + location.pathname}
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content={data.site.siteMetadata.siteUrl + '/card.png'}
-        />
+        <meta property="og:image" content={defaultCard} />
         <meta
           property="og:description"
           content={data.site.siteMetadata.description}
@@ -46,10 +41,7 @@ const Layout = ({ children, data, location }) => (
           itemprop="description"
           content={data.site.siteMetadata.description}
         />
-        <meta
-          itemprop="image"
-          content={data.site.siteMetadata.siteUrl + '/card.png'}
-        />
+        <meta itemprop="image" content={defaultCard} />
 
         {/* FACEBOOK */}
         <meta property="fb:app_id" content={data.site.siteMetadata.fbAppId} />
@@ -64,10 +56,7 @@ const Layout = ({ children, data, location }) => (
           content={data.site.siteMetadata.description}
         />
         <meta name="twitter:title" content={data.site.siteMetadata.title} />
-        <meta
-          property="twitter:image"
-          content={data.site.siteMetadata.siteUrl + '/card.png'}
-        />
+        <meta property="twitter:image" content={defaultCard} />
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* STYLES */}

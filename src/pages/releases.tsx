@@ -137,6 +137,8 @@ export default class ReleasesPage extends React.Component<
         <OpenGraph
           title="Releases"
           description="Check out all the project releases"
+          cardTitle="xcbuddy"
+          cardSubtitle="Explore all the project releases"
         />
         <Heading is="h1" fontSize={[5, 6]} mb={4} mt={[4, 0]} textAlign="left">
           Releases

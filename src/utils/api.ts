@@ -1,4 +1,5 @@
 import 'whatwg-fetch'
+import { API_URL } from './constants'
 
 export default class Api {
   static contributors(): Promise<any> {
@@ -8,7 +9,7 @@ export default class Api {
     return Api.get('/releases')
   }
   private static get(path: string): Promise<any> {
-    const url = `https://website-api-jigoqvnodo.now.sh${path}`
+    const url = `${API_URL}${path}`
     return fetch(url, {
       method: 'GET',
     })

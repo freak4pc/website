@@ -9,7 +9,9 @@ const LegalPage = ({ data }) => (
   <Page pb={[0, 0]}>
     <OpenGraph
       title="Legal and conduct"
-      description="Check out all the project releases"
+      description="Legal and conduct"
+      cardTitle="xcbuddy"
+      cardSubtitle="Legal and conduct"
     />
     <Text
       my={2}
