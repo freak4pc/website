@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import { borderRadius, color, themeGet } from 'styled-system'
 import { withPrefix } from 'gatsby-link'
 import timeago from 'timeago.js'
+import Disqus from 'disqus-react'
 
 const AuthorName = styled.div`
   color: ${themeGet('colors.orange')};
@@ -44,12 +45,20 @@ export const IconLink = ({ icon, url }) => {
 
 const BlogPostTemplate = ({ data, pathContext }) => {
   const post = data.markdownRemark
+  const id = post.id
   const siteMetadata = data.site.siteMetadata
   const frontmatter = post.frontmatter
   const title = frontmatter.title
   const description = frontmatter.description
   const author = frontmatter.author
   const { previous, next } = pathContext
+
+  const disqusShortname = 'xcbuddy'
+  const disqusConfig = {
+    // url: this.props.article.url,
+    identifier: id,
+    title: title,
+  }
 
   return (
     <Flex flex="1" flexDirection="column" alignItems="stretch">
@@ -119,8 +128,15 @@ const BlogPostTemplate = ({ data, pathContext }) => {
             </Text>
           </Link>
         )}
+
         <Image src={withPrefix('/rocket.svg')} height={400} width={400} />
       </Flex>
+      <Box mx={[3, 6]} mt={4}>
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
+      </Box>
     </Flex>
   )
 }
