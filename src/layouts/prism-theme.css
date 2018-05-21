@@ -50,6 +50,11 @@ pre[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
   white-space: normal;
+  background: #efefef;
+  color: #13505b;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-shadow: 0 0px;
 }
 
 .token.comment,
