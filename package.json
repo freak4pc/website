@@ -43,9 +43,7 @@
     "typescript": "^2.8.1",
     "whatwg-fetch": "^2.0.4"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

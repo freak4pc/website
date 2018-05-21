@@ -8,6 +8,7 @@ import { borderRadius, color, themeGet } from 'styled-system'
 import { withPrefix } from 'gatsby-link'
 import timeago from 'timeago.js'
 import Disqus from 'disqus-react'
+import Share from '../components/share'
 
 const AuthorName = styled.div`
   color: ${themeGet('colors.orange')};
@@ -45,6 +46,8 @@ export const IconLink = ({ icon, url }) => {
 
 const BlogPostTemplate = ({ data, pathContext }) => {
   const post = data.markdownRemark
+  const slug = post.fields.slug
+  const url = withPrefix(slug)
   const id = post.id
   const siteMetadata = data.site.siteMetadata
   const frontmatter = post.frontmatter
@@ -55,7 +58,7 @@ const BlogPostTemplate = ({ data, pathContext }) => {
 
   const disqusShortname = 'xcbuddy'
   const disqusConfig = {
-    // url: this.props.article.url,
+    url: url,
     identifier: id,
     title: title,
   }
@@ -108,6 +111,7 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         <Heading is="h1" fontSize={[5, 6]} textAlign={['center', 'left']}>
           {frontmatter.title}
         </Heading>
+        <Share url={url} description={title} />
         <Text
           style={{ fontStyle: 'italic' }}
           textAlign={['center', 'left']}
@@ -152,6 +156,9 @@ export const pageQuery = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       id
       html
       frontmatter {
