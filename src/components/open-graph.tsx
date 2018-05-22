@@ -1,36 +1,30 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import * as _ from 'lodash'
-import cardUrl from '../utils/card'
+import { CARD_PATH } from '../utils/constants'
 
 type Props = {
   title: string
   description: string
   twitter?: string
   type?: string
-  cardTitle: string
-  cardSubtitle: string
 }
 
 export default class OpenGraph extends React.Component<Props> {
   render() {
     const prefixedTitle = `xcbuddy · ${this.props.title}`
-    const card = cardUrl({
-      title: this.props.cardTitle,
-      subtitle: this.props.cardSubtitle,
-    })
     return (
       <Helmet>
         <title>{prefixedTitle}</title>
         {/* SEARCH ENGINE */}
-        <meta name="image" content={card} />
+        <meta name="image" content={CARD_PATH} />
 
         {/* TWITTER */}
         {this.props.twitter && (
           <meta property="twitter:creator" content={`@${this.props.twitter}`} />
         )}
         <meta property="twitter:description" content={this.props.description} />
-        <meta property="twitter:image" content={card} />
+        <meta property="twitter:image" content={CARD_PATH} />
 
         {/* OPEN GRAPH */}
         <meta property="og:title" content={prefixedTitle} />
@@ -38,12 +32,12 @@ export default class OpenGraph extends React.Component<Props> {
         {this.props.type && (
           <meta property="og:type" content={this.props.type} />
         )}
-        <meta property="og:image" content={card} />
+        <meta property="og:image" content={CARD_PATH} />
 
         {/* GOOGLE */}
         <meta itemprop="name" content={this.props.title} />
         <meta itemprop="description" content={this.props.description} />
-        <meta itemprop="image" content={card} />
+        <meta itemprop="image" content={CARD_PATH} />
       </Helmet>
     )
   }

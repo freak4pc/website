@@ -7,12 +7,7 @@ import Link, { withPrefix } from 'gatsby-link'
 
 const LegalPage = ({ data }) => (
   <Page pb={[0, 0]}>
-    <OpenGraph
-      title="Legal and conduct"
-      description="Legal and conduct"
-      cardTitle="xcbuddy"
-      cardSubtitle="Legal and conduct"
-    />
+    <OpenGraph title="Legal and conduct" description="Legal and conduct" />
     <Text
       my={2}
       textAlign={['center', 'left']}

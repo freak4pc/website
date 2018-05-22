@@ -71,8 +71,6 @@ const BlogPostTemplate = ({ data, pathContext }) => {
         description={description}
         twitter={frontmatter.author.twitter}
         type="article"
-        cardTitle="Blog post"
-        cardSubtitle={`"${title}"`}
       />
       <Header
         flex="1 1 auto"

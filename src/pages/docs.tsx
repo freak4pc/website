@@ -45,12 +45,7 @@ const DocsPage = ({ data }) => {
 
   return (
     <Page pb={[0, 0]}>
-      <OpenGraph
-        title={pageTitle}
-        description={pageDescription}
-        cardTitle="xcbuddy"
-        cardSubtitle="Check out xcbuddy documentation"
-      />
+      <OpenGraph title={pageTitle} description={pageDescription} />
       <Flex flex="1" flexDirection="column">
         <Box flex="0 0 auto">
           <Box>
