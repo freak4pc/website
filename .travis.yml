@@ -6,7 +6,7 @@ cache:
 script:
 - npm run build
 - npm run test
-- npx urlint https://xcbuddy.io
+- npx urlint-cli https://xcbuddy.io
 env:
   matrix:
   - CI=true
