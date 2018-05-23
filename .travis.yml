@@ -2,11 +2,15 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - npm run build
-  - npm run test
+- npm run build
+- npm run test
+- npx urlint https://xcbuddy.io
 env:
+  matrix:
   - CI=true
+  global:
+    secure: f81XWUaqy2bQazu+thK6eE5R62Rzk1IWmUSIHvsjWWbMtX/y4xX+AzbnoGdjoji7NoGSnY7txp4Akm0tQYZJ0DB7aRw/5roeHHI02jrfDelBBQrvUR92O+cbzdiUfCWyDGiz2FrjnrnWNUTJDSoNAAjjk3OoelHS6p2jY8+rlhbm8ON0751VxdwDo22zBSRvlJLtpPhL/QwVkOth8YoIlVKdHUOjiRSjAJ8Gwfv/4tEcDEQoJgXFLYuuTKqvPduZgki759upo/PPyNjeYGbzyMkUGoFPlZ9sP1K5cE4RQSdO11RQqF5DqpyjDzQDM52wnOP7u7zrRYxprP1uvPZDc8v/St7gjouXPqj+Kd2DBlU0eG/Ri4ugPdLIN8XUXC6ldtzLXIONy7iEedMrVvcgumKbIZU9+PoeDestDy3U1Z8SmWbeZQPNvuKItXvF1raUfVTn0dvlOzGnyLDj48NCBRhaRL3yMgDFnNMsr35oaWTxKH+Arc9Nudh2ZG+KZK/hkE9c2ojpjHNV9Upt2sx3PZXjpAEdJTx4IJzfEf/ET5CJ5qGowEnmpRTxiC7YFmTxvgVYwnZ0nFbAfGbSSsEQAJWYrb5BGtyQVVlfZ3yiVaUpoWd8wj8qsX++lH8Huy/eDW74O147OGPW2tnwNxQDl0v2ObKfBXa6am1Dg6tw1Zk=
 before_deploy:
-  - npm run build
+- npm run build
