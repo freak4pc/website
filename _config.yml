@@ -1,8 +1,9 @@
 title: Xcode Project Manager
 email: pepibumur@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Xcode Project Manager is a command line tool that helps you use Xcode
-  at a large scale. 
+  Xcode Project Manager is a tool that helps developers manage large Xcode projects by leveraging
+  project generation. Moreover, it provides some tools to automate most common tasks, allowing
+  developers to focus on building app.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://xcodepm.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xcodepm
