@@ -32,7 +32,9 @@ It's been a few years struggling with them and with no solution coming from Appl
 
 With nothing out there that could help developers with those issues aforementioned, I set on to build Xcode Project Manager. It's probably one of my largest open source projects and the one I'm most proud about. 
 
-## Project generation
+# Open Source 👐
+
+<!-- ## Project generation
 
 *xpm* leverages Xcode project generation to address the presented scalability issues. In a nutshell, developers define their projects in a more modular and reusable format, a `Project.swift` that *xpm* parses and uses to generate a Xcode project and provide an easy-to-use CLI.
 
@@ -43,4 +45,4 @@ The idea is simple, yet powerful. Thanks to the project generation we can:
 - **Facilitate consistency:** We leverage Swift and modules to allow reusing parts of your projects. Instead of duplicating settings all over the place you can define them in a shared file, and reuse it everywhere. You can part of your project, including schemes or targets. 
 
 
-We are very excited about all the doors that this opens, and all the opportunities ahead to challenge the standars. We hope you find the project useful and we are looking forward to getting feedback from you. **We'll continue rowing on our tiny boat at full speed next to Apple's cruise**.
+We are very excited about all the doors that this opens, and all the opportunities ahead to challenge the standars. We hope you find the project useful and we are looking forward to getting feedback from you. **We'll continue rowing on our tiny boat at full speed next to Apple's cruise**. -->
