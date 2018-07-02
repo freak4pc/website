@@ -8,6 +8,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 url: "https://xcodepm.com/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xcodepm
 github_username:  xcode-project-manager
+show_excerpts: true
 
 # Build settings
 markdown: kramdown
