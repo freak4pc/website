@@ -8,6 +8,24 @@ layout: home
 
 # What 🦄
 
+Xcode Project Manager (XPM) is a command line tool that helps teams maintain and work with large Xcode projects. It leverages project generation to abstract developers from Xcode and provide them with a standard and convenient CLI API. The tool is [open source](https://github.com/xcode-project-manager) and entirely written in Swift:
+
+### Features
+
+- 🐦 Type-safe Swift manifests editable with Xcode.
+- ↗️ Local dependencies support.
+- ⚠️ Misconfiguration catching.
+- 📦 Precompiled binaries (Frameworks & Libraries support).
+- 🔄 Circular dependency detection.
+- 👷‍♀️ `build` and `test` commands.
+- ⌨️ Project bootstrapping from the terminal.
+- ✅ Tasks automation.
+
+### Coming soon
+- 🔑 Built-in certificates management.
+- 📱 `release` command.
+- 📄 Template system.
+
 # Install ⬇️
 
 ```bash
@@ -16,8 +34,6 @@ layout: home
 
 
 # Why Xcode Project Manager 🚢
-
-Hola Xcoder! I'm glad that you are interested in using Xcode Project Manager. You might have read that *xpm* is a tool that helps you use Xcode at scale, but that might sound a bit ambiguous.
 
 Xcode is a great IDE, with awesome tools that developers can use to develop stunning apps. However, it was designed a long time ago when they couldn't have foreseen the size of the projects and teams that are building apps nowadays. As a result, there are certain issues that come up when using Xcode at that scale. **Some of those issues are:**
 
@@ -30,19 +46,4 @@ Xcode is a great IDE, with awesome tools that developers can use to develop stun
 
 It's been a few years struggling with them and with no solution coming from Apple. Developers keep asking for a [Swift Package Manager](https://swift.org/package-manager/) that is compatible with Xcode projects but the project seems to be very focused on Swift packages and its dependencies.
 
-With nothing out there that could help developers with those issues aforementioned, I set on to build Xcode Project Manager. It's probably one of my largest open source projects and the one I'm most proud about. 
-
-# Open Source 👐
-
-<!-- ## Project generation
-
-*xpm* leverages Xcode project generation to address the presented scalability issues. In a nutshell, developers define their projects in a more modular and reusable format, a `Project.swift` that *xpm* parses and uses to generate a Xcode project and provide an easy-to-use CLI.
-
-The idea is simple, yet powerful. Thanks to the project generation we can:
-
-- **Catch errors earlier:** If we can detect something before the compiler starts doing its job we do it. Surprisingly, there are many things that can be caught before the compiler can catch them.
-- **Make implicitness explicit:** We understand your project structure and the dependencies so we can make that information explicit for you. If you want to get a json representation of your project, you can dump the `Project.swift`.
-- **Facilitate consistency:** We leverage Swift and modules to allow reusing parts of your projects. Instead of duplicating settings all over the place you can define them in a shared file, and reuse it everywhere. You can part of your project, including schemes or targets. 
-
-
-We are very excited about all the doors that this opens, and all the opportunities ahead to challenge the standars. We hope you find the project useful and we are looking forward to getting feedback from you. **We'll continue rowing on our tiny boat at full speed next to Apple's cruise**. -->
+With nothing out there that could help developers with those issues aforementioned, I set on to build Xcode Project Manager.
