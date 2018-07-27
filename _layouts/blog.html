@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Blog
 ---
 
 <div class="home">
@@ -10,20 +11,17 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
+    <h2 class="posts__heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="posts__list">
       {%- for post in site.posts -%}
       <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
+        <h3 class="posts__post-title">
+          <span class="posts__post-title--case">.post</span>(<a href="{{ post.url | relative_url }}" class="posts__post-title--text">"{{ post.title | escape }}"</a>)
         </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
+        <div class="posts__post-date">{{ post.date | date: date_format }}</div>
+        <div class="posts__post-excerpt">{{ post.excerpt }}</div>
+        <a class="posts__post-read-more" href="{{ post.url | relative_url }}">Read more...</a>
       </li>
       {%- endfor -%}
     </ul>

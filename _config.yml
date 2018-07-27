@@ -1,17 +1,23 @@
-title: Xcode Project Manager
+title: Tuist
 email: pepibumur@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Xcode Project Manager is a tool that helps developers manage large Xcode projects by leveraging
   project generation. Moreover, it provides some tools to automate most common tasks, allowing
   developers to focus on building app.
 # baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://xcodepm.com/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: xcodepm
-github_username:  xcode-project-manager
-show_excerpts: true
+url: "https://tuist.io/" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: tuistapp
+github_username:  tuist
+sass:
+  sass_dir: _sass
 
-# Build settings
+urls:
+  releases: https://github.com/tuist/tuist/releases
+  github: https://github.com/tuist
+  # TODO: Check links
+  contributors_url: https://github.com/tuist/contributors
+  pedro: https://ppinera.com
+
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed

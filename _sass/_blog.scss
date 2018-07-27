@@ -1,0 +1,94 @@
+.posts__heading {
+  @include relative-font-size(1.75);
+}
+
+.posts__list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.posts__post-date {
+  font-size: $small-font-size;
+  color: $grey-color;
+  margin-bottom: $spacing-unit/2;
+}
+
+.posts__post-title {
+  font-weight: $bold-font-weight;
+}
+
+.posts__post-title--case {
+  color: $xcode-blue-marina;
+}
+
+.posts__post-excerpt {
+
+}
+
+.posts__post-title--text {
+  color: $xcode-red;
+
+  &:visited {
+    color: $xcode-red;
+  }
+  
+  &:hover {
+    color: $xcode-red;
+    text-decoration: underline;
+  } 
+}
+
+.posts__post-read-more {
+  display: block;
+  font-size: $small-font-size;
+  margin-top: $spacing-unit/2;
+}
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+}
+
+.post-title {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1;
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.25);
+  }
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    @include relative-font-size(2);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.75);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.625);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.375);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.125);
+    }
+  }
+}
