@@ -2,10 +2,6 @@
 layout: home
 ---
 
-<p style="text-align: center">
-  <img src="{{site.url}}/images/logo.png" height="200px"/>
-</p>
-
 # What 🦄
 
 Xcode Project Manager (XPM) is a command line tool that helps teams maintain and work with large Xcode projects. It leverages project generation to abstract developers from Xcode and provide them with a standard and convenient CLI API. The tool is [open source](https://github.com/xcode-project-manager) and entirely written in Swift:

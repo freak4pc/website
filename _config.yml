@@ -15,7 +15,7 @@ urls:
   releases: https://github.com/tuist/tuist/releases
   github: https://github.com/tuist
   # TODO: Check links
-  contributors_url: https://github.com/tuist/contributors
+  contributors: https://github.com/tuist/contributors
   pedro: https://ppinera.com
 
 markdown: kramdown

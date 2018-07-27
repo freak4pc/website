@@ -1,0 +1,168 @@
+.header {
+  border-top: 8px solid $xcode-blue-marina;
+  border-bottom: 1px solid $grey-color-light;
+  min-height: $spacing-unit * 1.865;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__wrapper {
+  @extend .wrapper;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__credits-wrapper {
+  align-self: flex-end;
+  text-align: end;
+  width: $spacing-unit*9;
+  margin-right: $spacing-unit;
+  font-size: $small-font-size;
+
+  @include media-query($on-palm) {
+    align-self: center;
+    text-align: center;
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.header__title {
+  color: $xcode-blue-marina;
+  @include bold-font;
+  @include relative-font-size(2.4);
+
+  &:hover {
+    color: $xcode-blue-marina;
+  }
+  &:visited {
+    color: $xcode-blue-marina;
+  }
+}
+
+.header__slogan {
+  @include relative-font-size(1.2);
+  margin-bottom: $spacing-unit;
+}
+
+.header__slogan-let {
+  color: $xcode-pink;
+}
+
+.header__slogan-text {
+  color: $xcode-red;
+}
+
+.header__logo {
+  width: 170px;
+}
+
+.header__links {
+  text-align: center;
+}
+
+.header__links-link {
+  color: $text-color;
+  text-decoration: none;
+  
+  &:visited {
+    color: $text-color;
+  }
+  
+  &:hover {
+    color: $xcode-blue-marina;
+    text-decoration: underline;
+  } 
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  line-height: $base-line-height * $base-font-size * 2.25;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  float: left;
+
+  &,
+  &:visited {
+    color: $grey-color-dark;
+  }
+}
+
+.site-nav {
+  float: right;
+  line-height: $base-line-height * $base-font-size * 2.25;
+
+  .nav-trigger {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: $text-color;
+    line-height: $base-line-height;
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    position: absolute;
+    top: 9px;
+    right: $spacing-unit / 2;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    border-radius: 5px;
+    text-align: right;
+
+    label[for="nav-trigger"] {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 36px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+
+      > svg {
+        fill: $grey-color-dark;
+      }
+    }
+
+    input ~ .trigger {
+      clear: both;
+      display: none;
+    }
+
+    input:checked ~ .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+      margin-left: 20px;
+    }
+  }
+}

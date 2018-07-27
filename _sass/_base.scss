@@ -94,11 +94,11 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight;
+  @include bold-font;
 }
 h1, h2 {
   color: $xcode-green;
-  font-weight: $bold-font-weight;
+  @include bold-font;
 }
 
 

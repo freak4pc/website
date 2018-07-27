@@ -11,7 +11,3 @@
     @content;
   }
 }
-
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}

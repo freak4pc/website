@@ -1,10 +1,25 @@
+$spacing-unit: 30px !default;
+
+// Font sizes
 $base-font-size: 16px !default;
-$base-font-weight: 400 !default;
-$bold-font-weight: 600 !default;
 $small-font-size: $base-font-size * 0.875 !default;
+
+// Line heights
 $base-line-height: 1.5 !default;
 
-$spacing-unit: 30px !default;
+// Regular font
+$base-font-weight: 400 !default;
+@mixin regular-font {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight
+}
+
+// Bold fonts
+$bold-font-weight: 500 !default;
+@mixin bold-font {
+  font-family: $bold-font-family;
+  font-family: $bold-font-weight
+}
 
 $table-text-align: left !default;
 
