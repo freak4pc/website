@@ -15,11 +15,7 @@
 
     <div class="header__links">
       <!-- Home -->
-      {% if !page.path || page.path == "/" %}
-      <a class="header__links-link-enabled" href="/">Home</a> * 
-      {% else %}
       <a class="header__links-link" href="/">Home</a> * 
-      {% endif %}
       
       <!-- Blog -->
       {% if page.url contains "blog" %}
