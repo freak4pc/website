@@ -14,8 +14,7 @@ sass:
 urls:
   releases: https://github.com/tuist/tuist/releases
   github: https://github.com/tuist
-  # TODO: Check links
-  contributors: https://github.com/tuist/contributors
+  contributors: https://github.com/orgs/tuist/teams/contributors
   pedro: https://ppinera.com
   open_pr: https://github.com/tuist/website
   spectrum: https://spectrum.chat/tuist
