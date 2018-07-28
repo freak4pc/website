@@ -9,7 +9,11 @@
   padding-top: $spacing-unit/2;
   padding-bottom: $spacing-unit/2;
   width: calc(#{$content-width}/3 - #{$spacing-unit*2});
+  height: 200px;
+  display: flex;
   text-align: center;
+  justify-content: flex-start;
+  flex-direction: column;
   padding-left: $spacing-unit/2;
   padding-right: $spacing-unit/2;
   font-size: $small-font-size;
@@ -23,8 +27,9 @@
 .docs__box-excerpt {
   padding-top: $spacing-unit/2;
   padding-bottom: $spacing-unit/2;
+  flex: 1;
 }
 
 .docs__box-readmore {
-
+  justify-self: flex-end;
 }
