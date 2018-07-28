@@ -1,2 +1,25 @@
 .post__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post__header-avatar {
+  flex: 1;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+}
+
+.post__header-author {
+  margin-top: $spacing-unit;
+}
+
+.post__header-published-at {
+  margin-bottom: $spacing-unit;
+}
+
+.post__next {
+  margin-bottom: spacing-unit;
+  margin-top: spacing-unit;
 }

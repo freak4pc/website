@@ -4,6 +4,7 @@ title:  "Introducing Xcode Project Manager"
 date:   2018-06-29 09:56:06 +0200
 categories: jekyll update
 excerpt: Xcode Project Manager was oficially released. Read more on this blog post about what motivated us to build tuist and how it can help you scale your Xcode projects.
+author: pepibumur
 ---
 
 It's been a year since I started working on a Xcode project parser. The goal was implementing a tool that would help large teams scale their Xcode projects. At that time I was doing a lot of research on modularizing Xcode projects. It helped overcoming common issues such as compilation times, which **had a very negative impact on developer productivity and motivation**. You can read more about it [here](https://github.com/pepibumur/microfeatures-guidelines).
