@@ -37,5 +37,5 @@ They can, but there's no dependency management built in tuist. Depending on how 
 You are welcome to contribute. Contributors bring fresh ideas and new points of view to the project. Here are some examples of contributions:
 
 - **Open an issue:** It can be an idea, a bug that you have found. Don't hesitate to do so. For instance, you can easily do it from tuist by running `tuist create-issue`. It'll open the browser with the issue form to fill it out.
-- **Open a PR:** If you'd like to get your hands dirty, pick an issue and work on it. Issues for beginners are labelled on GitHub and can be a good starting point to get familiar with the project. After your first contribution gets merged you'll be come part of the contributors team.
+- **Open a PR:** If you'd like to get your hands dirty, pick an issue and work on it. Issues for beginners are labelled on GitHub and can be a good starting point to get familiar with the project. After your first contribution gets merged you'll become part of the contributors team.
 - **Participate on Spectrum discussions:** We have an [open community]({{site.urls.spectrum}}) on Spectrum where contributors have discussions around different topics. Show up and participate in them!
