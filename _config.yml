@@ -27,3 +27,4 @@ collections:
     output: true
     permalink: /:collection/:name
 collections_dir: collections
+permalink: /blog/:year/:month/:day/:title/

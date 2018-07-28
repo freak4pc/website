@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Introducing Xcode Project Manager"
+title:  "Introducing Tuist"
 date:   2018-06-29 09:56:06 +0200
 categories: jekyll update
-excerpt: Xcode Project Manager was oficially released. Read more on this blog post about what motivated us to build tuist and how it can help you scale your Xcode projects.
+excerpt: Tuist was oficially released. Read more on this blog post about what motivated us to build tuist and how it can help you scale your Xcode projects.
 author: pepibumur
 ---
 

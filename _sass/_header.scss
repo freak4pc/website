@@ -77,6 +77,20 @@
   } 
 }
 
+.header__links-link-enabled {
+  color: $xcode-blue-marina;
+  text-decoration: none;
+  
+  &:visited {
+    color: $xcode-blue-marina;
+  }
+  
+  &:hover {
+    color: $xcode-blue-marina;
+    text-decoration: underline;
+  } 
+}
+
 .site-title {
   @include relative-font-size(1.625);
   font-weight: 300;

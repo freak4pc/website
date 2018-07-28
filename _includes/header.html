@@ -14,9 +14,28 @@
     </div>
 
     <div class="header__links">
+      <!-- Home -->
+      {% if !page.path || page.path == "/" %}
+      <a class="header__links-link-enabled" href="/">Home</a> * 
+      {% else %}
       <a class="header__links-link" href="/">Home</a> * 
+      {% endif %}
+      
+      <!-- Blog -->
+      {% if page.url contains "blog" %}
+      <a class="header__links-link-enabled" href="/blog">Blog</a> * 
+      {% else %}
       <a class="header__links-link" href="/blog">Blog</a> * 
-      <a class="header__links-link" href="/faq">Faq</a> * 
+      {% endif %}
+
+      <!-- FAQ -->
+      {% if page.url contains "faq" %}
+        <a class="header__links-link-enabled" href="/faq">FAQ</a> * 
+      {% else %}
+        <a class="header__links-link" href="/faq">FAQ</a> * 
+      {% endif %}
+
+
       <a class="header__links-link" target="__blank" href="{{site.urls.releases}}">Releases</a> * 
       <a class="header__links-link" target="__blank" href="{{site.urls.github}}">GitHub</a> *
       <a class="header__links-link" target="__blank" href="{{site.urls.spectrum}}">Spectrum</a>
