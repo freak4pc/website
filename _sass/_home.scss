@@ -1,0 +1,13 @@
+.home__page {
+  display: flex;
+  flex-direction: column;
+}
+
+.home__title {
+  text-align: center;
+}
+
+.home__back-to-top {
+  text-align: center;
+  margin-top: $spacing-unit*2;
+}

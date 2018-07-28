@@ -1,32 +1,22 @@
 ---
-layout: default
+layout: page
 title: Blog
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+{% if site.posts.size > 0 %}
+  <h1 class="page__title">{{ page.list_title | default: "Blog" }}</h1>
+  <ul class="posts__list">
+    {% for post in site.posts %}
+    <li>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <h3 class="posts__post-title">
+        <span class="posts__post-title--case">.post</span>(<a href="{{ post.url | relative_url }}" class="posts__post-title--text">"{{ post.title | escape }}"</a>)
+      </h3>
+      <div class="posts__post-date">{{ post.date | date: date_format }}</div>
+      <div class="posts__post-excerpt">{{ post.excerpt }}</div>
+    </li>
+    {% endfor %}
+  </ul>
 
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
-    <h2 class="posts__heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="posts__list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <h3 class="posts__post-title">
-          <span class="posts__post-title--case">.post</span>(<a href="{{ post.url | relative_url }}" class="posts__post-title--text">"{{ post.title | escape }}"</a>)
-        </h3>
-        <div class="posts__post-date">{{ post.date | date: date_format }}</div>
-        <div class="posts__post-excerpt">{{ post.excerpt }}</div>
-        <a class="posts__post-read-more" href="{{ post.url | relative_url }}">Read more...</a>
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
-
-</div>
+  <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{% endif %}

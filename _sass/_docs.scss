@@ -1,0 +1,25 @@
+.docs__grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.docs__box {
+  padding-top: $spacing-unit/2;
+  padding-bottom: $spacing-unit/2;
+  flex: 1;
+}
+
+.docs__box-title {
+  font-family: $bold-font-family;
+  @include relative-font-size(1.250);
+}
+
+.docs__box-excerpt {
+  padding-top: $spacing-unit/2;
+  padding-bottom: $spacing-unit/2;
+}
+
+.docs__box-readmore {
+
+}

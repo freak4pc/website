@@ -89,7 +89,6 @@ li {
 }
 
 
-
 /**
  * Headings
  */
@@ -97,10 +96,14 @@ h1, h2, h3, h4, h5, h6 {
   @include bold-font;
 }
 h1, h2 {
-  color: $xcode-green;
   @include bold-font;
 }
-
+h1 {
+  color: $xcode-green;
+}
+h2 {
+  color: $xcode-blue-marina;
+}
 
 /**
  * Links
@@ -108,10 +111,6 @@ h1, h2 {
 a {
   color: $xcode-pink;
   text-decoration: none;
-
-  &:visited {
-    color: darken($xcode-pink, 15%);
-  }
 
   &:hover {
     color: $text-color;

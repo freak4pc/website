@@ -17,7 +17,14 @@ urls:
   # TODO: Check links
   contributors: https://github.com/tuist/contributors
   pedro: https://ppinera.com
+  open_pr: https://github.com/tuist/website
+  spectrum: https://spectrum.chat/tuist
 
 markdown: kramdown
 plugins:
   - jekyll-feed
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name
+collections_dir: collections
