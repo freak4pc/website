@@ -4,8 +4,71 @@ layout: default
 
 <div class="page__content home__page">
 
+  <!-- What -->
+  <h1 class="home__title home__title-what">What is Tuist?</h1>
+
+  <p>
+    Tuist is a <b>command line tool</b> that helps teams maintain and work with large Xcode projects. 
+  </p>
+  <p>
+    It leverages project generation to abstract developers from Xcode, and provide them with a <span class="home__what-highlight">.standard</span> and <span class="home__what-highlight">.convenient</span> CLI. 
+  </p>
+  <p>
+    The tool is open source and entirely written in <span class="home__what-swift">Swift</span>.
+  </p>
+
+  <img src="/images/diagram.png"/>
+
+  <!-- What -->
+  <h1 class="home__title home__title-what">Features</h1>
+
+  <p>
+    <ul>
+      <li>🥘 100% written in Swift.</li>
+      <li>🐦 Type-safe Swift manifests editable with Xcode.</li>
+      <li>↗️ Local dependencies support.</li>
+      <li>⚠️ Misconfiguration catching.</li>
+      <li>📦 Precompiled binaries (Frameworks & Libraries support).</li>
+      <li>🔄 Circular dependency detection.</li>
+    </ul>
+  </p>
+
   <!-- Why? -->
-  <h1 class="home__title">Why?</h1>
+  <h1 class="home__title home__title-why">Why?</h1>
+
+  <p>
+    Xcode is a <b>great IDE</b>, with awesome tools that developers can use to develop stunning apps. However, it was designed a long time ago when they couldn’t have foreseen the size of the projects and teams that are building apps nowadays. As a result, there are certain <span class="home__why-body-issues">[issue]</span> that come up when using Xcode at that scale. Some of those issues are:
+  </p>
+
+  <p>
+      issues.<span class="home__why-code-purple">map</span> { (issue) in
+        <br/><br/>
+        &nbsp;&nbsp;<span class="home__why-code-pink">switch</span> issue {
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.monolith</span>:
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“Most of the project settings live in a single file. When the team is large, it’s very likely that developers introduce changes into that file from multiple branches, and have to spend some time solving conflicts.”</span>
+          <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.reusability</span>:
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“If you have a project with a structure that you’d like to replicate or reuse in another project it’s not possible. The only Xcode feature that allows reusability across projects is .xcconfig files, but those are just for build settings.”</span>
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.implicitness</span>:
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“When a project is single, e.g. a main target and its tests target, it’s easy to understand what depends on what. If you keep creating targets and adding dependencies is hard to know what the dependency graph looks like. This can lead to misconfigurations and compilation issues like \“framework not found\”, or \“header test.h is missing\”.”</span>
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.inconsistencies</span>:
+        <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“When you have a lot of targets and projects, it’s hard to ensure that the settings are consistent accross all the projects. For example, if you wrongly setup one your frameworks to compile for the platform macOS and try to link it from an iOS target, you’ll get a not-readable compiler error.”</span>
+        <br/><br/>
+        &nbsp;&nbsp;}
+        <br/>
+      }
+  </p>
+
+  <p>
+    <b>Does any of these issues resonate with you?</b> If they don’t do it yet, they’ll do sooner or later if your project keeps growing.
+  </p>
 
   <!-- Start using it -->
   <h1 class="home__title">Start using it</h1>

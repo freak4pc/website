@@ -7,6 +7,30 @@
   text-align: center;
 }
 
+.home__title-what {
+  text-align: left;
+}
+
+.home__title-features {
+  text-align: left;
+}
+
+.home__title-why {
+  text-align: right;
+}
+
+.home__why-body-issues {
+  color: $xcode-blue-marina;
+}
+
+.home__what-highlight {
+  color: $xcode-blue-marina;
+}
+
+.home__what-swift {
+  color: $xcode-swift;
+}
+
 .home__back-to-top {
   text-align: center;
   margin-top: $spacing-unit*2;
@@ -49,8 +73,6 @@
   &:hover {
     color: $xcode-blue-marina;
   }
-
-
 }
 
 .home__window-minimize {
@@ -69,4 +91,20 @@
 
 .home__window--start {
   margin: $spacing-unit;
+}
+
+.home__why-code-red {
+  color: $xcode-red;
+}
+
+.home__why-code-pink {
+  color: $xcode-pink;
+}
+
+.home__why-code-blue {
+  color: $xcode-blue-marina;
+}
+
+.home__why-code-purple {
+  color: $xcode-purple;
 }
