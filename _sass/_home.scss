@@ -11,3 +11,62 @@
   text-align: center;
   margin-top: $spacing-unit*2;
 }
+
+.home__window {
+  display: flex;
+  border: 1px solid $xcode-grey;
+  flex-direction: column;
+}
+
+.home__window-bar {
+  height: 25px;
+  background: lighten($xcode-grey, 10%);
+  border-bottom: 1px solid $xcode-grey;
+  display: flex;
+  align-items: center;
+  padding-left: $spacing-unit/2;
+  padding-right: $spacing-unit/4;
+}
+
+.home__window-button {
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  margin-right: $spacing-unit/4;
+}
+
+.home__window-close {
+  @extend .home__window-button;
+  background: $window-close;
+}
+
+.home__window-copy {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: darken($xcode-grey, 30%);
+
+  &:hover {
+    color: $xcode-blue-marina;
+  }
+
+
+}
+
+.home__window-minimize {
+  @extend .home__window-button;
+  background: $window-minimize;
+}
+
+.home__window-maximize {
+  @extend .home__window-button;
+  background: $window-maximize;
+}
+
+.home__window-content {
+  padding: $spacing-unit;
+}
+
+.home__window--start {
+  margin: $spacing-unit;
+}

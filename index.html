@@ -10,6 +10,21 @@ layout: default
   <!-- Start using it -->
   <h1 class="home__title">Start using it</h1>
 
+  <div class="home__window home__window--start">
+    <div class="home__window-bar">
+      <div class="home__window-close"></div>
+      <div class="home__window-minimize"></div>
+      <div class="home__window-maximize"></div>
+      <div style="flex: 1"></div>
+      <div id="start-code-copy" title="Copied!" class="btn far fa-copy home__window-copy" data-clipboard-action="copy" data-clipboard-target="#start-code"></div>
+    </div>
+    <div id="start-code" class="home__window-content">
+      eval "$(curl -sL https://bit.ly/2JWMfx8)"<br/>
+      tuist init —platform ios —product application<br/>
+      tuist generate
+    </div>
+  </div>
+
   <!-- Resources -->
   <h1 class="home__title">Learning resources</h1>
   {% include docs.html %}
@@ -17,3 +32,13 @@ layout: default
   <a class="home__back-to-top" href="#">Go back to the top ↑</a>
 
 </div>
+
+<script>
+  const clipboard = new ClipboardJS('.btn');
+  tippy('#start-code-copy', {
+    trigger: 'click'
+  })
+  clipboard.on('success', function(e) {
+    e.clearSelection();
+});
+</script>
