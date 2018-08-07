@@ -4,7 +4,7 @@ title: Getting started
 excerpt: In this page you'll find the first steps you should take to start using Tuist.
 ---
 
-Tuist is a command line tool *(CLI)* that aims to facilitate the generation, maintenance and interaction with Xcode projects. It's distributed as a binary, which you can easily install and use without having to depend on other tools to manage dependencies *(like you would do if the tool was written in other programming languages such as Ruby, or Java)*. 
+Tuist is a command line tool *(CLI)* that aims to facilitate the generation, maintenance, and interaction with Xcode projects. It's distributed as a binary, which you can easily install and use without having to depend on other tools to manage dependencies *(like you would do if the tool was written in other programming languages such as Ruby, or Java)*. 
 
 ## Install
 
@@ -25,9 +25,9 @@ eval "$(curl -sL https://raw.githubusercontent.com/tuist/tuist/master/script/ins
 
 The process is relatively fast because we are actually not installing the tool. We are installing `tuistenv` *(which gets renamed to `tuist`)* when you install it.
 
-A very common issue working on iOS projects is **not having a reproducible environment**. Very often, projects depend on things that should be installed by other tools. To give you an example, if your project depends on Fastlane, it probably depends un Bundler being installed in the system, and a clean Ruby environment with the version that the project expects. If any of those things are missing or are not in a good state, it results in unexpected outputs, and a really bad experience for your developers.
+A very common issue working on iOS projects is **not having a reproducible environment**. Very often, projects depend on things that should be installed by other tools. To give you an example, if your project depends on Fastlane, it probably depends on Bundler being installed in the system and a clean Ruby environment with the version that the project expects. If any of those things are missing or are not in a good state, it results in unexpected outputs and a really bad experience for your developers.
 
-To avoid that, Tuist is self-contained and comes with `tuistenv` which ensures that the right version is used. It manages different versions in your environment, and runs the version your project is pinned to. Thanks to that, we ensure that anyone in your team will use the same version of Tuist. 
+To avoid that, Tuist is self-contained and comes with `tuistenv` which ensures that the right version is used. It manages different versions in your environment and runs the version your project is pinned to. Thanks to that, we ensure that anyone in your team will use the same version of Tuist. 
 
 In a more advanced section on the documentation, we'll see the power of `tuistenv`. For now, we'll keep things simple and just assume that we are running Tuist directly.
 
@@ -81,18 +81,18 @@ let project = Project(name: "MyApp",
 Since we are defining an Xcode project, most of the properties might be familiar to you. There are some that are available which are not used from the manifest that you've got generated. You can [check out](https://tuist.github.io/tuist/index.html) the project reference to see all the public models that are available in the `ProjectDescription` framework.
 
 ## Generating project
-We have the manifest, the project files, but there is something missing, the Xcode project. If we don't have an Xcode project we can't use Xcode, because that's the format that Xcode expects. Fortunately, Tuist comes with a command to generate projects and workspaces from your manifest files. If we run the following command in the terminal:
+We have the manifest and the project files, but something missing, the Xcode project. If we don't have an Xcode project, we can't use Xcode, because that's the format that Xcode expects. Fortunately, Tuist comes with a command to generate projects and workspaces from your manifest files. If we run the following command in the terminal:
 
 ```
 tuist generate
 ```
 
-We'll get a `MyApp.xcodeproj` and `MyApp.xcworkspace` files. As we'll see in the dependencies section, the workspace is necessary to add other projects `MyApp` project is depending to.
+We'll get a `MyApp.xcodeproj` and `MyApp.xcworkspace` files. As we'll see in the dependencies section, the workspace is necessary to add other projects `MyApp` project is depending on.
 
-If you open `MyApp.xcworkspace` and try to run the `MyApp` scheme it should build the app and run it on the simulator 📱 successfully 🎉.
+If you open `MyApp.xcworkspace` and try to run the `MyApp` scheme, it should build the app and run it on the simulator 📱 successfully 🎉.
 
 ## Editing the Project.swift
 Did you realize that there's a target, `MyAppDescription`, which contains the manifest file? Thanks to the Swift types system and Xcode, you can edit the manifest file from Xcode and get syntax autocompletion, documentation and errors while you are modifying the definition. Isn't it great?
 
 # Next
-// TODO
+In the [next page](/docs/2-dependencies), you'll learn how to define dependencies between targets and with precompiled frameworks and libraries. 
