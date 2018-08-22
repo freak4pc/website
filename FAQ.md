@@ -42,6 +42,13 @@ Whether or not you check in your projects is up to you, as workflows vary from p
 **Benefits of ignoring the projects**
 - There won't be any conflicts to deal with when performing source control operations, such as merging branches with different Pod versions.
 
+{% include faq-question.html question="Why aren't all Xcode project features available?" %}
+That's on purpose. We could have exposed things like schemes, or the link frameworks build phase. However, we'd be offering an alternative syntax for defining Xcode projects, and that's not the goal of Tuist. We aim to provide a simple, convenient and scalable interface that abstracts from the implementation details. Whether you need to create a scheme to test a target, or add a copy frameworks build phase to embed your transitive dependencies. That's something you shouldn't have to worry about. 
+
+This approach might sound restrictive at first, but it allows us to have more control over the generated project, validate your input and generate an output that we feel confident about. We'd feel bad if we give you a project that doesn't compile and you need to spend time figuring out what's wrong.
+
+If you'd like a more granular approach you can check out a tool like [XcodeGen](https://github.com/yonaskolb/XcodeGen).
+
 {% include faq-question.html question="I love this project, how can I contribute?" %}
 
 You are welcome to contribute. Contributors bring fresh ideas and new points of view to the project. Here are some examples of contributions:
