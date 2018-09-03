@@ -95,4 +95,4 @@ If you open `MyApp.xcworkspace` and try to run the `MyApp` scheme, it should bui
 Did you realize that there's a target, `MyAppDescription`, which contains the manifest file? Thanks to the Swift types system and Xcode, you can edit the manifest file from Xcode and get syntax autocompletion, documentation and errors while you are modifying the definition. Isn't it great?
 
 # Next
-In the [next page](/docs/2-dependencies), you'll learn how to define dependencies between targets and with precompiled frameworks and libraries. 
+In the [next page](/guides/2-dependencies), you'll learn how to define dependencies between targets and with precompiled frameworks and libraries. 

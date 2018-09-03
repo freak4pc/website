@@ -1,4 +1,4 @@
-Resolves https://github.com/xcode-project-manager/website/issues/YYY
+Resolves https://github.com/tuist/website/issues/YYY
 
 ### Short description 📝
 

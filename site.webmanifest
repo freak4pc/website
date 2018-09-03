@@ -1,6 +1,6 @@
 {
-  "name": "Xcode Project Manager",
-  "short_name": "Xcode Project Manager",
+  "name": "Tuist",
+  "short_name": "Tuist",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
