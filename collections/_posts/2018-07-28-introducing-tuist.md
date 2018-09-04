@@ -95,6 +95,8 @@ I read that GitHub came up with [some design principles](https://ben.balter.com/
 
 This is a malleable list which will change and grow as the project evolves. You can check out the [list](https://github.com/tuist/contributors/blob/master/Zen.md) on the [contributors repository](https://github.com/tuist/contributors)
 
+> We implemented an endpoint, [api.tuist.io/zen](http://api.tuist.io/zen), that returns the project design principles.
+
 ## 🚀 What's coming
 
 - 📃 **Documentation:** Unfortunately, We haven't devoted much time to have a good documentation for the project. That makes onboarding hard. We'll work on documenting the public interfaces and the CLI.
