@@ -11,29 +11,71 @@
 
   <!-- COMMON TAGS -->
   <meta charset="utf-8">
-  <title>Tuist - Xcode at scale</title>
-  <!-- Search Engine -->
-  <meta name="description" content="{{site.description}}">
-  <meta name="image" content="{{site.url}}/images/social.png">
+
   <!-- Schema.org for Google -->
-  <meta itemprop="name" content="Tuist">
-  <meta itemprop="description" content="Learn more about Tuist, why and how you can use it within your Xcode projects">
-  <meta name="image" content="{{site.url}}/images/social.png">
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tuist">
-  <meta name="twitter:description" content="Learn more about Tuist, why and how you can use it within your Xcode projects">
   <meta name="twitter:site" content="@tuistapp">
   <meta name="twitter:creator" content="@tuistapp">
-  <meta name="twitter:image:src" content="{{site.url}}/images/social.png">
+
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta property="og:title" content="Tuist">
-  <meta property="og:url" content="{{site.url}}"/>
-  <meta property="og:description" content="Learn more about Tuist, why and how you can use it within your Xcode projects">
-  <meta property="og:image" content="{{site.url}}/images/social.png">
-  <meta property="og:site_name" content="Tuist">
   <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="website">
+
+  <meta content="{{ site.title }}" property="og:site_name">
+  {% if page.title %}
+    <title>{{ page.title }}</title>
+    <meta content="{{ page.title }}" property="og:title">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta itemprop="name" content="{{ page.title }}">
+  {% else %}
+    <title>{{ site.title }}</title>
+    <meta content="{{ site.title }}" property="og:title">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta itemprop="name" content="{{ site.title }}">
+  {% endif %}
+  {% if page.title %}
+    <meta content="article" property="og:type">
+  {% else %}
+    <meta content="website" property="og:type">
+  {% endif %}
+  {% if page.description %}
+    <meta content="{{ page.description }}" property="og:description">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta itemprop="description" content="{{ page.description }}">
+    <meta name="description" content="{{page.description}}">
+  {% else %}
+    <meta content="{{ site.description }}" property="og:description">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta itemprop="description" content="{{ site.description }}">
+    <meta name="description" content="{{site.description}}">
+  {% endif %}
+  {% if page.url %}
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+  {% endif %}
+  {% if page.date %}
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.url }}/about/" property="article:author">
+  {% endif %}
+  {% if page.image %}
+    <meta content="{{ site.url }}/images/posts/{{ page.image }}" property="og:image">
+    <meta name="twitter:image:src" content="{{ site.url }}/images/posts/{{ page.image }}">
+    <meta name="image" content="{{ site.url }}/images/posts/{{ page.image }}">
+    <meta name="image" content="{{ site.url }}/images/posts/{{ page.image }}">
+  {% else %}
+    <meta content="{{site.url}}/images/social.png" property="og:image">
+    <meta name="twitter:image:src" content="{{ site.url }}/images/social.png">
+    <meta name="image" content="{{ site.url }}/images/social.png">
+    <meta name="image" content="{{ site.url }}/images/social.png">
+  {% endif %}
+  {% if page.categories %}
+    {% for category in page.categories limit:1 %}
+    <meta content="{{ category }}" property="article:section">
+    {% endfor %}
+  {% endif %}
+  {% if page.tags %}
+    {% for tag in page.tags %}
+    <meta content="{{ tag }}" property="article:tag">
+    {% endfor %}
+  {% endif %}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
