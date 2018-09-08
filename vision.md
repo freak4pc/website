@@ -20,8 +20,6 @@ Tuist should provide a standard command line interface that developers get famil
 ## Communication
 Most of the communication happens on **GitHub issues and pull requests**. We prefer that over real-time channels like Slack to facilitate asynchronous communication and keep track of all the discussions. If developers reach out to individual maintainers privately, we should forward them to GitHub, where they can open an issue which anyone has access to.
 
-There's also a [Spectrum](https://spectrum.chat/tuist) community, but we haven't figured out whether there're or not suitable discussions for this platform.
-
 With a lot of these things, though, they're about scale
 
 ## Contributions

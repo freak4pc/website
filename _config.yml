@@ -17,7 +17,6 @@ urls:
   contributors: https://github.com/orgs/tuist/teams/contributors
   pedro: https://ppinera.com
   open_pr: https://github.com/tuist/website
-  spectrum: https://spectrum.chat/tuist
   patreon: https://www.patreon.com/tuist
 
 markdown: kramdown

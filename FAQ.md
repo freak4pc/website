@@ -55,5 +55,4 @@ You are welcome to contribute. Contributors bring fresh ideas and new points of 
 
 - **Open an issue:** It can be an idea, a bug that you have found. Don't hesitate to do so. For instance, you can easily do it from tuist by running `tuist create-issue`. It'll open the browser with the issue form to fill it out.
 - **Open a PR:** If you'd like to get your hands dirty, pick an issue and work on it. Issues for beginners are labelled on GitHub and can be a good starting point to get familiar with the project. After your first contribution gets merged you'll become part of the contributors team.
-- **Participate on Spectrum discussions:** We have an [open community]({{site.urls.spectrum}}) on Spectrum where contributors have discussions around different topics. Show up and participate in them!
 - **Write content:** If you like writing, you can also help writing blog posts or documentation for this website.
