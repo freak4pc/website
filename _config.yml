@@ -18,6 +18,7 @@ urls:
   pedro: https://ppinera.com
   open_pr: https://github.com/tuist/website
   patreon: https://www.patreon.com/tuist
+  trello: https://trello.com/b/DN6HvDzW/tuist
 
 markdown: kramdown
 plugins:
