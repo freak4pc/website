@@ -23,6 +23,7 @@ urls:
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
   - pagemaster
 collections:
   guides:
