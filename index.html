@@ -8,67 +8,90 @@ layout: default
   <h1 class="home__title home__title-what">What is Tuist?</h1>
 
   <p>
-    Tuist is a <b>command line tool</b> that helps teams maintain and work with large Xcode projects. 
+    Tuist is a command line tool that helps you <b>generate</b>, <b>maintain</b> and <b>interact</b> with Xcode projects.
   </p>
   <p>
-    It leverages project generation to abstract developers from Xcode, and provide them with a <span class="home__what-highlight">.standard</span> and <span class="home__what-highlight">.convenient</span> CLI. 
-  </p>
-  <p>
-    The tool is open source and entirely written in <span class="home__what-swift">Swift</span>.
+    The tool is open source and written in <span class="home__what-swift">Swift</span>.
   </p>
 
-  <!-- What -->
-  <h1 class="home__title home__title-what">Features</h1>
+  <!-- Defining projects -->
+  <h2>Defining your projects</h2>
 
   <p>
-    <ul>
-      <li>🥘 100% written in Swift.</li>
-      <li>🐦 Type-safe Swift manifests editable with Xcode.</li>
-      <li>↗️ Local dependencies support.</li>
-      <li>⚠️ Misconfiguration catching.</li>
-      <li>📦 Precompiled binaries (Frameworks & Libraries support).</li>
-      <li>🔄 Circular dependency detection.</li>
-      <li>✅ Thorough test coverage with unit and integration tests.</li>
-    </ul>
+    With Tuist, projects are defined in a <i>Project.swift</i>, also known as manifest. The manifest format is a simple and convenient format that abstracts you from the implementation details of Xcode projects. In your manifest you can define which targets your project has, which sources and resources belong to them, as well as the dependencies with targets in the same and other projects. The advantages of defining the projects in a manifest are:
   </p>
-  <p><b>Do you have an idea which you think could be a great fit for Tuist?</b> You can open an issue on the <a target="__blank" href="{{site.urls.github}}">project</a>.</p>
 
-  <!-- Why? -->
-  <h1 class="home__title home__title-why">Why?</h1>
+  <ul>
+    <li>It can <b>catch misconfigurations and fail early</b>. For example, if a target has an invalid dependency, it’ll let you know before you start compiling the app.</li>
+    <li>Since the manifest doesn’t include Xcode implementation details, it's <b>more unlikely to have git conflicts</b> related to projects.
+    </li>
+    <li><b>It makes the configuration easier</b>. The decision on how the project looks is on you. Tuist processes it and manages the complexity for you. One example of that complexity is setting up dependencies between targets.</li>
+  </ul>
+
+  {% highlight swift %}
+  import ProjectDescription
+
+  let project = Project(name: "App",
+                        targets: [
+                          Target(name: "App",
+                                platform: .iOS,
+                                product: .app,
+                                bundleId: "io.tuist.App",
+                                infoPlist: "Info.plist",
+                                sources: "Sources/**",
+                                dependencies: [
+                                    /* .framework(path: "framework") */
+                                  ]),
+                          Target(name: "AppTests",
+                                platform: .iOS,
+                                product: .unitTests,
+                                bundleId: "io.tuist.AppTests",
+                                infoPlist: "Tests.plist",
+                                sources: "Tests/**",
+                                dependencies: [
+                                      .target(name: "App")
+                                ])
+                        ])
+  {% endhighlight %}
+
+  <!-- Interacting with them-->
+  <h2>Interacting with them</h2>
+
+  <p>Tuist leverages project generation to provide a <b>simple and convenient set of commands</b>, standard across all the projects. The commands infer most of the necessary information from your projects, requiring you to pass only the arguments that are strictly necessary.</p>
+
+  <p>Having a standard command line interface makes it easier to jump between projects since there’s an interaction language everyone in the team is familiar with.</p>
+
+  <p class="home__commands--container">
+      <img class="home__commands" src="/images/commands.jpg" alt="All available commands"/>
+  </p>
+
+  <ul>
+    <li><b>Init:</b> Bootstraps a new project. You can specify the platform and the type of project and it’ll generate all the necessary artifacts <i>(Info.plist, AppDelegate, Project.swift, Playgrounds…)</i></li>
+    <li><b>Generate:</b> Generates the Xcode workspace and projects to work on a particular project.</li>
+    <li><b>Build:</b> Builds the project in the current directory. It supports all the arguments that xcodebuild supports. <i class="home__command-not-available">(Not available yet)</i></li>
+    <li><b>Test:</b> Test the project in the current directory. It supports all the arguments that xcodebuild supports. <i class="home__command-not-available">(Not available yet)</i></li>
+    <li><b>Run:</b> Runs the project. If the project needs a device to run on, it’ll prompt you to select one. <i class="home__command-not-available">(Not available yet)</i></li>
+    <li><b>Release:</b> Builds and publishes your project on iTunes Connect. <i class="home__command-not-available">(Not available yet)</i></li>
+  </ul>
 
   <p>
-    Xcode is a <b>great IDE</b>, with awesome tools that developers can use to develop stunning apps. However, it was designed a long time ago when they couldn’t have foreseen the size of the projects and teams that are building apps nowadays. As a result, there are certain <span class="home__why-body-issues">[issue]</span> that come up when using Xcode at that scale. Some of those issues are:
+    The list of actions will likely grow as we get feedback from you.
   </p>
 
-  <p>
-      issues.<span class="home__why-code-purple">map</span> { (issue) in
-        <br/><br/>
-        &nbsp;&nbsp;<span class="home__why-code-pink">switch</span> issue {
-        <br/><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.monolith</span>:
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“Most of the project settings live in a single file. When the team is large, it’s very likely that developers introduce changes into that file from multiple branches, and have to spend some time solving conflicts.”</span>
-          <br/><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.reusability</span>:
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“If you have a project with a structure that you’d like to replicate or reuse in another project it’s not possible. The only Xcode feature that allows reusability across projects is .xcconfig files, but those are just for build settings.”</span>
-        <br/><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.implicitness</span>:
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“When a project is single, e.g. a main target and its tests target, it’s easy to understand what depends on what. If you keep creating targets and adding dependencies is hard to know what the dependency graph looks like. This can lead to misconfigurations and compilation issues like \“framework not found\”, or \“header test.h is missing\”.”</span>
-        <br/><br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">case</span> <span class="home__why-code-blue">.inconsistencies</span>:
-        <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="home__why-code-pink">return</span> <span class="home__why-code-red">“When you have a lot of targets and projects, it’s hard to ensure that the settings are consistent accross all the projects. For example, if you wrongly setup one your frameworks to compile for the platform macOS and try to link it from an iOS target, you’ll get a not-readable compiler error.”</span>
-        <br/><br/>
-        &nbsp;&nbsp;}
-        <br/>
-      }
-  </p>
+  <!-- When -->
+  <h1 class="home__title">When should I use Tuist?</h1>
 
   <p>
-    <b>Does any of these issues resonate with you?</b> If they don’t do it yet, they’ll do sooner or later if your project keeps growing.
+      Considering using Tuist? Here are some good situations when we think you should consider using Tuist:
   </p>
+  
+  <ul>
+    <li><span class="home__why--when">When</span> my projects and workspaces are too complex and only a few people in the team know how to configure them.</li>
+    <li><span class="home__why--when">When</span> there are so many people commiting to the project that a lot of time is spent solving git conflicts.</li>
+    <li><span class="home__why--when">When</span> I have many similar automation scripts and files, and need some standarization.</li>
+    <li><span class="home__why--when">When</span> I need reliability on the automation layer but I don't have resources to work on that domain.</li> 
+    <li><span class="home__why--when">When</span> I want to be able to run my apps executing a command on the terminal.</li>
+  </ul>
 
   <!-- Start using it -->
   <h1 class="home__title">Start using it</h1>

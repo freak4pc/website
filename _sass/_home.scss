@@ -15,14 +15,6 @@
   text-align: left;
 }
 
-.home__title-why {
-  text-align: right;
-}
-
-.home__why-body-issues {
-  color: $xcode-blue-marina;
-}
-
 .home__what-highlight {
   color: $xcode-blue-marina;
 }
@@ -93,18 +85,18 @@
   margin: $spacing-unit;
 }
 
-.home__why-code-red {
-  color: $xcode-red;
+.home__commands--container {
+  text-align: center;
 }
 
-.home__why-code-pink {
-  color: $xcode-pink;
+.home__commands {
+  width: 320px;
 }
 
-.home__why-code-blue {
+.home__command-not-available {
   color: $xcode-blue-marina;
 }
 
-.home__why-code-purple {
-  color: $xcode-purple;
+.home__why--when {
+  color: $xcode-pink;
 }
