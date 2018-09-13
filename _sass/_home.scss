@@ -100,3 +100,46 @@
 .home__why--when {
   color: $xcode-pink;
 }
+
+.home__grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home__box {
+  padding-top: $spacing-unit/2;
+  padding-bottom: $spacing-unit/2;
+  width: calc(#{$content-width}/2 - #{$spacing-unit*4});
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: $spacing-unit/2;
+  padding-left: $spacing-unit/2;
+  padding-right: $spacing-unit/2;
+  font-size: $small-font-size;
+  border: 1px;
+  border-color: $xcode-purple;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.home__box-title {
+  font-family: $bold-font-family;
+  @include relative-font-size(1.250);
+  flex: 0;
+  color: $xcode-purple;
+}
+
+.home__box-excerpt {
+  padding-top: $spacing-unit/2;
+  padding-bottom: $spacing-unit/2;
+  flex: 1;
+}
+
+.home__box-readmore {
+  justify-self: flex-end;
+}

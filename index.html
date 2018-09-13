@@ -82,7 +82,7 @@ layout: default
   <h1 class="home__title">When should I use it?</h1>
 
   <p>
-      Considering using Tuist? Here are some good situations when we think you should consider using Tuist:
+    Here are some good situations when we think you should consider using Tuist:
   </p>
   
   <ul>
@@ -95,12 +95,29 @@ layout: default
   </ul>
 
   <h1 class="home__title">How can I adopt it?</h1>
+  <p>
+    Considering adopting Tuist? You can introduce it incrementally in your projects.
+  </p>
 
-  <ol>
-    <li><b>Create a <i>Project.swift</i> for each of the Xcode projects.</b> You can validate them by generating the Xcode project and compiling it. Don't .gitignore Xcode projects and workspaces straight away.</li>
-    <li><b>Introduce the tool to your team and onboard them on all the commands that are available</b>. Give them some time until they get used to them. It's important that they understand that there's a new source of truth for projects and that changes in their settings should be done in the manifest file.</li>
-    <li><b>You can set up your CI pipelines</b> to run Tuist commands or continue using your previous automation scripts/tools <i>(e.g. Fastlane)</i>. It's up to you! If you continue using the previous setup, make sure that you generate the projects with Tuist beforehand.</li>
-  </ol>
+  <div class="home__grid">
+    <div class="home__box">
+      <span class="home__box-title">
+        1. Project Generation
+      </span>
+      <div class="home__box-excerpt">
+        Define a <i>Project.swift</i> for each of your projects and use Tuist to generate the Xcode projects. You can keep using your existing tools and scripts <i>(CocoaPods, Carthage, Fastlane).</i>
+      </div>
+    </div>
+
+    <div class="home__box">
+      <span class="home__box-title">
+        2. CLI
+      </span>
+      <div class="home__box-excerpt">
+        Leverage the commands that Tuist offers and avoid maintaining automation scripts or <i>Fastfiles</i> yourself. Set up your CI pipelines to use Tuist instead and onboard your team on how those commands work.
+      </div>
+    </div>
+  </div>
 
   <p>
     That's it! How tedious the process will be depends on how complex your projects are. Unfortunately, we can't generate the manifest files from your existing projects.
