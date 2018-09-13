@@ -192,7 +192,12 @@ pre {
   }
 }
 
-
+::selection {
+  background: $window-minimize; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $window-minimize; /* Gecko Browsers */
+}
 
 /**
  * Clearfix
@@ -202,7 +207,6 @@ pre {
   display: table;
   clear: both;
 }
-
 
 
 /**
