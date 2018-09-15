@@ -146,3 +146,29 @@
 .home__box-readmore {
   justify-self: flex-end;
 }
+
+
+.home__before-after {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home_before-after--box {
+  width: calc(#{$content-width}/2 - #{$spacing-unit*2});
+  flex-grow: 0;
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.home__before-after--title {
+  @include bold-font;
+  color: $xcode-purple;
+}
+
+.home__before-after--image {
+  width: calc(#{$content-width}/2 - #{$spacing-unit*4});
+}
