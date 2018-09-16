@@ -72,9 +72,26 @@ layout: default
 
   <p>Having a standard command line interface makes it easier to jump between projects since there’s an interaction language everyone in the team is familiar with.</p>
 
+  <div class="home__window">
+    <div class="home__window-bar">
+      <div class="home__window-close"></div>
+      <div class="home__window-minimize"></div>
+      <div class="home__window-maximize"></div>
+      <div style="flex: 1"></div>
+    </div>
+    <div id="start-code" class="home__window-content">
+      $ tuist init --platform ios<br/>
+      $ tuist generate<br/>
+      $ tuist build<br/>
+      $ tuist test<br/>
+      $ tuist run<br/>
+      $ tuist release<br/>
+    </div>
+  </div>
+<!--   
   <p class="home__commands--container">
       <img class="home__commands" src="/images/commands.jpg" alt="All available commands"/>
-  </p>
+  </p> -->
 
   <ul>
     <li><b>Init:</b> Bootstraps a new project. You can specify the platform and the type of project and it’ll generate all the necessary artifacts <i>(Info.plist, AppDelegate, Project.swift, Playgrounds…)</i></li>
@@ -152,7 +169,7 @@ layout: default
   <!-- Start using it -->
   <h1 class="home__title">Start using it</h1>
 
-  <div class="home__window home__window--start">
+  <div class="home__window">
     <div class="home__window-bar">
       <div class="home__window-close"></div>
       <div class="home__window-minimize"></div>

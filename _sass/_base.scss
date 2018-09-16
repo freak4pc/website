@@ -32,7 +32,6 @@ code {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
 }
 
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -43,6 +42,9 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
+h1 {
+  margin-top: 2*$spacing-unit;
+}
 
 
 /**
@@ -146,7 +148,6 @@ blockquote {
 }
 
 
-
 /**
  * Code formatting
  */
@@ -172,8 +173,6 @@ pre {
     padding-left: 0;
   }
 }
-
-
 
 /**
  * Wrapper

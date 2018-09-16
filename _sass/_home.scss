@@ -32,6 +32,10 @@
   display: flex;
   border: 1px solid $xcode-grey;
   flex-direction: column;
+
+  margin-right: $spacing-unit;
+  margin-left: $spacing-unit;
+  margin-bottom: $spacing-unit;
 }
 
 .home__window-bar {
@@ -81,10 +85,6 @@
   padding: $spacing-unit;
 }
 
-.home__window--start {
-  margin: $spacing-unit;
-}
-
 .home__commands--container {
   text-align: center;
 }
@@ -109,6 +109,7 @@
 }
 
 .home__box {
+  @include floating;
   padding-top: $spacing-unit/2;
   padding-bottom: $spacing-unit/2;
   width: calc(#{$content-width}/2 - #{$spacing-unit*4});
