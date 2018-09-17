@@ -16,7 +16,7 @@ urls:
   github: https://github.com/tuist
   contributors: https://github.com/orgs/tuist/teams/contributors
   pedro: https://ppinera.com
-  open_pr: https://github.com/tuist/website
+  website_repository: https://github.com/tuist/website
   patreon: https://www.patreon.com/tuist
   trello: https://trello.com/b/DN6HvDzW/tuist
 
