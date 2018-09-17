@@ -6,8 +6,8 @@
   @extend %vertical-rhythm;
   @include floating;
 
-  margin-top: $spacing-unit;
-  margin-bottom: $spacing-unit;
+  // margin-top: $spacing-unit;
+  // margin-bottom: $spacing-unit;
 
   .highlighter-rouge & {
     background: #fff;
