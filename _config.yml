@@ -19,6 +19,7 @@ urls:
   website_repository: https://github.com/tuist/website
   patreon: https://www.patreon.com/tuist
   trello: https://trello.com/b/DN6HvDzW/tuist
+  api: http://api.tuist.io
 
 highlighter: rouge
 markdown: kramdown
