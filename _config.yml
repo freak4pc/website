@@ -20,6 +20,7 @@ urls:
   patreon: https://www.patreon.com/tuist
   trello: https://trello.com/b/DN6HvDzW/tuist
   api: http://api.tuist.io
+  slack: http://slack.tuist.io
 
 highlighter: rouge
 markdown: kramdown
