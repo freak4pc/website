@@ -16,6 +16,26 @@ I'm jealous that there isn't a thing like Rails for developers that work with Xc
 In this post, I'll explore where the complexity comes from, talk about why it exists, and the role Tuist plays in conceptually compressing it. 
 
 ## Complexity
+Xcode is used to build apps of any complexity.
 
 ## Why is there inherent complexity?
 The complexity of 
+
+## Challenge
+
+While other tools have taken the approach of changing the language to define the complexity, we decided to challenge some assumptions that we have accepted for a long time, and take the opportunity to define some conventions that aim for simplicity and convenience. When you define a target in Tuist you can't define a sources our resources build phase. Instead, a target has sources and resources that are turned into target build phases *(implementation detail)*
+
+opinionated
+draw the line
+say no
+strong opinions weakly held
+
+stay true to our values and opinions
+it's not our goal to reach as many people and project as possible, but to make sure the few that use the project are happy about not having to deal with complexities anymore.
+
+it's not about pleasing anyone and giving them what they ask for, it's about listening, showing empathy, and making the right call
+
+
+## We need you
+
+If the challenge sounds exciting and you'd like to participate in an actively maintained open source project written in Swift
