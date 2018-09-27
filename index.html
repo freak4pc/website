@@ -59,29 +59,29 @@ layout: default
         <div style="flex: 1"></div>
       </div>
     <div class="home__window-content">
-        {% highlight swift %}
-        let project = Project(name: "App",
-                              targets: [
-                                Target(name: "App",
-                                      platform: .iOS,
-                                      product: .app,
-                                      bundleId: "io.tuist.App",
-                                      infoPlist: "Info.plist",
-                                      sources: "Sources/**",
-                                      dependencies: [
-                                          /* .framework(path: "framework") */
-                                        ]),
-                                Target(name: "AppTests",
-                                      platform: .iOS,
-                                      product: .unitTests,
-                                      bundleId: "io.tuist.AppTests",
-                                      infoPlist: "Tests.plist",
-                                      sources: "Tests/**",
-                                      dependencies: [
-                                            .target(name: "App")
-                                      ])
+{% highlight swift %}
+let project = Project(name: "App",
+                      targets: [
+                        Target(name: "App",
+                              platform: .iOS,
+                              product: .app,
+                              bundleId: "io.tuist.App",
+                              infoPlist: "Info.plist",
+                              sources: "Sources/**",
+                              dependencies: [
+                                  /* .framework(path: "framework") */
+                                ]),
+                        Target(name: "AppTests",
+                              platform: .iOS,
+                              product: .unitTests,
+                              bundleId: "io.tuist.AppTests",
+                              infoPlist: "Tests.plist",
+                              sources: "Tests/**",
+                              dependencies: [
+                                    .target(name: "App")
                               ])
-        {% endhighlight %}
+                      ])
+{% endhighlight %}
     </div>
   </div>
   
@@ -100,14 +100,14 @@ layout: default
       <div style="flex: 1"></div>
     </div>
     <div class="home__window-content">
-      {% highlight bash %}
-      tuist init --platform ios
-      tuist generate
-      tuist build
-      tuist test
-      tuist run
-      tuist release
-      {% endhighlight %}
+{% highlight bash %}
+tuist init --platform ios
+tuist generate
+tuist build
+tuist test
+tuist run
+tuist release
+{% endhighlight %}
     </div>
   </div>
 
@@ -194,11 +194,11 @@ layout: default
       <div class="home__window-maximize"></div>
       <div style="flex: 1"></div>
     </div>
-    {% highlight bash %}
-    eval "$(curl -sL https://bit.ly/2JWMfx8)"
-    tuist init --platform ios --product application
-    tuist focus
-    {% endhighlight %}
+{% highlight bash %}
+eval "$(curl -sL https://bit.ly/2JWMfx8)"
+tuist init --platform ios --product application
+tuist focus
+{% endhighlight %}
   </div>
 
   <!-- Resources -->

@@ -29,13 +29,12 @@
 }
 
 .home__window {
-  display: flex;
   border: 1px solid $xcode-grey;
   flex-direction: column;
-
   margin-right: $spacing-unit;
   margin-left: $spacing-unit;
   margin-bottom: $spacing-unit;
+  margin-top: $spacing-unit;
 }
 
 .home__window-bar {
@@ -146,7 +145,6 @@
 .home__box-readmore {
   justify-self: flex-end;
 }
-
 
 .home__before-after {
   display: flex;
