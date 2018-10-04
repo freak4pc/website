@@ -51,39 +51,7 @@ layout: default
   The example below shows the format of a project manifest:
   <br/><br/>
 
-  <div class="home__window">
-      <div class="home__window-bar">
-        <div class="home__window-close"></div>
-        <div class="home__window-minimize"></div>
-        <div class="home__window-maximize"></div>
-        <div style="flex: 1"></div>
-      </div>
-    <div class="home__window-content">
-{% highlight swift %}
-let project = Project(name: "App",
-                      targets: [
-                        Target(name: "App",
-                              platform: .iOS,
-                              product: .app,
-                              bundleId: "io.tuist.App",
-                              infoPlist: "Info.plist",
-                              sources: "Sources/**",
-                              dependencies: [
-                                  /* .framework(path: "framework") */
-                                ]),
-                        Target(name: "AppTests",
-                              platform: .iOS,
-                              product: .unitTests,
-                              bundleId: "io.tuist.AppTests",
-                              infoPlist: "Tests.plist",
-                              sources: "Tests/**",
-                              dependencies: [
-                                    .target(name: "App")
-                              ])
-                      ])
-{% endhighlight %}
-    </div>
-  </div>
+
   
   <!-- Interacting with them-->
   <h2>Interacting with them</h2>
@@ -92,24 +60,14 @@ let project = Project(name: "App",
 
   <p>Having a standard command line interface makes it easier to jump between projects since there’s an interaction language everyone in the team is familiar with.</p>
 
-  <div class="home__window">
-    <div class="home__window-bar">
-      <div class="home__window-close"></div>
-      <div class="home__window-minimize"></div>
-      <div class="home__window-maximize"></div>
-      <div style="flex: 1"></div>
-    </div>
-    <div class="home__window-content">
-{% highlight bash %}
+{% window_highlight bash %}
 tuist init --platform ios
 tuist generate
 tuist build
 tuist test
 tuist run
 tuist release
-{% endhighlight %}
-    </div>
-  </div>
+{% endwindow_highlight %}
 
   <ul>
     <li><b>Init:</b> Bootstraps a new project. You can specify the platform and the type of project and it’ll generate all the necessary artifacts <i>(Info.plist, AppDelegate, Project.swift, Playgrounds…)</i></li>
@@ -187,19 +145,12 @@ tuist release
   <!-- Start using it -->
   <h1 class="home__title">Start using it</h1>
 
-  <div class="home__window">
-    <div class="home__window-bar">
-      <div class="home__window-close"></div>
-      <div class="home__window-minimize"></div>
-      <div class="home__window-maximize"></div>
-      <div style="flex: 1"></div>
-    </div>
-{% highlight bash %}
-eval "$(curl -sL https://bit.ly/2JWMfx8)"
+{% window_highlight bash %}
+eval \"$(curl -sL https://bit.ly/2JWMfx8)\"
 tuist init --platform ios --product application
 tuist focus
-{% endhighlight %}
-  </div>
+{% endwindow_highlight %}
+
 
   <!-- Resources -->
   <h1 class="home__title">Learning resources</h1>

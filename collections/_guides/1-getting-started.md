@@ -10,9 +10,9 @@ Tuist is a command line tool *(CLI)* that aims to facilitate the generation, mai
 
 The first thing that we need to do to get started is installing the tool. There are two recommended ways of doing it: using Homebrew or running a script. In either way, you need to run the following commands in your terminal:
 
-```bash
+{% window_highlight bash %}
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/tuist/install/master/install)"
-```
+{% endwindow_highlight %}
 
 The process is relatively fast because we are actually not installing the tool. We are installing `tuistenv` *(which gets renamed to `tuist`)* when you install it.
 
@@ -25,16 +25,16 @@ In a more advanced section on the documentation, we'll see the power of `tuisten
 ## Creating our first project
 Now that we have Tuist installed, we can create our first project. Create a directory for your app:
 
-```
+{% window_highlight bash %}
 mkdir MyApp
 cd MyApp
-```
+{% endwindow_highlight %}
 
 And then run:
 
-```
+{% window_highlight bash %}
 tuist init --platform ios --product application
-```
+{% endwindow_highlight %}
 
 The `init` command will bootstrap an iOS application, which includes the `Info.plist` files, an `AppDelegate.swift`, a tests file, and a **`Project.swift` that contains the definition of the project.**
 
@@ -42,7 +42,7 @@ The `init` command will bootstrap an iOS application, which includes the `Info.p
 
 The definition file, also known as manifest, has the following structure:
 
-```swift
+{% window_highlight swift %}
 import ProjectDescription
 
 let project = Project(name: "MyApp",
@@ -67,16 +67,16 @@ let project = Project(name: "MyApp",
                                     .target(name: "MyApp")
                                ])
                       ])
-```
+{% endwindow_highlight %}
 
 Since we are defining an Xcode project, most of the properties might be familiar to you. There are some that are available which are not used from the manifest that you've got generated. You can [check out](https://tuist.github.io/tuist/index.html) the project reference to see all the public models that are available in the `ProjectDescription` framework.
 
 ## Generating project
 We have the manifest and the project files, but something missing, the Xcode project. If we don't have an Xcode project, we can't use Xcode, because that's the format that Xcode expects. Fortunately, Tuist comes with a command to generate projects and workspaces from your manifest files. If we run the following command in the terminal:
 
-```
+{% window_highlight bash %}
 tuist generate
-```
+{% endwindow_highlight %}
 
 We'll get a `MyApp.xcodeproj` and `MyApp.xcworkspace` files. As we'll see in the dependencies section, the workspace is necessary to add other projects `MyApp` project is depending on.
 
