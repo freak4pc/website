@@ -10,17 +10,8 @@ Tuist is a command line tool *(CLI)* that aims to facilitate the generation, mai
 
 The first thing that we need to do to get started is installing the tool. There are two recommended ways of doing it: using Homebrew or running a script. In either way, you need to run the following commands in your terminal:
 
-#### Using Homebrew
-
 ```bash
-brew tap tuist/tuist git@github.com:tuist/tuist.git
-brew install tuist
-```
-
-#### Running a script
-
-```bash
-eval "$(curl -sL https://raw.githubusercontent.com/tuist/tuist/master/script/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/tuist/install/master/install)"
 ```
 
 The process is relatively fast because we are actually not installing the tool. We are installing `tuistenv` *(which gets renamed to `tuist`)* when you install it.
