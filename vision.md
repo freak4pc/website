@@ -6,10 +6,10 @@ permalink: /vision/
 
 Tuis is a long-term open source project. Its goal is:
 
-- **Making developers productive working with large Xcode projects**
+- **Making developers productive working with Xcode**
 
 ## How it does it
-Most of the issues developers struggle with nowadays when they deal with Xcode projects come from the fact that their format is monolithic, closed to extensions, and exposes many implementation details. Xcode sets the right settings up when the project is created, but when it grows, the maintenance becomes complex, cumbersome and error-prone. 
+Most of the issues developers struggle with nowadays when they deal with Xcode projects come from the fact that their format is monolithic, closed to extensions, and exposes many implementation details. Xcode sets the right settings up when the project is created, but when it grows, the maintenance becomes complex, cumbersome, and error-prone. 
 
 We **believe that the maintenance of large Xcode projects should be simpler**. To do so, Tuist abstracts developers from implementation details and complexities by leveraging projects generation.
 
