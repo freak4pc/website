@@ -45,14 +45,11 @@
 .header__slogan {
   @include relative-font-size(1.2);
   margin-bottom: $spacing-unit;
+  color: $xcode-blue-marina;
 }
 
-.header__slogan-let {
-  color: $xcode-pink;
-}
-
-.header__slogan-text {
-  color: $xcode-red;
+.header__slogan-black {
+  color: black;
 }
 
 .header__logo {
