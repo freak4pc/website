@@ -1,0 +1,25 @@
+---
+- description: " \U0001F4DD Read, update and write your Xcode projects"
+  topics: 
+  language: Swift
+  license: MIT License
+  reference: https://tuist.github.io/xcodeproj/
+  url: https://github.com/tuist/xcodeproj
+- description: "\U0001F680 Create, maintain, and interact with Xcode projects at scale"
+  topics: 
+  language: Swift
+  license: MIT License
+  reference: https://tuist.io
+  url: https://github.com/tuist/tuist
+- description: "❤ Swift utilities and extensions used by Tuist projects"
+  topics: 
+  language: Swift
+  license: MIT License
+  reference: https://tuist.github.io/core/
+  url: https://github.com/tuist/core
+- description: "\U0001F4F1 A simctl wrapper in Swift"
+  topics: 
+  language: Swift
+  license: MIT License
+  reference: https://tuist.github.io/simctl/
+  url: https://github.com/tuist/simulator
