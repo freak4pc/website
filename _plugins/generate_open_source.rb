@@ -13,6 +13,7 @@ def fetch_projects_at(path, projects:, api_url:)
     { 
       "description" => project["description"],
       "topics" => project["topics"],
+      "name" => project["name"],
       "language" => project["language"],
       "license" => project["license"]["name"],
       "reference" => project["homepage"],
