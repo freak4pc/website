@@ -12,16 +12,4 @@ Our tools and libraries are made up by combining smaller building blocks in diff
 
 The following projects are part of the Tuist organization:
 
-<div class="open__grid">
-{% for project in site.data.projects %}
-  <div class="open__box">
-  <a href="{{project.url}}" target="__blank"><h2>{{ project.name }}</h2></a>
-  <p>{{ project.description }}</p>
-  <p class="open__box-license">{{ project.license }}</p>
-  <div>
-    <a href="{{project.url}}" target="__blank"><i class="fab fa-github"></i></a>
-    <a href="{{project.reference}}" target="__blank"><i class="fas fa-book"></i></a>
-  </div>
-  </div>
-{% endfor %}
-</div>
+{% include open-source.html %}
