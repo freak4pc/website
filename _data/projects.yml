@@ -11,15 +11,8 @@
   name: tuist
   language: Swift
   license: MIT License
-  reference: https://tuist.io
+  reference: https://tuist.github.io/tuist/
   url: https://github.com/tuist/tuist
-- description: "❤ Swift utilities and extensions used by Tuist projects"
-  topics: 
-  name: core
-  language: Swift
-  license: MIT License
-  reference: https://tuist.github.io/core/
-  url: https://github.com/tuist/core
 - description: "\U0001F4F1 A simctl wrapper in Swift"
   topics: 
   name: simulator
