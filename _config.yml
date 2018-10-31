@@ -14,7 +14,7 @@ sass:
 urls:
   releases: https://github.com/tuist/tuist/releases
   github: https://github.com/tuist
-  contributors: https://github.com/orgs/tuist/teams/contributors
+  contributors: https://github.com/orgs/tuist/people
   pedro: https://ppinera.com
   website_repository: https://github.com/tuist/website
   patreon: https://www.patreon.com/tuist
