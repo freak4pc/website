@@ -39,11 +39,12 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote,
 ul, ol, dl
 %vertical-rhythm {
+  margin-top: $spacing-unit / 2;
   margin-bottom: $spacing-unit / 2;
 }
 
 h1 {
-  margin-top: 2*$spacing-unit;
+  margin-top: $spacing-unit;
 }
 
 
