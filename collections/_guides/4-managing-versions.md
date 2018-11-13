@@ -12,71 +12,71 @@ Although the [Swift Package Manager](https://swift.org/package-manager/) support
 
 **Tuist opted for a simple, reproducible and transparent version management approach that is built into Tuist.** If you followed the [Getting Started](/guides/1-getting-started) guide when you installed Tuist, you installed a tool called `tuistenv` that got renamed into `tuist`. Try executing the following command:
 
-{% highlight bash %}
+{% window_highlight bash %}
 tuist --help-env
-{% endhighlight %}
+{% endwindow_highlight %}
 
 It'll execute help on `tuistenv` which prints the list of commands that are available to manage the Tuist environment. In the following sections, we'll go through each of these commands, explain what they do, and what they are for.
 
 ### tuist local
 When executed with no arguments, `tuist local`, it prints the list of versions that are available locally:
 
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist local
 
 The following versions are available in the local environment:
 - 0.4.0
-{% endhighlight %}
+{% endwindow_highlight %}
 
 If you execute the same command passing a version as an argument, it pins the directory where you are running the command from to the given version:
 
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist local 0.4.0 
 
 Generating .tuist-version file with version 0.4.0
 ✅ Success: File generated at path /Tuist/.tuist-version
-{% endhighlight %}
+{% endwindow_highlight %}
 
 Note that it pins the version by creating a `.tuist-version` file in the current directory.
 
 ### tuist bundle
 You might want to bundle `tuist` in your repository so that each git snapshot contains all the necessary elements to interact with the projects in it. The `tuist bundle` command is precisely for that:
 
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist bundle 0.4.0
 
 Bundling the version 0.4.0 in the directory /Tuist/.tuist-bin
 ✅ Success: tuist bundled successfully at /Tuist/.tuist-bin
-{% endhighlight %}
+{% endwindow_highlight %}
 
 It creates a `.tuist-bin` directory in the current directory that contains the `tuist` binary and its artifacts.
 
 ### tuist install
 `tuist install` installs a given version locally. It requires a version or a commit sha to be passed:
 
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist install 0.4.0
 
 Downloading version from https://github.com/tuist/tuist/releases/download/0.4.0/tuist.zip
 Installing...
 Version 0.4.0 installed
-{% endhighlight %}
+{% endwindow_highlight %}
 
 If the given version has a GitHub release, it'll pull the compiled assets and place them locally. Otherwise, it'll pull the source code, compile it, and move them into the right directory.
 
 ### tuist uninstall
 As you might have guessed, this command reverts the command above by deleting an installed version:
 
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist uninstall 0.4.0
 
 ✅ Success: Version 0.4.0 uninstalled
-{% endhighlight %}
+{% endwindow_highlight %}
 
 ### tuist update
 If there isn't any version installed, or there's a new version that is not installed locally, the update command installs it:
 
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist update
 
 Checking for updates...
@@ -84,7 +84,7 @@ No local versions available. Installing the latest version 0.4.0
 Downloading version from https://github.com/tuist/tuist/releases/download/0.4.0/tuist.zip
 Installing...
 Version 0.4.0 installed
-{% endhighlight %}
+{% endwindow_highlight %}
 
 ## Running tuist
 
@@ -99,7 +99,8 @@ When you run Tuist:
 - After ensuring that the version exists, it runs it, passing the right arguments.
 
 **Running tuist with a pinned version that is not installed**
-{% highlight bash %}
+
+{% window_highlight bash %}
 $ tuist --help
 
 Using version 0.4.0 defined at /Users/pedropinera/Downloads/.tuist-version
@@ -111,10 +112,10 @@ OVERVIEW: Generate, build and test your Xcode projects.
 
 USAGE: tuist <command> <options>
 ...
-{% endhighlight %}
+{% endwindow_highlight %}
 
 **Running tuist with a bundled version**
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist --help
 
 Using bundled version at path /Users/pedropinera/Downloads/.tuist-bin
@@ -122,14 +123,14 @@ OVERVIEW: Generate, build and test your Xcode projects.
 
 USAGE: tuist <command> <options>
 ...
-{% endhighlight %}
+{% endwindow_highlight %}
 
 **Running tuist without any pinned nor bundled version**
-{% highlight bash %}
+{% window_highlight bash %}
 $ tuist --help
 
 OVERVIEW: Generate, build and test your Xcode projects.
 
 USAGE: tuist <command> <options>
 ...
-{% endhighlight %}
+{% endwindow_highlight %}

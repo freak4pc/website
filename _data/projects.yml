@@ -18,5 +18,5 @@
   name: simulator
   language: Swift
   license: MIT License
-  reference: https://tuist.github.io/simctl/
+  reference: https://tuist.github.io/simulator/
   url: https://github.com/tuist/simulator
