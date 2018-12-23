@@ -15,10 +15,10 @@ If you noticed when we first introduced the manifest file, there isn't any publi
 ## Defining dependencies
 The `Target` model that we use from the manifest has a property, `dependencies`, that allows you to define the dependencies of the target. A dependency can have any of the following values:
 
-- `.target("App")`: It defines a dependency with another target in the same project. For instance, a tests target depends on the target that is being tested.
-- `.project(target: "Core", path: "../Core")`: It defines a dependency with a target in another project. When the workspace gets generated, the other project is also included so that Xcode knows how to compile that other target.
-- `.framework(path: "Carthage/Build/iOS/Alamofire.framework")`: It defines a dependency with a precompiled framework, for example, a framework that has been compiled by Carthage. If the framework contains multiple architectures, Tuist will add an extra build phase to strip them.
-- `.library(path: "Vendor/Library.a", publicHeaders: nil, swiftModuleMap: "Vendor/Library.modulemap")`: It defines a dependency with a precompiled library. It allows specifying the path where the public headers or Swift module map is.
+- **.target("App"):** It defines a dependency with another target in the same project. For instance, a tests target depends on the target that is being tested.
+- **.project(target: "Core", path: "../Core"):** It defines a dependency with a target in another project. When the workspace gets generated, the other project is also included so that Xcode knows how to compile that other target.
+- **.framework(path: "Carthage/Build/iOS/Alamofire.framework"):** It defines a dependency with a precompiled framework, for example, a framework that has been compiled by Carthage. If the framework contains multiple architectures, Tuist will add an extra build phase to strip them.
+- **.library(path: "Vendor/Library.a", publicHeaders: nil, swiftModuleMap: "Vendor/Library.modulemap"):** It defines a dependency with a precompiled library. It allows specifying the path where the public headers or Swift module map is.
 
 As we mentioned, the beauty of defining your dependencies with Tuist is that when you generate the project, things are set up and ready for you to successfully compile your targets.
 
