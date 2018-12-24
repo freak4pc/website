@@ -20,3 +20,10 @@
   license: MIT License
   reference: https://tuist.github.io/simulator/
   url: https://github.com/tuist/simulator
+- description: "\U0001F34B Acho is a Swift library to generate interactive CLI prompts"
+  topics: 
+  name: acho
+  language: Swift
+  license: MIT License
+  reference: 
+  url: https://github.com/tuist/acho
