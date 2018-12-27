@@ -25,5 +25,12 @@
   name: acho
   language: Swift
   license: MIT License
-  reference: 
+  reference: https://tuist.github.io/acho/
   url: https://github.com/tuist/acho
+- description: "\U0001F9EA Shell is a µ-library written Swift to run system commands"
+  topics: 
+  name: shell
+  language: Swift
+  license: MIT License
+  reference: https://tuist.github.io/shell/
+  url: https://github.com/tuist/shell
