@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote,
 ul, ol, dl
 %vertical-rhythm {
-  margin-top: $spacing-unit / 2;
+  margin-top: $spacing-unit;
   margin-bottom: $spacing-unit / 2;
 }
 
@@ -141,7 +141,7 @@ blockquote {
   border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
   letter-spacing: -1px;
-  font-style: italic;
+  // font-style: italic;
 
   > :last-child {
     margin-bottom: 0;

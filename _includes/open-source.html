@@ -1,13 +1,14 @@
 <div class="open__grid">
 {% for project in site.data.projects %}
   <div class="open__box">
-  <a href="{{project.url}}" target="__blank"><h2>{{ project.name }}</h2></a>
-  <p>{{ project.description }}</p>
-  <p class="open__box-license">{{ project.license }}</p>
-  <div>
+  <a href="{{project.url}}" target="__blank">
+    <h3>{{ project.name }}</h3></a>
+  <div>{{ project.description }}</div>
+  <div class="open__box-license">{{ project.license }}</div>
+  <p>
     <a href="{{project.url}}" target="__blank"><i class="fab fa-github"></i></a>
     <a href="{{project.reference}}" target="__blank"><i class="fas fa-book"></i></a>
-  </div>
+  </p>
   </div>
 {% endfor %}
 </div>

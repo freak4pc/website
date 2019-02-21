@@ -4,33 +4,33 @@
   name: xcodeproj
   language: Swift
   license: MIT License
-  reference: https://tuist.github.io/xcodeproj/
+  reference: ''
   url: https://github.com/tuist/xcodeproj
 - description: "\U0001F680 Create, maintain, and interact with Xcode projects at scale"
   topics: 
   name: tuist
   language: Swift
   license: MIT License
-  reference: https://tuist.github.io/tuist/
+  reference: https://tuist.io
   url: https://github.com/tuist/tuist
 - description: "\U0001F4F1 A simctl wrapper in Swift"
   topics: 
   name: simulator
   language: Swift
   license: MIT License
-  reference: https://tuist.github.io/simulator/
+  reference: ''
   url: https://github.com/tuist/simulator
 - description: "\U0001F34B Acho is a Swift library to generate interactive CLI prompts"
   topics: 
   name: acho
   language: Swift
   license: MIT License
-  reference: https://tuist.github.io/acho/
+  reference: ''
   url: https://github.com/tuist/acho
 - description: "\U0001F9EA Shell is a µ-library written Swift to run system commands"
   topics: 
   name: shell
   language: Swift
   license: MIT License
-  reference: https://tuist.github.io/shell/
+  reference: ''
   url: https://github.com/tuist/shell

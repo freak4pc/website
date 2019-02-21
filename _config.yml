@@ -17,11 +17,9 @@ urls:
   contributors: https://github.com/orgs/tuist/people
   pedro: https://ppinera.com
   website_repository: https://github.com/tuist/website
-  patreon: https://www.patreon.com/tuist
   api: http://api.tuist.io
   slack: http://slack.tuist.io
-  docs: https://docs.tuist.io/
-  opencollective: https://opencollective.com/tuistapp
+  docs: https://github.com/tuist/tuist/tree/master/docs
 
 highlighter: rouge
 markdown: kramdown
