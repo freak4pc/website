@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Tuist | Xcode at scale`,
+    title: `Tuist - Xcode at scale`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@tuist`
   },
@@ -34,6 +34,36 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`
       }
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./static/favicon.png",
+        appName: "Tuist",
+        appDescription:
+          "Bootstrap, maintain, and interact with Xcode projects at any scale",
+        developerName: "Pedro Piñera",
+        developerURL: "https://ppinera.es",
+        dir: "auto",
+        lang: "en-US",
+        background: "#fff",
+        theme_color: "#fff",
+        display: "standalone",
+        orientation: "any",
+        version: "1.0",
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false
+        }
+      }
+    }
   ]
 };
