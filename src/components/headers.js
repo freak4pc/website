@@ -10,4 +10,4 @@ const header = (type, color, size) => {
 };
 
 const H1 = header("h1", "white", [4, 5]);
-export default H1;
+export { H1 };
