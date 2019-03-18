@@ -6,3 +6,9 @@ Developed with [Gatsby](https://www.gatsbyjs.org/)
 
 1. Git clone the repository `git@github.com:tuist/website.git`.
 2. Run `gatsby develop`
+
+## References
+
+- Styled system - [Link](https://styled-system.com)
+- Grid - [Link](https://github.com/rebassjs/grid)
+- Rebass - [Link](https://rebassjs.org/)
