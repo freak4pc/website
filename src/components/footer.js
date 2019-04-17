@@ -42,7 +42,8 @@ const Footer = () => {
             flexDirection={["column", "row"]}
           >
             <FooterSentence textAlign={["center", "left"]} mb={[3, 0]}>
-              Tuist is a project from Pedro Piñera and the Tuist community
+              Tuist is a project from <a href="">Pedro Piñera</a> and the Tuist
+              community
             </FooterSentence>
             <Box flex={1} />
             <Flex

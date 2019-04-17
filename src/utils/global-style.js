@@ -24,7 +24,7 @@ export default createGlobalStyle`
   }
 
   a {
-    color: initial;
+    color: inherit;
     text-decoration: none;
     background-image: none;
     text-shadow: none;
