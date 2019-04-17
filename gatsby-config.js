@@ -14,13 +14,76 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         commonmark: true,
         footnotes: true,
         pedantic: true,
         gfm: true,
-        plugins: []
+        plugins: [
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false
+            }
+          },
+          {
+            resolve: "gatsby-remark-gemoji-to-image",
+            // default options, can be ignored
+            options: {
+              base: "https://github.githubassets.com/images/icons/emoji/",
+              ext: ".png",
+              height: "1.2em"
+            }
+          },
+          {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              username: "weirdpattern",
+              includeDefaultCss: true
+            }
+          },
+          {
+            resolve: `gatsby-remark-social-cards`,
+            options: {
+              title: {
+                field: "title",
+                font: "DejaVuSansCondensed",
+                color: "white",
+                size: 48,
+                style: "bold",
+                x: null,
+                y: null
+              },
+              meta: {
+                parts: ["Tuist"],
+                font: "DejaVuSansCondensed",
+                color: "white",
+                size: 24,
+                style: "normal",
+                x: null,
+                y: null
+              },
+              background: "#12344F",
+              xMargin: 24,
+              yMargin: 24
+            }
+          }
+        ]
       }
     },
     {
@@ -90,29 +153,72 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-remark-social-cards`,
+      resolve: `gatsby-plugin-feed`,
       options: {
-        title: {
-          field: "title",
-          font: "DejaVuSansCondensed",
-          color: "white",
-          size: 48,
-          style: "bold",
-          x: null,
-          y: null
-        },
-        meta: {
-          parts: ["Tuist"],
-          font: "DejaVuSansCondensed",
-          color: "white",
-          size: 24,
-          style: "normal",
-          x: null,
-          y: null
-        },
-        background: "#12344F",
-        xMargin: 24,
-        yMargin: 24
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                const siteUrl = site.siteMetadata.siteUrl;
+                const postText = `
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted on tuist.io. You can read it online by <a href="${siteUrl +
+                  edge.node.fields.slug}">clicking here</a>.)</div>
+              `;
+
+                let html = edge.node.html;
+                html = html
+                  .replace(/href="\//g, `href="${siteUrl}/`)
+                  .replace(/src="\//g, `src="${siteUrl}/`)
+                  .replace(/"\/static\//g, `"${siteUrl}/static/`)
+                  .replace(/,\s*\/static\//g, `,${siteUrl}/static/`);
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.excerpt,
+                  date: edge.node.fields.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": html + postText }]
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  limit: 1000,
+                  filter: { fields: { type: { eq: "blog" } } },
+                  sort: { order: DESC, fields: [fields___date] }
+                ) {
+                  edges {
+                    node {
+                      html
+                      fields { 
+                        slug 
+                        date  
+                      }
+                      frontmatter {
+                        title
+                        excerpt
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/feed.xml",
+            title: "Tuist's Blog RSS Feed"
+          }
+        ]
       }
     }
   ]

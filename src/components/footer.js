@@ -10,16 +10,10 @@ const FooterSentence = styled(Box)`
 
 const StyledLink = styled.a`
   ${color}
-  :hover {
-    text-decoration: underline;
-  }
 `;
 
 const GatsbyStyledLink = styled(Link)`
   ${color}
-  :hover {
-    text-decoration: underline;
-  }
 `;
 
 const Footer = () => {

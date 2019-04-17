@@ -6,16 +6,48 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { Flex, Box } from "rebass";
 import { Link } from "gatsby";
+import Pen from "../../assets/pen.svg";
+import { width, height, space, color } from "styled-system";
+import styled from "styled-components";
+import Body from "../components/body";
 
-// const Post = () => {
-//   return <div />;
-// };
+const StyledPen = styled(Pen)`
+  ${width}
+  ${height}
+`;
+
+const PostTitle = styled.h2`
+  ${space}
+`;
+
+const PostMetadata = styled.p`
+  ${color}
+`;
+
+const Post = ({ post }) => {
+  return (
+    <article>
+      <header>
+        <PostTitle mb={2}>
+          <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+        </PostTitle>
+      </header>
+      <PostMetadata color="blue">
+        Published on {post.fields.date} by {post.frontmatter.author}
+      </PostMetadata>
+      <p>{post.frontmatter.excerpt}</p>
+      <p>
+        <Link to={post.fields.slug}>Read on</Link>
+      </p>
+    </article>
+  );
+};
 
 const PostsFooter = ({ currentPage, numPages }) => {
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const prevPage =
-    currentPage - 1 === 1 ? "/blog" : `/blog/${(currentPage - 1).toString()}`;
+    currentPage - 1 === 1 ? "/blog/" : `/blog/${(currentPage - 1).toString()}`;
   const nextPage = `/blog/${(currentPage + 1).toString()}`;
 
   return (
@@ -41,12 +73,19 @@ const BlogList = ({
   }
 }) => (
   <Layout>
-    <SEO
-      title="Blog"
-      keywords={[`blog`, `tuist`, `engineering`, `xcode`, `swift`]}
-    />
-    <Header title="Blog" />
-    <PostsFooter />
+    <SEO title="Blog" />
+    <Header
+      title="Tuist Blog"
+      description="The blog for Tuist, your best friend to use Xcode at scale."
+    >
+      <StyledPen width={80} height={80} />
+    </Header>
+    <Body>
+      {edges.map(({ node }, index) => {
+        return <Post post={node} key={index} />;
+      })}
+      <PostsFooter {...pageContext} />
+    </Body>
     <Footer />
   </Layout>
 );
@@ -72,6 +111,7 @@ export const blogListQuery = graphql`
             categories
             title
             excerpt
+            author
           }
         }
       }

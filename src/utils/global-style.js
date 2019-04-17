@@ -2,6 +2,18 @@ import { createGlobalStyle } from "styled-components";
 import theme from "./theme";
 
 export default createGlobalStyle`
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+  h1 {
+    margin: 0px;
+    color: ${theme.colors.blue}
+  }
+  h2 {
+    color: ${theme.colors.purple}
+  }
+  
   ::-moz-selection { 
     background: ${theme.colors.blue}; 
     color: white;
@@ -16,6 +28,30 @@ export default createGlobalStyle`
     text-decoration: none;
     background-image: none;
     text-shadow: none;
+  }
+
+  h2 > a {
+    color: ${theme.colors.purple};
+    text-decoration: none;
+  }
+
+  h2 > a:hover {
+    color: ${theme.colors.darkPurple};
+    text-decoration: underline;
+  }
+
+  p > a {
+    color: ${theme.colors.green};
+    text-decoration: underline;
+  }
+
+  p > a:hover {
+    color: ${theme.colors.darkGreen};
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   /* PRISM */

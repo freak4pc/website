@@ -22,9 +22,13 @@ export default {
   space,
   fontSizes,
   colors: {
+    blue: "#3495E8",
     darkBlue: "#12344F",
     lightGray: "#F8F8F8",
     gray: "#A3A3A3",
-    blue: "#3495E8"
+    purple: "#7768AF",
+    darkPurple: "#52428E",
+    green: "#3EB270",
+    darkGreen: "#207E49"
   }
 };
