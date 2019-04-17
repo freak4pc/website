@@ -2,12 +2,14 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import HomeHeader from "../components/home-header";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <HomeHeader />
+    <Header />
+    <Footer />
   </Layout>
 );
 

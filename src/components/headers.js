@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { fontSize } from "styled-system";
 
@@ -9,5 +8,5 @@ const header = (type, color, size) => {
   `;
 };
 
-const H1 = header("h1", "white", [4, 5]);
+const H1 = header("h1", "white", [5, 6]);
 export { H1 };

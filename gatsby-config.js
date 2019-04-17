@@ -1,11 +1,35 @@
 module.exports = {
   siteMetadata: {
     title: `Tuist - Xcode at scale`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@tuist`
+    description: `Tuist is a tool that helps developers manage large Xcode projects by leveraging
+    project generation. Moreover, it provides some tools to automate most common tasks, allowing
+    developers to focus on building apps.`,
+    author: `@tuist`,
+    siteUrl: "https://tuist.io/",
+    githubUrl: "https://github.com/tuist",
+    releasesUrl: "https://github.com/tuist/tuist/releases",
+    documentationUrl: "https://github.com/tuist/tuist/tree/master/docs",
+    slackUrl: "http://slack.tuist.io/"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        gfm: true,
+        plugins: []
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/markdown`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -63,6 +87,32 @@ module.exports = {
           yandex: false,
           windows: false
         }
+      }
+    },
+    {
+      resolve: `gatsby-remark-social-cards`,
+      options: {
+        title: {
+          field: "title",
+          font: "DejaVuSansCondensed",
+          color: "white",
+          size: 48,
+          style: "bold",
+          x: null,
+          y: null
+        },
+        meta: {
+          parts: ["Tuist"],
+          font: "DejaVuSansCondensed",
+          color: "white",
+          size: 24,
+          style: "normal",
+          x: null,
+          y: null
+        },
+        background: "#12344F",
+        xMargin: 24,
+        yMargin: 24
       }
     }
   ]

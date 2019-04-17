@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "tuist-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Tuist website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Pedro Piñera <pedro@ppinera.es>",
   "dependencies": {
     "@rebass/grid": "^6.0.0-7",
     "babel-plugin-styled-components": "^1.10.0",
@@ -16,7 +16,9 @@
     "gatsby-plugin-sharp": "^2.0.25",
     "gatsby-plugin-styled-components": "^3.0.6",
     "gatsby-plugin-typography": "^2.2.8",
+    "gatsby-remark-social-cards": "^0.4.1",
     "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.15",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
@@ -27,10 +29,12 @@
     "styled-components": "^4.1.3",
     "styled-system": "^4.0.5",
     "typography": "^0.16.19",
-    "typography-theme-doelger": "^0.16.19"
+    "typography-theme-doelger": "^0.16.19",
+    "typography-theme-ocean-beach": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "slug": "^1.1.0"
   },
   "keywords": [
     "gatsby"

@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import HomeHeader from "./home-header";
 import { ThemeProvider } from "styled-components";
-import theme from "./theme";
-
+import theme from "../utils/theme";
+import GlobalStyle from "../utils/global-style";
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -19,11 +18,9 @@ const Layout = ({ children }) => (
     render={data => (
       <ThemeProvider theme={theme}>
         <>
-          <HomeHeader />
-          <div>
-            <main>{children}</main>
-            <footer />
-          </div>
+          <GlobalStyle />
+          <main>{children}</main>
+          <footer />
         </>
       </ThemeProvider>
     )}

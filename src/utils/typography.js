@@ -1,4 +1,4 @@
 import Typography from "typography";
-import doelgerTheme from "typography-theme-doelger";
-const typography = new Typography(doelgerTheme);
+import oceahBeachTheme from "typography-theme-ocean-beach";
+const typography = new Typography(oceahBeachTheme);
 export default typography;
