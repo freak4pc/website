@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 import Pen from "../../assets/pen.svg";
 import { width, height, space, color } from "styled-system";
 import styled from "styled-components";
-import Body from "../components/body";
+import Main from "../components/main";
 
 const StyledPen = styled(Pen)`
   ${width}
@@ -22,6 +22,11 @@ const PostTitle = styled.h2`
 
 const PostMetadata = styled.p`
   ${color}
+  ${space}
+`;
+
+const PostExcerpt = styled.p`
+  ${space}
 `;
 
 const Post = ({ post }) => {
@@ -32,10 +37,10 @@ const Post = ({ post }) => {
           <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
         </PostTitle>
       </header>
-      <PostMetadata color="blue">
+      <PostMetadata mb={0} color="blue">
         Published on {post.fields.date} by {post.frontmatter.author}
       </PostMetadata>
-      <p>{post.frontmatter.excerpt}</p>
+      <PostExcerpt my={2}>{post.frontmatter.excerpt}</PostExcerpt>
       <p>
         <Link to={post.fields.slug}>Read on</Link>
       </p>
@@ -80,12 +85,12 @@ const BlogList = ({
     >
       <StyledPen width={80} height={80} />
     </Header>
-    <Body>
+    <Main>
       {edges.map(({ node }, index) => {
         return <Post post={node} key={index} />;
       })}
       <PostsFooter {...pageContext} />
-    </Body>
+    </Main>
     <Footer />
   </Layout>
 );

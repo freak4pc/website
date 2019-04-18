@@ -2,16 +2,16 @@ import React from "react";
 import { space } from "styled-system";
 import styled from "styled-components";
 
-const StyledBody = styled.body`
+const StyledMain = styled.main`
   ${space}
 `;
 
-const Body = ({ children }) => {
+const Main = ({ children }) => {
   return (
-    <StyledBody my={[2, 4]} mx={[20, 100]}>
+    <StyledMain my={[2, 4]} mx={[20, 100]}>
       {children}
-    </StyledBody>
+    </StyledMain>
   );
 };
 
-export default Body;
+export default Main;

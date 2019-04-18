@@ -12,7 +12,15 @@ module.exports = {
     slackUrl: "http://slack.tuist.io/"
   },
   plugins: [
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      name: "data",
+      options: {
+        path: `${__dirname}/data`
+      }
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
