@@ -19,31 +19,30 @@ If you are already using Tuist or plan to use it, we'll make it easier for you. 
 
 Let's say that your project depends on swiftlint being available in the system, which can be installed with Homebrew. Traditionally, you'd find something like this in the project `README`:
 
-{% window_highlight md %}
-
+```md
 1. Clone the repository.
 2. Install Homebrew if you don't have it installed.
 3. Install swiftlint with `brew install swiftlint`.
 4. A Bunch of other steps.
-   {% endwindow_highlight %}
+```
 
 With Tuist we simplify and standardize the process. All you need to know is that there's a command, `tuist up` that ensures your environment is properly configured to work on the project:
 
-{% window_highlight bash %}
+```bash
 tuist init
 tuist up
 tuist generate
-{% endwindow_highlight %}
+```
 
 In order for Tuist to know what needs to be configured in the environment, projects can now specify a list of up commands:
 
-{% window_highlight swift %}
+```swift
 let project = Project(name: "Downloads",
-up: [
-.homebrew(packages: ["swiftlint"]),
-.custom(name: "My Tool", meet: "./install-mytool.sh", isMet: "test mytool")
-])
-{% endwindow_highlight %}
+                      up: [
+                        .homebrew(packages: ["swiftlint"]),
+                        .custom(name: "My Tool", meet: "./install-mytool.sh", isMet: "test mytool")
+                      ])
+```
 
 There are some predefined commands, like the homebrew's that you can see in the example above, and you can also define custom ones, where you just need to define how the environment gets configured, and how to verify that the environment is properly configured. Although the list of predefined commands is limited, we plan to add more in the future after we validate the feature and get some ideas from you.
 

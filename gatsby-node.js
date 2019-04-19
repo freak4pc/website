@@ -9,15 +9,17 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     if (fileNode.relativePath.includes("posts")) {
       const filename = createFilePath({ node, getNode, basePath: `posts` });
 
-      const [, date, title] = filename.match(
-        /^\/([\d]{4}-[\d]{2}-[\d]{2})-{1}(.+)\/$/
-      );
+      const postName = filename;
+      const [, date, title] = postName
+        .split("/")[1]
+        .match(/^([\d]{4}-[\d]{2}-[\d]{2})-{1}(.+)$/);
 
       const slug = `/${slugify([date].join("-"), "/")}/${title}/`;
 
       createNodeField({ node, name: `type`, value: "blog" });
       createNodeField({ node, name: `slug`, value: slug });
       createNodeField({ node, name: `date`, value: date });
+      createNodeField({ node, name: `path`, value: fileNode.relativePath });
     } else {
       const filename = createFilePath({ node, getNode });
       createNodeField({ node, name: `slug`, value: filename });

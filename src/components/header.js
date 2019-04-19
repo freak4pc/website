@@ -34,7 +34,7 @@ const Header = ({ title, subtitle, children }) => {
 
       {subtitle && (
         <Box>
-          <Text color="white" fontSize={[2, 3]} textAlign="center">
+          <Text color="white" fontSize={[2, 3]} mt={[3, 3]} textAlign="center">
             {subtitle}
           </Text>
         </Box>

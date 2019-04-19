@@ -9,6 +9,8 @@ import { width, height, borderRadius, space } from "styled-system";
 import { graphql, StaticQuery } from "gatsby";
 import moment from "moment";
 import Main from "../components/main";
+import EditPage from "../components/edit-page";
+import Share from "../components/share";
 
 const StyledAvatar = styled.img`
   ${width}
@@ -42,7 +44,7 @@ const IndexPage = ({
   const author = authors.find(
     author => author.handle == post.frontmatter.author
   );
-  const subtitle = `Published by ${author.handle} on ${moment(
+  const subtitle = `Published by ${author.name} on ${moment(
     post.fields.date
   ).format("MMMM Do YYYY")}`;
   return (
@@ -57,6 +59,14 @@ const IndexPage = ({
       </Header>
       <Main>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <p>
+          <EditPage path={post.fields.path} />
+        </p>
+        <Share
+          path={post.fields.path}
+          tags={post.frontmatter.categories}
+          title={post.frontmatter.title}
+        />
       </Main>
       <Footer />
     </Layout>
@@ -79,6 +89,7 @@ export const query = graphql`
       fields {
         slug
         date
+        path
       }
       frontmatter {
         title
@@ -90,6 +101,7 @@ export const query = graphql`
     allAuthorsYaml {
       edges {
         node {
+          name
           avatar
           twitter
           handle

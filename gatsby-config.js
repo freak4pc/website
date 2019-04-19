@@ -5,11 +5,12 @@ module.exports = {
     project generation. Moreover, it provides some tools to automate most common tasks, allowing
     developers to focus on building apps.`,
     author: `@tuist`,
-    siteUrl: "https://tuist.io/",
+    siteUrl: "https://tuist.io",
     githubUrl: "https://github.com/tuist",
     releasesUrl: "https://github.com/tuist/tuist/releases",
     documentationUrl: "https://github.com/tuist/tuist/tree/master/docs",
-    slackUrl: "http://slack.tuist.io/"
+    slackUrl: "http://slack.tuist.io/",
+    editUrl: "https://github.com/tuist/website/edit/master"
   },
   plugins: [
     `gatsby-transformer-yaml`,
@@ -39,6 +40,15 @@ module.exports = {
         plugins: [
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590
+            }
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {

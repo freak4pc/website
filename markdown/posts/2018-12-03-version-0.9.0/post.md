@@ -23,7 +23,7 @@ Previous versions of Tuist generated only the Debug or the Release configuration
 
 Although this is not a user-facing feature, it has a huge impact in the reliability of the tool. Although we took seriously and covered most of the execution paths with unit test, they don't prevent common Tuist use cases from breaking at any time. In [this PR](https://github.com/tuist/tuist/pull/166) we add Cucumber to the toolbox to define acceptance tests that will be executed on CI. If you are curious about how a Cucumber test looks, you can have a look at the test below:
 
-{% window_highlight ruby %}
+```ruby
 Feature: Initialize a new project using Tuist
 Scenario: The project is a compilable macOS application
 Given that tuist is available
@@ -32,7 +32,7 @@ When I initialize a macos application named Test
 Then I generate the project
 Then I should be able to build the scheme Test
 Then I delete the working directory
-{% endwindow_highlight %}
+```
 
 If any of the feature steps breaks, the test fails and we have to fix it before merging the changes into master. This brings more confidence when adding changes to the project, which is very handy for new project contributors.
 
@@ -40,9 +40,9 @@ If any of the feature steps breaks, the test fails and we have to fix it before 
 
 It's very easy, did you know that Tuist knows how to update itself? There's no need to depend on third-party tools to drive the update. Just run the following command in your terminal:
 
-{% window_highlight ruby %}
+```ruby
 tuist update
-{% endwindow_highlight %}
+```
 
 I hope you like the release and that keep reporting issues and ideas to help Xcode developers deliver stunning high-quality apps.
 

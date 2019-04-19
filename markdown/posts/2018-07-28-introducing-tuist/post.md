@@ -35,32 +35,32 @@ Before we dive into what Tuist does and how I think it's important to understand
 
 A manifest file is a `Project.swift` file, which looks like this:
 
-{% highlight swift %}
+```swift
 import ProjectDescription
 
 let project = Project(name: "MyApp",
-targets: [
-Target(name: "MyApp",
-platform: .iOS,
-product: .app,
-bundleId: "io.tuist.MyApp",
-infoPlist: "Info.plist",
-sources: "Sources/**",
-dependencies: [
-/* Target dependencies can be defined here */
-/* .framework(path: "framework") */
-]),
-Target(name: "MyAppTests",
-platform: .iOS,
-product: .unitTests,
-bundleId: "io.tuist.MyAppTests",
-infoPlist: "Tests.plist",
-sources: "Tests/**",
-dependencies: [
-.target(name: "MyApp")
-])
-])
-{% endhighlight %}
+                      targets: [
+                        Target(name: "MyApp",
+                               platform: .iOS,
+                               product: .app,
+                               bundleId: "io.tuist.MyApp",
+                               infoPlist: "Info.plist",
+                               sources: "Sources/**",
+                               dependencies: [
+                                /* Target dependencies can be defined here */
+                                /* .framework(path: "framework") */
+                               ]),
+                        Target(name: "MyAppTests",
+                               platform: .iOS,
+                               product: .unitTests,
+                               bundleId: "io.tuist.MyAppTests",
+                               infoPlist: "Tests.plist",
+                               sources: "Tests/**",
+                               dependencies: [
+                                 .target(name: "MyApp")
+                               ])
+                       ])
+```
 
 If you have used the [Swift Package Manager](https://swift.org/package-manager/) before, this approach might sound familiar to you. One of the benefits of defining the project in a Swift file instead of formats like YAML or JSON is that you can leverage Xcode to validate the syntax and get code auto-completion.
 
@@ -70,12 +70,12 @@ Take for instance linking dependencies. You might already know that all transiti
 
 Getting your input through manifest files allows, not only generating a valid project but providing a **set of commands that reliably work with those projects**. As opposed to Fastlane, where you should write lanes that take the right arguments, Tuist knows the structure of the project and can infer most of those things for you. The goal is that developers should be able to land on a folder, where there's a project defined, and interact with it, without having to guess which commands are available and which arguments need to be passed. Pretty much like:
 
-{% highlight bash %}
+```bash
 tuist generate
 tuist build
 tuist test
 tuist run
-{% endhighlight %}
+```
 
 If the arguments can be inferred, they will be inferred. If an input is invalid, we'll fail early instead of delegating that to the build system. Tuist is designed to fail soon and clearly. We want you to know when things go wrong, why so, and what you can do about them.
 

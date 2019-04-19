@@ -8,7 +8,7 @@ const StyledMain = styled.main`
 
 const Main = ({ children }) => {
   return (
-    <StyledMain my={[2, 4]} mx={[20, 100]}>
+    <StyledMain my={[2, 4]} mx={[20, 100]} py={2}>
       {children}
     </StyledMain>
   );
