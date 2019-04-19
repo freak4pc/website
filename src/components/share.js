@@ -59,7 +59,7 @@ export default ({ path, title, tags }) => {
             flexDirection="row"
             alignItems="center"
             justifyContent="center"
-            my={3}
+            my={4}
           >
             <a
               href={shareUrl(title, tags, url, "twitter")}
