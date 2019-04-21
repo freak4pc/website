@@ -416,9 +416,9 @@ const Mission = ({ authors }) => {
       <StyledH2 textAlign="center">Our mission</StyledH2>
       <p style={{ textAlign: "center" }}>
         We aim to provide a command line tool that makes the interaction with
-        Xcode projects accessible, standard, and convenient at any scale, built
-        on the principles of ease of use and reliability, and powered by Swift
-        in the open.
+        Xcode projects approachable, standard, and convenient at any scale,
+        built on the principles of ease of use and reliability, and powered by
+        Swift in the open.
       </p>
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap" mb={4}>
         {authors.map((author, index) => {
