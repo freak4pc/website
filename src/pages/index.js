@@ -359,7 +359,7 @@ const OpenSource = ({ githubUrl, slackUrl }) => {
             flex={1}
             ml={[0, 0, -30]}
             flexDirection="column"
-            alignItems="flex-end"
+            alignItems={["center", "center", "flex-end"]}
             justifyContent="flex-end"
           >
             <StyledH2 textAlign={["center", "center", "right"]} color="white">
