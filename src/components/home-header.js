@@ -4,17 +4,24 @@ import { H1 } from "./headers";
 import { Image, Text } from "rebass";
 import styled from "styled-components";
 import { Box, Flex } from "@rebass/grid";
-import { borders, color, space } from "styled-system";
 import HeaderLinks from "./header-links";
 import StyledHeader from "./styled-header";
+import theme from "../utils/theme";
 
-const HeaderButton = styled.div`
-  ${borders}
-  ${space}
-  ${color}
+const HeaderButton = styled.a`
+  border-radius: 3px;
+  border: 1px solid;
+  border-color: white;
+  color: white;
+  padding: 7px;
+  &:hover {
+    background: white;
+    color: ${theme.colors.darkBlue};
+    text-decoration: none;
+  }
 `;
 
-const HomeHeader = ({ title }) => {
+const HomeHeader = ({ title, gettingStartedUrl }) => {
   return (
     <StyledHeader p={[4, 4]} pb={[3, 3]}>
       <HeaderLinks />
@@ -34,18 +41,8 @@ const HomeHeader = ({ title }) => {
           </Text>
         </Box>
         <Flex p={3} flexWrap="wrap" justifyContent="center">
-          <HeaderButton p={2} m={1} bg="white" borderRadius={3}>
-            Get started
-          </HeaderButton>
-          <HeaderButton
-            color="white"
-            m={1}
-            p={2}
-            borderRadius={3}
-            border="1px solid"
-            borderColor="white"
-          >
-            Documentation
+          <HeaderButton href={gettingStartedUrl} target="__blank">
+            Getting started
           </HeaderButton>
         </Flex>
       </Flex>

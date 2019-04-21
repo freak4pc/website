@@ -17,7 +17,8 @@ import {
   space,
   borders,
   textAlign,
-  borderRadius
+  borderRadius,
+  fontSize
 } from "styled-system";
 import BoxIcon from "../../assets/box.svg";
 import Check from "../../assets/check.svg";
@@ -29,6 +30,8 @@ import Asteroid from "../../assets/asteroid.svg";
 import Astrology from "../../assets/astrology.svg";
 import Rocket from "../../assets/rocket.svg";
 import Astronaut from "../../assets/astronaut.svg";
+import GitHub from "../../assets/github.svg";
+import Slack from "../../assets/slack.svg";
 import theme from "../utils/theme";
 import Terminal from "react-animated-term";
 import "react-animated-term/dist/react-animated-term.css";
@@ -36,6 +39,18 @@ import "react-animated-term/dist/react-animated-term.css";
 const StyledAstronaut = styled(Astronaut)`
   ${width}
   ${height}
+`;
+
+const StyledGitHub = styled(GitHub)`
+  ${width}
+  ${height}
+  ${space}
+`;
+
+const StyledSlack = styled(Slack)`
+  ${width}
+  ${height}
+  ${space}
 `;
 
 const StyledRocket = styled(Rocket)`
@@ -87,6 +102,7 @@ const StyledDiv = styled.div`
   ${color}
   ${borders}
   ${fontWeight}
+  ${fontSize}
   ${space}
 `;
 
@@ -168,6 +184,7 @@ const StyledWhiteButtonLink = styled.a`
 const StyledParagraph = styled.p`
   ${textAlign}
   ${color}
+  ${fontSize}
 `;
 
 const StyledImg = styled.img`
@@ -189,11 +206,14 @@ const Feature = ({ children, title, description }) => {
         fontWeight="bold"
         color="purple"
         style={{ textAlign: "center" }}
+        fontSize={2}
         mb={3}
       >
         {title}
       </StyledDiv>
-      <p style={{ textAlign: "center" }}>{description}</p>
+      <StyledParagraph style={{ textAlign: "center" }} fontSize={2}>
+        {description}
+      </StyledParagraph>
     </Flex>
   );
 };
@@ -314,7 +334,16 @@ const How = () => {
   );
 };
 
-const OpenSource = () => {
+const OpenSourceButton = styled.a`
+  ${space};
+  background: white;
+  border-radius: 3px;
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+const OpenSource = ({ githubUrl, slackUrl }) => {
   return (
     <GreenGradientFlex>
       <WithMargin style={{ color: "white" }}>
@@ -330,6 +359,7 @@ const OpenSource = () => {
             flex={1}
             ml={[0, 0, -30]}
             flexDirection="column"
+            alignItems="flex-end"
             justifyContent="flex-end"
           >
             <StyledH2 textAlign={["center", "center", "right"]} color="white">
@@ -359,6 +389,20 @@ const OpenSource = () => {
               Anyone has a place and voice in our healthy, collaborative, and
               ego-free community.
             </StyledParagraph>
+            <Flex flexDirection="row" pb={5}>
+              <OpenSourceButton mx={2} p={12} href={githubUrl} target="__blank">
+                <Flex flexDirection="row" alignItems="center">
+                  <StyledGitHub width="25" height="25" mr={3} />{" "}
+                  <span>GitHub</span>
+                </Flex>
+              </OpenSourceButton>
+              <OpenSourceButton mx={2} p={12} href={slackUrl} target="__blank">
+                <Flex flexDirection="row" alignItems="center">
+                  <StyledSlack width="25" height="25" mr={3} />{" "}
+                  <span>Join our Slack</span>
+                </Flex>
+              </OpenSourceButton>
+            </Flex>
           </Flex>
         </Flex>
       </WithMargin>
@@ -518,7 +562,13 @@ const OneMoreThing = ({ contributeUrl }) => {
 const IndexPage = ({
   data: {
     site: {
-      siteMetadata: { contributeUrl, gettingStartedUrl }
+      siteMetadata: {
+        contributeUrl,
+        gettingStartedUrl,
+        documentationUrl,
+        githubUrl,
+        slackUrl
+      }
     },
     allAuthorsYaml
   }
@@ -527,7 +577,10 @@ const IndexPage = ({
   return (
     <Layout>
       <SEO />
-      <HomeHeader />
+      <HomeHeader
+        gettingStartedUrl={gettingStartedUrl}
+        documentationUrl={documentationUrl}
+      />
       <main>
         <WithMargin>
           <Why />
@@ -535,7 +588,7 @@ const IndexPage = ({
         {/* <WithMargin>
           <How />
         </WithMargin> */}
-        <OpenSource />
+        <OpenSource githubUrl={githubUrl} slackUrl={slackUrl} />
         <Mission authors={authors} />
         <TestItOut gettingStartedUrl={gettingStartedUrl} />
         <WithMargin>
@@ -555,6 +608,9 @@ export const query = graphql`
       siteMetadata {
         contributeUrl
         gettingStartedUrl
+        documentationUrl
+        githubUrl
+        slackUrl
       }
     }
     allAuthorsYaml {
