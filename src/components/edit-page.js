@@ -1,5 +1,5 @@
 import React from "react";
-import { gatsby, StaticQuery } from "gatsby";
+import { StaticQuery } from "gatsby";
 
 export default ({ path }) => {
   return (

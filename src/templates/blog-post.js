@@ -6,7 +6,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import styled from "styled-components";
 import { width, height, borderRadius, space } from "styled-system";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 import moment from "moment";
 import Main from "../components/main";
 import EditPage from "../components/edit-page";
@@ -42,7 +42,7 @@ const IndexPage = ({
   const post = markdownRemark;
   const authors = edges.map(edge => edge.node);
   const author = authors.find(
-    author => author.handle == post.frontmatter.author
+    author => author.handle === post.frontmatter.author
   );
   const subtitle = `Published by ${author.name} on ${moment(
     post.fields.date
@@ -53,6 +53,7 @@ const IndexPage = ({
         title={post.frontmatter.title}
         description={post.frontmatter.excerpt}
         keywords={post.frontmatter.categories}
+        author={author.twitter}
       />
       <Header title={post.frontmatter.title} subtitle={subtitle}>
         <Avatar author={author} />
@@ -81,7 +82,6 @@ export const query = graphql`
       siteMetadata {
         title
         siteUrl
-        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

@@ -4,13 +4,16 @@ module.exports = {
     description: `Tuist is a tool that helps developers manage large Xcode projects by leveraging
     project generation. Moreover, it provides some tools to automate most common tasks, allowing
     developers to focus on building apps.`,
-    author: `@tuist`,
     siteUrl: "https://tuist.io",
     githubUrl: "https://github.com/tuist",
     releasesUrl: "https://github.com/tuist/tuist/releases",
     documentationUrl: "https://github.com/tuist/tuist/tree/master/docs",
     slackUrl: "http://slack.tuist.io/",
-    editUrl: "https://github.com/tuist/website/edit/master"
+    editUrl: "https://github.com/tuist/website/edit/master",
+    contributeUrl:
+      "https://github.com/tuist/tuist/blob/master/docs/README.md#for-contributorsmaintainers-",
+    gettingStartedUrl:
+      "https://github.com/tuist/tuist/blob/master/docs/usage/getting-started.md"
   },
   plugins: [
     `gatsby-transformer-yaml`,

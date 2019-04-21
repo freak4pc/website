@@ -1,6 +1,6 @@
 import React from "react";
-import { gatsby, StaticQuery } from "gatsby";
-import { Box, Flex } from "rebass";
+import { StaticQuery } from "gatsby";
+import { Flex } from "rebass";
 import Facebook from "../../assets/facebook.svg";
 import Twitter from "../../assets/twitter.svg";
 import Mail from "../../assets/mail.svg";
