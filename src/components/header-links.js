@@ -41,6 +41,15 @@ const HeaderLinks = () => {
             </Box>
             <Box flex={[0, 1]} />
             <Box mx={3}>
+              <a
+                style={{ color: "white" }}
+                href={siteMetadata.documentationUrl}
+                target="__blank"
+              >
+                Docs
+              </a>
+            </Box>
+            <Box mr={[0, 3]}>
               <Link style={{ color: "white" }} to="/blog">
                 Blog
               </Link>

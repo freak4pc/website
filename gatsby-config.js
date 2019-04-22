@@ -7,13 +7,11 @@ module.exports = {
     siteUrl: "https://tuist.io",
     githubUrl: "https://github.com/tuist",
     releasesUrl: "https://github.com/tuist/tuist/releases",
-    documentationUrl: "https://github.com/tuist/tuist/tree/master/docs",
+    documentationUrl: "https://docs.tuist.io/",
     slackUrl: "http://slack.tuist.io/",
     editUrl: "https://github.com/tuist/website/edit/master",
-    contributeUrl:
-      "https://github.com/tuist/tuist/blob/master/docs/README.md#for-contributorsmaintainers-",
-    gettingStartedUrl:
-      "https://github.com/tuist/tuist/blob/master/docs/usage/getting-started.md"
+    contributeUrl: "https://docs.tuist.io/contribution-1-getting-started",
+    gettingStartedUrl: "https://docs.tuist.io/"
   },
   plugins: [
     `gatsby-transformer-yaml`,
