@@ -76,24 +76,25 @@ const BlogList = ({
   data: {
     allMarkdownRemark: { edges }
   }
-}) => (
-  <Layout>
-    <SEO title="Blog" />
-    <Header
-      title="Tuist Blog"
-      description="The blog for Tuist, your best friend to use Xcode at scale."
-    >
-      <StyledPen width={80} height={80} />
-    </Header>
-    <Main>
-      {edges.map(({ node }, index) => {
-        return <Post post={node} key={index} />;
-      })}
-      <PostsFooter {...pageContext} />
-    </Main>
-    <Footer />
-  </Layout>
-);
+}) => {
+  const description =
+    "The blog for Tuist, your best friend to use Xcode at scale.";
+  return (
+    <Layout>
+      <SEO title="Blog" description={description} />
+      <Header title="Tuist Blog" description={description}>
+        <StyledPen width={80} height={80} />
+      </Header>
+      <Main>
+        {edges.map(({ node }, index) => {
+          return <Post post={node} key={index} />;
+        })}
+        <PostsFooter {...pageContext} />
+      </Main>
+      <Footer />
+    </Layout>
+  );
+};
 
 export default BlogList;
 

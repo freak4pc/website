@@ -10,7 +10,7 @@ module.exports = {
     documentationUrl: "https://docs.tuist.io/",
     slackUrl: "http://slack.tuist.io/",
     editUrl: "https://github.com/tuist/website/edit/master",
-    contributeUrl: "https://docs.tuist.io/contribution-1-getting-started",
+    contributeUrl: "https://docs.tuist.io/",
     gettingStartedUrl: "https://docs.tuist.io/"
   },
   plugins: [
