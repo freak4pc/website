@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Pen from "../../assets/pen.svg";
+import Open from "../../assets/open.svg";
 import { width, height, flexbox, space, fontSize } from "styled-system";
 import styled from "styled-components";
 import Main from "../components/main";
@@ -13,7 +13,7 @@ import { Flex } from "rebass";
 import theme from "../utils/theme";
 import { lighten } from "polished";
 
-const StyledPen = styled(Pen)`
+const StyledOpen = styled(Open)`
   ${width}
   ${height}
 `;
@@ -142,7 +142,7 @@ const OpenSourcePage = () => {
         description={description}
         subtitle="Building open source tools and libraries in Swift"
       >
-        <StyledPen width={80} height={80} />
+        <StyledOpen width={80} height={80} />
       </Header>
       <Main>
         <p>
