@@ -1,0 +1,12 @@
+- name: XcodeProj
+  description:  📝 Read, update and write your Xcode projects
+  link: https://github.com/tuist/xcodeproj
+  license: MIT
+- name: Shell
+  description: 🧪 Shell is a µ-library written Swift to run system commands
+  link: https://github.com/tuist/shell
+  license: MIT
+- name: Acho
+  description: 🍋 Acho is a Swift library to generate interactive CLI prompts
+  link: https://github.com/tuist/acho
+  license: MIT
