@@ -3,7 +3,7 @@
   link: https://github.com/tuist/xcodeproj
   license: MIT
 - name: Shell
-  description: 🧪 Shell is a µ-library written Swift to run system commands
+  description: 🧪 Shell is a µ-library written in Swift to run system commands
   link: https://github.com/tuist/shell
   license: MIT
 - name: Acho
