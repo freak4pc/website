@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticQuery } from "gatsby";
+import { useStaticQuery } from "gatsby";
 import { Flex } from "rebass";
 import Facebook from "../../assets/facebook.svg";
 import Twitter from "../../assets/twitter.svg";
@@ -37,51 +37,45 @@ const shareUrl = (title, tags, url, dst) => {
 };
 
 export default ({ path, title, tags }) => {
+  const {
+    site: {
+      siteMetadata: { siteUrl }
+    }
+  } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          siteUrl
+        }
+      }
+    }
+  `);
+  const url = `${siteUrl}/${path}`;
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-        }
-      `}
-      render={({
-        site: {
-          siteMetadata: { siteUrl }
-        }
-      }) => {
-        const url = `${siteUrl}/${path}`;
-        return (
-          <Flex
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="center"
-            my={4}
-          >
-            <a
-              href={shareUrl(title, tags, url, "twitter")}
-              alt="Share the blog post on Twitter"
-            >
-              <StyledTwitter width={[40, 50]} height={[40, 50]} mx={3} />
-            </a>
-            <a
-              href={shareUrl(title, tags, url, "facebook")}
-              alt="Share the blog post on Facebook"
-            >
-              <StyledFacebook width={[40, 50]} height={[25, 40]} mx={3} />
-            </a>
-            <a
-              href={shareUrl(title, tags, url, "mail")}
-              alt="Share the blog post via email"
-            >
-              <StyledMail width={[40, 50]} height={[40, 50]} mx={3} />
-            </a>
-          </Flex>
-        );
-      }}
-    />
+    <Flex
+      flexDirection="row"
+      alignItems="center"
+      justifyContent="center"
+      my={4}
+    >
+      <a
+        href={shareUrl(title, tags, url, "twitter")}
+        alt="Share the blog post on Twitter"
+      >
+        <StyledTwitter width={[40, 50]} height={[40, 50]} mx={3} />
+      </a>
+      <a
+        href={shareUrl(title, tags, url, "facebook")}
+        alt="Share the blog post on Facebook"
+      >
+        <StyledFacebook width={[40, 50]} height={[25, 40]} mx={3} />
+      </a>
+      <a
+        href={shareUrl(title, tags, url, "mail")}
+        alt="Share the blog post via email"
+      >
+        <StyledMail width={[40, 50]} height={[40, 50]} mx={3} />
+      </a>
+    </Flex>
   );
 };

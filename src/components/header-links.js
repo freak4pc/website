@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex } from "rebass";
 import styled from "styled-components";
-import { Link, StaticQuery, useStaticQuery } from "gatsby";
+import { Link, useStaticQuery } from "gatsby";
 import { display, margin } from "styled-system";
 
 const StyledLinks = styled(Flex)`
